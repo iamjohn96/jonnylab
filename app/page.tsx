@@ -3,6 +3,7 @@ import Link from "next/link";
 const apps = [
   {
     icon: "🔒",
+    iconBg: "bg-indigo-600",
     name: "ClearSpace",
     tagline: "Private photo cleaner for iOS & Android",
     tags: ["Utilities", "Privacy", "iOS", "Android"],
@@ -13,6 +14,7 @@ const apps = [
   },
   {
     icon: "🐦",
+    iconBg: "bg-indigo-600",
     name: "SafeUnfollow",
     tagline: "Track and manage your Twitter/X followers",
     tags: ["Web App", "Social"],
@@ -21,13 +23,35 @@ const apps = [
     status: "Live",
     statusGreen: true,
   },
+  {
+    icon: "📁",
+    iconBg: "bg-indigo-600",
+    name: "Fileio",
+    tagline: "Smart file manager for iOS & Android",
+    tags: ["iOS", "Android", "Productivity"],
+    href: "/fileio",
+    external: false,
+    status: "Coming Soon",
+    statusGreen: false,
+  },
+  {
+    icon: "📚",
+    iconBg: "bg-amber-500",
+    name: "Hakki",
+    tagline: "학생 플래너 — 시간표, 과제, 포모도로 타이머",
+    tags: ["iOS", "Android", "Education", "Korean"],
+    href: "/hakki",
+    external: false,
+    status: "Coming Soon",
+    statusGreen: false,
+  },
 ];
 
 function AppCard({ app }: { app: (typeof apps)[number] }) {
   return (
     <div className="bg-[#111111] border border-white/10 rounded-2xl p-6 hover:border-indigo-500/50 transition-colors">
       <div className="flex items-start justify-between mb-4">
-        <div className="w-12 h-12 bg-indigo-600 rounded-xl flex items-center justify-center text-2xl">
+        <div className={`w-12 h-12 ${app.iconBg} rounded-xl flex items-center justify-center text-2xl`}>
           {app.icon}
         </div>
         <span
