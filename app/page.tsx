@@ -1,65 +1,111 @@
-import Image from "next/image";
+import Link from "next/link";
+
+const apps = [
+  {
+    icon: "🔒",
+    name: "ClearSpace",
+    tagline: "Private photo cleaner for iOS & Android",
+    tags: ["Utilities", "Privacy", "iOS", "Android"],
+    href: "/clearspace",
+    external: false,
+    status: "Coming Soon",
+    statusGreen: false,
+  },
+  {
+    icon: "🐦",
+    name: "SafeUnfollow",
+    tagline: "Track and manage your Twitter/X followers",
+    tags: ["Web App", "Social"],
+    href: "https://safeunfollow.com",
+    external: true,
+    status: "Live",
+    statusGreen: true,
+  },
+];
+
+function AppCard({ app }: { app: (typeof apps)[number] }) {
+  return (
+    <div className="bg-[#111111] border border-white/10 rounded-2xl p-6 hover:border-indigo-500/50 transition-colors">
+      <div className="flex items-start justify-between mb-4">
+        <div className="w-12 h-12 bg-indigo-600 rounded-xl flex items-center justify-center text-2xl">
+          {app.icon}
+        </div>
+        <span
+          className={`text-xs px-2.5 py-1 rounded-full font-medium ${
+            app.statusGreen
+              ? "bg-green-500/20 text-green-400"
+              : "bg-zinc-700 text-zinc-400"
+          }`}
+        >
+          {app.status}
+        </span>
+      </div>
+      <h3 className="text-lg font-semibold text-white mb-1">{app.name}</h3>
+      <p className="text-sm text-zinc-400 mb-4">{app.tagline}</p>
+      <div className="flex flex-wrap gap-2">
+        {app.tags.map((tag) => (
+          <span
+            key={tag}
+            className="text-xs text-zinc-500 bg-zinc-800 px-2 py-0.5 rounded"
+          >
+            {tag}
+          </span>
+        ))}
+      </div>
+    </div>
+  );
+}
 
 export default function Home() {
   return (
-    <div className="flex flex-col flex-1 items-center justify-center bg-zinc-50 font-sans dark:bg-black">
-      <main className="flex flex-1 w-full max-w-3xl flex-col items-center justify-between py-32 px-16 bg-white dark:bg-black sm:items-start">
-        <Image
-          className="dark:invert"
-          src="/next.svg"
-          alt="Next.js logo"
-          width={100}
-          height={20}
-          priority
-        />
-        <div className="flex flex-col items-center gap-6 text-center sm:items-start sm:text-left">
-          <h1 className="max-w-xs text-3xl font-semibold leading-10 tracking-tight text-black dark:text-zinc-50">
-            To get started, edit the page.tsx file.
-          </h1>
-          <p className="max-w-md text-lg leading-8 text-zinc-600 dark:text-zinc-400">
-            Looking for a starting point or more instructions? Head over to{" "}
-            <a
-              href="https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-              className="font-medium text-zinc-950 dark:text-zinc-50"
-            >
-              Templates
-            </a>{" "}
-            or the{" "}
-            <a
-              href="https://nextjs.org/learn?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-              className="font-medium text-zinc-950 dark:text-zinc-50"
-            >
-              Learning
-            </a>{" "}
-            center.
-          </p>
+    <main className="mx-auto max-w-4xl px-6 py-20">
+      <section className="mb-20">
+        <div className="mb-4">
+          <span className="text-sm text-zinc-400 bg-zinc-800/60 px-3 py-1 rounded-full">
+            Seoul, Korea 🇰🇷
+          </span>
         </div>
-        <div className="flex flex-col gap-4 text-base font-medium sm:flex-row">
-          <a
-            className="flex h-12 w-full items-center justify-center gap-2 rounded-full bg-foreground px-5 text-background transition-colors hover:bg-[#383838] dark:hover:bg-[#ccc] md:w-[158px]"
-            href="https://vercel.com/new?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            <Image
-              className="dark:invert"
-              src="/vercel.svg"
-              alt="Vercel logomark"
-              width={16}
-              height={16}
-            />
-            Deploy Now
-          </a>
-          <a
-            className="flex h-12 w-full items-center justify-center rounded-full border border-solid border-black/[.08] px-5 transition-colors hover:border-transparent hover:bg-black/[.04] dark:border-white/[.145] dark:hover:bg-[#1a1a1a] md:w-[158px]"
-            href="https://nextjs.org/docs?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Documentation
-          </a>
+        <h1 className="text-5xl font-bold text-white mb-4 tracking-tight">
+          Jonny Lab
+        </h1>
+        <p className="text-xl text-zinc-400 max-w-lg leading-relaxed">
+          Building privacy-first apps for people who care about their data.
+        </p>
+      </section>
+
+      <section id="apps">
+        <h2 className="text-2xl font-bold text-white mb-6">Apps</h2>
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+          {apps.map((app) =>
+            app.external ? (
+              <a
+                key={app.name}
+                href={app.href}
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                <AppCard app={app} />
+              </a>
+            ) : (
+              <Link key={app.name} href={app.href}>
+                <AppCard app={app} />
+              </Link>
+            )
+          )}
         </div>
-      </main>
-    </div>
+      </section>
+
+      <footer className="mt-24 pt-8 border-t border-white/10 flex flex-col sm:flex-row items-center justify-between gap-4 text-sm text-zinc-500">
+        <p>© 2026 Jonny Lab · jonnylab.app</p>
+        <a
+          href="https://github.com/iamjohn96"
+          target="_blank"
+          rel="noopener noreferrer"
+          className="hover:text-white transition-colors"
+        >
+          GitHub
+        </a>
+      </footer>
+    </main>
   );
 }
