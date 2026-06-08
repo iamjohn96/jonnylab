@@ -46,13 +46,13 @@ export default function HakkiPrivacyPage() {
       <div className="mb-2">
         <Link
           href="/hakki"
-          className="text-sm text-zinc-500 hover:text-white transition-colors"
+          className="text-sm text-zinc-500 hover:text-zinc-950 transition-colors"
         >
           ← Hakki
         </Link>
       </div>
 
-      <h1 className="text-3xl font-bold text-white mt-6 mb-2 tracking-tight">
+      <h1 className="text-3xl font-bold text-zinc-950 mt-6 mb-2 tracking-tight">
         Hakki 개인정보 처리방침
       </h1>
       <p className="text-sm text-zinc-500 mb-12">최종 수정: 2026년 5월</p>
@@ -60,10 +60,10 @@ export default function HakkiPrivacyPage() {
       <div className="space-y-10">
         {sections.map((s, i) => (
           <section key={s.title}>
-            <h2 className="text-base font-semibold text-white mb-2">
+            <h2 className="text-base font-semibold text-zinc-950 mb-2">
               {i + 1}. {s.title}
             </h2>
-            <p className="text-zinc-400 leading-relaxed">{s.body}</p>
+            <p className="text-zinc-600 leading-relaxed">{s.body}</p>
           </section>
         ))}
       </div>

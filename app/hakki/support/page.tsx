@@ -34,36 +34,36 @@ export default function HakkiSupportPage() {
       <div className="mb-2">
         <Link
           href="/hakki"
-          className="text-sm text-zinc-500 hover:text-white transition-colors"
+          className="text-sm text-zinc-500 hover:text-zinc-950 transition-colors"
         >
           ← Hakki
         </Link>
       </div>
 
-      <h1 className="text-3xl font-bold text-white mt-6 mb-12 tracking-tight">
+      <h1 className="text-3xl font-bold text-zinc-950 mt-6 mb-12 tracking-tight">
         Hakki 고객지원
       </h1>
 
       <section className="mb-16">
-        <h2 className="text-xl font-bold text-white mb-6">
+        <h2 className="text-xl font-bold text-zinc-950 mb-6">
           자주 묻는 질문
         </h2>
         <div className="space-y-6">
           {faqs.map((item) => (
             <div
               key={item.q}
-              className="bg-[#111111] border border-white/10 rounded-xl p-5"
+              className="bg-white border border-zinc-200 shadow-sm rounded-xl p-5"
             >
-              <p className="font-semibold text-white mb-2">{item.q}</p>
-              <p className="text-sm text-zinc-400 leading-relaxed">{item.a}</p>
+              <p className="font-semibold text-zinc-950 mb-2">{item.q}</p>
+              <p className="text-sm text-zinc-600 leading-relaxed">{item.a}</p>
             </div>
           ))}
         </div>
       </section>
 
-      <section className="bg-[#111111] border border-white/10 rounded-2xl p-8">
-        <h2 className="text-lg font-bold text-white mb-2">추가 문의</h2>
-        <p className="text-zinc-400 mb-4">
+      <section className="bg-white border border-zinc-200 shadow-sm rounded-2xl p-8">
+        <h2 className="text-lg font-bold text-zinc-950 mb-2">추가 문의</h2>
+        <p className="text-zinc-600 mb-4">
           영업일 기준 24시간 이내에 답변 드립니다.
         </p>
         <a

@@ -25,17 +25,17 @@ export default function FileioPage() {
         <div className="mx-auto mb-6 w-24 h-24 bg-indigo-600 rounded-3xl flex items-center justify-center text-4xl select-none">
           📁
         </div>
-        <h1 className="text-4xl font-bold text-white mb-3 tracking-tight">
+        <h1 className="text-4xl font-bold text-zinc-950 mb-3 tracking-tight">
           Fileio
         </h1>
-        <p className="text-xl text-zinc-400 mb-6">
+        <p className="text-xl text-zinc-600 mb-6">
           Smart File Manager for iOS &amp; Android
         </p>
         <div className="flex flex-wrap justify-center gap-2 mb-8">
           {["Google Drive", "iCloud", "Local Files"].map((badge) => (
             <span
               key={badge}
-              className="text-xs font-medium bg-indigo-600/20 text-indigo-400 border border-indigo-500/30 px-3 py-1 rounded-full"
+              className="text-xs font-medium bg-indigo-50 text-indigo-700 border border-indigo-200 px-3 py-1 rounded-full"
             >
               {badge}
             </span>
@@ -54,28 +54,34 @@ export default function FileioPage() {
           {features.map((f) => (
             <div
               key={f.title}
-              className="bg-[#111111] border border-white/10 rounded-2xl p-5"
+              className="bg-white border border-zinc-200 rounded-2xl p-5 shadow-sm"
             >
               <div className="text-2xl mb-3">{f.icon}</div>
-              <h3 className="font-semibold text-white mb-1">{f.title}</h3>
-              <p className="text-sm text-zinc-400">{f.description}</p>
+              <h3 className="font-semibold text-zinc-950 mb-1">{f.title}</h3>
+              <p className="text-sm text-zinc-600">{f.description}</p>
             </div>
           ))}
         </div>
       </section>
 
-      <div className="flex gap-6 text-sm">
+      <div className="flex flex-wrap gap-6 text-sm">
         <Link
           href="/fileio/privacy"
-          className="text-indigo-400 hover:text-indigo-300 transition-colors"
+          className="text-indigo-600 hover:text-indigo-500 transition-colors"
         >
           Privacy Policy
         </Link>
         <Link
           href="/fileio/support"
-          className="text-indigo-400 hover:text-indigo-300 transition-colors"
+          className="text-indigo-600 hover:text-indigo-500 transition-colors"
         >
           Support
+        </Link>
+        <Link
+          href="/fileio/delete-account"
+          className="text-indigo-600 hover:text-indigo-500 transition-colors"
+        >
+          Delete Account
         </Link>
       </div>
     </main>

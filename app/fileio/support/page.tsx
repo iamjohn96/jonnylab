@@ -34,36 +34,36 @@ export default function FileioSupportPage() {
       <div className="mb-2">
         <Link
           href="/fileio"
-          className="text-sm text-zinc-500 hover:text-white transition-colors"
+          className="text-sm text-zinc-500 hover:text-zinc-950 transition-colors"
         >
           ← Fileio
         </Link>
       </div>
 
-      <h1 className="text-3xl font-bold text-white mt-6 mb-12 tracking-tight">
+      <h1 className="text-3xl font-bold text-zinc-950 mt-6 mb-12 tracking-tight">
         Fileio Support
       </h1>
 
       <section className="mb-16">
-        <h2 className="text-xl font-bold text-white mb-6">
+        <h2 className="text-xl font-bold text-zinc-950 mb-6">
           Frequently Asked Questions
         </h2>
         <div className="space-y-6">
           {faqs.map((item) => (
             <div
               key={item.q}
-              className="bg-[#111111] border border-white/10 rounded-xl p-5"
+              className="bg-white border border-zinc-200 shadow-sm rounded-xl p-5"
             >
-              <p className="font-semibold text-white mb-2">{item.q}</p>
-              <p className="text-sm text-zinc-400 leading-relaxed">{item.a}</p>
+              <p className="font-semibold text-zinc-950 mb-2">{item.q}</p>
+              <p className="text-sm text-zinc-600 leading-relaxed">{item.a}</p>
             </div>
           ))}
         </div>
       </section>
 
-      <section className="bg-[#111111] border border-white/10 rounded-2xl p-8">
-        <h2 className="text-lg font-bold text-white mb-2">Still need help?</h2>
-        <p className="text-zinc-400 mb-4">
+      <section className="bg-white border border-zinc-200 shadow-sm rounded-2xl p-8">
+        <h2 className="text-lg font-bold text-zinc-950 mb-2">Still need help?</h2>
+        <p className="text-zinc-600 mb-4">
           We typically respond within 24 hours.
         </p>
         <a
