@@ -8,27 +8,23 @@ export const metadata: Metadata = {
 const sections = [
   {
     title: "Overview",
-    body: "ClearSpace is designed with privacy as its foundation. We collect no personal data, require no account, and process everything locally on your device.",
+    body: "ClearSpace is a private photo cleaner app designed to help you review and organize your photo library. No account is required to use ClearSpace.",
+  },
+  {
+    title: "Photos and Videos",
+    body: "ClearSpace requests access to your photo library solely to identify possible duplicate, blurry, screenshot, or low-quality photos and videos. Your photos and videos stay on your device. ClearSpace does not upload them to our servers.",
   },
   {
     title: "Information We Collect",
-    body: "We do not collect, store, or transmit any personal information. ClearSpace does not have servers that receive your data.",
+    body: "We do not require an account or collect, store, or transmit your photo library content. ClearSpace does not use advertising or tracking SDKs.",
   },
   {
-    title: "Photo Library Access",
-    body: "ClearSpace requests access to your photo library solely to scan for duplicates and low-quality images. All analysis is performed locally on your device. No photos or photo metadata are transmitted to any server.",
+    title: "Subscriptions and Payments",
+    body: "Subscription and payment processing is handled by Apple through the App Store or Google through Google Play. We do not receive or store your payment card details.",
   },
   {
-    title: "Analytics & Tracking",
-    body: "We do not use any analytics, tracking, or advertising SDKs.",
-  },
-  {
-    title: "In-App Purchases",
-    body: "Subscription purchases are processed by Apple (App Store) or Google (Play Store). We do not receive or store payment information.",
-  },
-  {
-    title: "Third-Party Services",
-    body: "We use RevenueCat solely to manage subscription state. RevenueCat may process anonymous subscription data. See RevenueCat's privacy policy at revenuecat.com/privacy.",
+    title: "Diagnostics",
+    body: "Basic app diagnostics or crash data may be processed by Apple, Google, or other platform providers when enabled or otherwise applicable. Their handling of that data is governed by their respective privacy policies.",
   },
   {
     title: "Children's Privacy",
@@ -40,7 +36,7 @@ const sections = [
   },
   {
     title: "Contact",
-    body: "Questions? Email: support@jonnylab.app",
+    body: "Questions about this policy can be sent to support@jonnylab.app.",
   },
 ];
 
@@ -59,7 +55,7 @@ export default function PrivacyPage() {
       <h1 className="text-3xl font-bold text-zinc-950 mt-6 mb-2 tracking-tight">
         ClearSpace Privacy Policy
       </h1>
-      <p className="text-sm text-zinc-500 mb-12">Last updated: May 2026</p>
+      <p className="text-sm text-zinc-500 mb-12">Last updated: June 2026</p>
 
       <div className="space-y-10">
         {sections.map((s, i) => (
@@ -70,6 +66,15 @@ export default function PrivacyPage() {
             <p className="text-zinc-600 leading-relaxed">{s.body}</p>
           </section>
         ))}
+      </div>
+
+      <div className="mt-12 border-t border-zinc-200 pt-6 text-sm">
+        <a
+          href="mailto:support@jonnylab.app"
+          className="text-indigo-600 hover:text-indigo-500 transition-colors"
+        >
+          Contact support@jonnylab.app
+        </a>
       </div>
     </main>
   );

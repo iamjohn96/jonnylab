@@ -93,6 +93,12 @@ export default function ClearSpacePage() {
           Privacy Policy
         </Link>
         <Link
+          href="/clearspace/terms"
+          className="text-indigo-600 hover:text-indigo-500 transition-colors"
+        >
+          Terms of Use
+        </Link>
+        <Link
           href="/clearspace/support"
           className="text-indigo-600 hover:text-indigo-500 transition-colors"
         >
