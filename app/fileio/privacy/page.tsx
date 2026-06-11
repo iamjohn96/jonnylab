@@ -8,7 +8,7 @@ export const metadata: Metadata = {
 const sections = [
   {
     title: "Overview",
-    body: "Fileio is a file management app that helps you access and organize files across local storage and cloud services.",
+    body: "Fileio is a file manager, document viewer, and document scanner that helps you organize and manage local files and documents.",
   },
   {
     title: "Information We Collect",
@@ -20,7 +20,7 @@ const sections = [
   },
   {
     title: "Cloud Services",
-    body: "When you connect Google Drive, your data is governed by Google's privacy policy. We use OAuth for secure authentication and do not store your cloud credentials.",
+    body: "When you connect Dropbox, your data is governed by Dropbox's privacy policy. We use OAuth for secure authentication and do not store your cloud credentials.",
   },
   {
     title: "Analytics & Tracking",
@@ -28,7 +28,7 @@ const sections = [
   },
   {
     title: "In-App Purchases",
-    body: "Subscription purchases are processed by Apple (App Store) or Google (Play Store) via RevenueCat. We do not receive or store payment information.",
+    body: "Subscription purchases are processed by Google Play via RevenueCat. We do not receive or store payment information.",
   },
   {
     title: "Children's Privacy",
@@ -55,7 +55,7 @@ export default function FileioPrivacyPage() {
       <h1 className="text-3xl font-bold text-zinc-950 mt-6 mb-2 tracking-tight">
         Fileio Privacy Policy
       </h1>
-      <p className="text-sm text-zinc-500 mb-12">Last updated: May 2026</p>
+      <p className="text-sm text-zinc-500 mb-12">Last updated: June 2026</p>
 
       <div className="space-y-10">
         {sections.map((s, i) => (

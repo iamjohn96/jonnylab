@@ -8,7 +8,7 @@ export const metadata: Metadata = {
 const faqs = [
   {
     q: "What cloud services does Fileio support?",
-    a: "Currently Google Drive. iCloud access is available through the native iOS file picker.",
+    a: "Fileio currently supports Dropbox for accessing and downloading cloud files.",
   },
   {
     q: "Is my data safe?",
@@ -24,7 +24,7 @@ const faqs = [
   },
   {
     q: "How do I cancel my subscription?",
-    a: "iOS: Settings → Apple ID → Subscriptions → Fileio. Android: Play Store → Subscriptions.",
+    a: "Open the Google Play Store, go to Payments & subscriptions → Subscriptions, then select Fileio.",
   },
 ];
 
