@@ -2,6 +2,17 @@ import Link from "next/link";
 
 const apps = [
   {
+    icon: "☾",
+    iconBg: "bg-violet-600",
+    name: "Serenity",
+    tagline: "Sleep sounds, white noise, and your perfect mix",
+    tags: ["Android", "Sleep", "Relaxation", "White Noise"],
+    href: "/serenity",
+    external: false,
+    status: "Coming Soon",
+    statusGreen: false,
+  },
+  {
     icon: "🔒",
     iconBg: "bg-indigo-600",
     name: "ClearSpace",
