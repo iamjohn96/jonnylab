@@ -45,17 +45,6 @@ const apps = [
     status: "Live",
     statusGreen: true,
   },
-  {
-    icon: "📚",
-    iconBg: "bg-amber-500",
-    name: "Hakki",
-    tagline: "학생 플래너 — 시간표, 과제, 포모도로 타이머",
-    tags: ["iOS", "Android", "Education", "Korean"],
-    href: "/hakki",
-    external: false,
-    status: "Coming Soon",
-    statusGreen: false,
-  },
 ];
 
 function AppCard({ app }: { app: (typeof apps)[number] }) {
