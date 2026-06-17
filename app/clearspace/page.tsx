@@ -2,9 +2,9 @@ import type { Metadata } from "next";
 import Link from "next/link";
 
 export const metadata: Metadata = {
-  title: "Clearspace — Private Photo Cleaner for Android",
+  title: "ClearSpace — Photo Cleaner for Android",
   description:
-    "Find duplicates, blurry photos, screenshots, and large files eating your storage. 100% on-device.",
+    "Find duplicate photos, similar shots, screenshots, chat media, and large or old videos with on-device analysis.",
 };
 
 const features = [
@@ -12,7 +12,7 @@ const features = [
     icon: "◎",
     title: "Duplicates & Similar Photos",
     description:
-      "Find exact matches, near-duplicates, burst shots, and repeated angles using perceptual hashing.",
+      "Find exact duplicates, near-duplicates, burst-style groups, edited versions, and repeated shots.",
   },
   {
     icon: "◫",
@@ -24,7 +24,7 @@ const features = [
     icon: "▦",
     title: "Screenshots & Chat Media",
     description:
-      "Review old screenshots and media from apps such as WhatsApp and Telegram.",
+      "Review screenshots and visible media from common chat folders such as WhatsApp, Telegram, and KakaoTalk.",
   },
   {
     icon: "↔",
@@ -34,29 +34,30 @@ const features = [
   },
   {
     icon: "↶",
-    title: "Batch Delete with Undo",
+    title: "Batch Review with Undo",
     description:
-      "Clean multiple items at once with a five-second undo window for peace of mind.",
+      "Select multiple suggested items, get a five-second undo window, then confirm through Android system trash.",
   },
   {
     icon: "◔",
-    title: "Storage Insights",
+    title: "Video Storage Cleanup",
     description:
-      "Find large files, understand storage usage, and track the space you have reclaimed.",
+      "Find large and old videos covered by Android media permissions, then review before removing.",
   },
 ];
 
 const freeFeatures = [
-  "Scan up to 500 photos",
-  "Duplicates and screenshots detection",
-  "Basic quality analysis",
+  "Unlimited scanning",
+  "Full results review",
+  "Move up to 50 selected items/month to trash",
+  "Manual review tools",
 ];
 
 const proFeatures = [
-  "Unlimited photo scanning",
-  "Similar and burst group detection",
-  "Advanced quality and chat media analysis",
-  "Storage breakdown and priority support",
+  "Unlimited trash moves",
+  "Swipe review mode and faster review tools",
+  "Similar, burst, chat media, and advanced quality analysis",
+  "Large/old video cleanup, widget, filters, and priority support",
 ];
 
 const steps = [
@@ -64,7 +65,7 @@ const steps = [
     number: "1",
     title: "Scan",
     description:
-      "Tap Scan and let on-device analysis review your photo library.",
+      "Tap Scan and let on-device analysis review photos and videos available through Android media permissions.",
   },
   {
     number: "2",
@@ -82,7 +83,7 @@ const steps = [
     number: "4",
     title: "Clean",
     description:
-      "Delete what you do not need, with a five-second undo window.",
+      "Move unwanted media to Android system trash after the undo window and confirmation prompt.",
   },
 ];
 
@@ -96,26 +97,30 @@ export default function ClearspacePage() {
             C
           </div>
           <p className="mb-3 text-sm font-medium tracking-[0.2em] text-teal-300 uppercase">
-            Private Photo Cleaner for Android
+            Android Photo & Video Cleaner
           </p>
           <h1 className="mb-4 text-4xl font-bold tracking-tight text-white sm:text-5xl">
-            Clearspace
+            ClearSpace
           </h1>
           <p className="mx-auto mb-8 max-w-2xl text-lg leading-relaxed text-zinc-300">
-            Find duplicates, blurry photos, old screenshots, chat media, and
-            large files eating your storage. See clearly. Free space.
+            Find duplicate photos, similar shots, blurry or dark images,
+            screenshots, chat media, and large or old videos. See clearly. Free
+            space.
           </p>
           <div className="mb-8 flex flex-wrap justify-center gap-2">
-            {["100% On-Device", "No Tracking", "No Cloud Uploads", "Android"].map(
-              (badge) => (
+            {[
+              "On-Device Analysis",
+              "No Tracking",
+              "No Cloud Uploads",
+              "Scoped Media Access",
+            ].map((badge) => (
                 <span
                   key={badge}
                   className="rounded-full border border-teal-300/20 bg-white/10 px-3 py-1 text-xs font-medium text-teal-50"
                 >
                   {badge}
                 </span>
-              )
-            )}
+              ))}
           </div>
           <button
             disabled
@@ -132,8 +137,8 @@ export default function ClearspacePage() {
             Find what is filling your phone
           </h2>
           <p className="mx-auto max-w-2xl leading-relaxed text-zinc-600">
-            Clearspace organizes cleanup suggestions by category so you can
-            review carefully and reclaim storage in seconds.
+            ClearSpace organizes cleanup suggestions by category so you can
+            review carefully before moving unwanted photos or videos to trash.
           </p>
         </div>
         <div className="grid grid-cols-1 gap-4 sm:grid-cols-2 lg:grid-cols-3">
@@ -160,7 +165,7 @@ export default function ClearspacePage() {
             A careful cleanup in four steps
           </h2>
           <p className="mx-auto max-w-2xl leading-relaxed text-zinc-600">
-            Clearspace helps you move quickly without taking control away from
+            ClearSpace helps you move quickly without taking control away from
             you.
           </p>
         </div>
@@ -190,9 +195,9 @@ export default function ClearspacePage() {
           Your photos never leave your phone
         </h2>
         <p className="max-w-2xl leading-relaxed text-zinc-700">
-          Photo and video analysis runs entirely on your device. Clearspace
-          does not collect your data, upload your media, or use analytics,
-          advertising, or tracking SDKs.
+          Photo and video analysis runs entirely on your device. ClearSpace
+          does not collect your data, upload your media, use cloud processing,
+          or include analytics, advertising, or tracking SDKs.
         </p>
       </section>
 
@@ -205,8 +210,8 @@ export default function ClearspacePage() {
         </h2>
         <p className="leading-relaxed text-zinc-600">
           Track space freed from a home screen widget, opt in to monthly cleanup
-          reminders, and enjoy Material You dynamic color with dark and light
-          themes.
+          reminders, and use a native Material 3 interface with light and dark
+          support.
         </p>
       </section>
 
@@ -227,7 +232,7 @@ export default function ClearspacePage() {
         </div>
         <div className="rounded-2xl bg-teal-700 p-8 text-white shadow-sm">
           <p className="mb-2 text-sm font-semibold text-teal-200">
-            Clearspace Pro
+            ClearSpace Pro
           </p>
           <h2 className="mb-4 text-xl font-bold">Unlock deeper cleanup</h2>
           <ul className="space-y-2">
