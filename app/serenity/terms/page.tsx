@@ -3,41 +3,41 @@ import Link from "next/link";
 
 export const metadata: Metadata = {
   title: "Terms of Use — Serenity",
-  description: "Terms of Use for Serenity - Sleep & Relax.",
+  description: "Terms of Use for Serenity, the Android sleep and relaxation app.",
 };
 
 const sections = [
   {
-    title: "Acceptance of Terms",
-    body: "By downloading, accessing, purchasing, or using Serenity, you agree to these Terms of Use. If you do not agree to these terms, do not use the app.",
+    title: "Acceptance",
+    body: "By downloading, accessing, purchasing, or using Serenity, you agree to these Terms of Use. If you do not agree, do not use the app.",
   },
   {
-    title: "About Serenity",
-    body: "Serenity provides sound playback, sound mixing, saved presets, and sleep timer features intended to support sleep, relaxation, focus, meditation, and similar personal routines.",
+    title: "Product Scope",
+    body: "Serenity is an Android app for sleep, relaxation, focus, and similar personal routines. It provides sound playback, sound mixing, presets, and a sleep timer.",
   },
   {
-    title: "Not Medical Advice",
-    body: "Serenity is a general wellness app and is not a medical device. It does not provide medical advice, diagnosis, or treatment and is not a substitute for professional care. Consult a qualified healthcare professional about sleep or health concerns.",
+    title: "Wellness Notice",
+    body: "Serenity is a general wellness app and is not medical advice, diagnosis, or treatment. It is not a medical device and is not a substitute for professional care.",
   },
   {
-    title: "Safe Use",
-    body: "Use a comfortable volume and do not use Serenity where reduced awareness of your surroundings could be unsafe, including while driving, cycling, or operating machinery. You are responsible for using the app safely.",
+    title: "Safe Listening",
+    body: "Use a comfortable volume and do not use Serenity where reduced awareness could be unsafe, including while driving, cycling, or operating machinery.",
   },
   {
-    title: "Subscriptions and Purchases",
-    body: "Serenity may offer auto-renewing monthly or yearly subscriptions and a one-time lifetime purchase. Prices and available products are displayed before purchase. Subscriptions automatically renew unless cancelled before the renewal date. Purchases, cancellations, and refunds are managed through Google Play and are subject to its applicable terms.",
+    title: "Purchases",
+    body: "Serenity Pro may offer monthly, yearly, and lifetime options. Prices are shown before purchase. Google Play handles payment processing, renewals, cancellations, and refunds under its own terms and policies.",
   },
   {
-    title: "License and Acceptable Use",
-    body: "We grant you a limited, personal, non-exclusive, non-transferable, revocable license to use Serenity. You may not copy, redistribute, resell, reverse engineer, interfere with, or misuse the app or its sound content except where applicable law permits.",
+    title: "License",
+    body: "We grant you a limited, personal, non-exclusive, non-transferable, revocable license to use Serenity. You may not copy, redistribute, resell, reverse engineer, interfere with, or misuse the app or its sound content except where applicable law allows it.",
   },
   {
     title: "Availability and Changes",
-    body: "We may add, change, suspend, or discontinue features or sound content and may update these terms from time to time. Updated terms will be posted on this page with a new effective date.",
+    body: "We may add, change, suspend, or discontinue features or sound content. We may also update these terms, and the new version will appear on this page with a new effective date.",
   },
   {
-    title: "Disclaimer and Limitation of Liability",
-    body: "Serenity is provided on an “as is” and “as available” basis to the extent permitted by law. We do not guarantee that the app will always be uninterrupted or that it will improve sleep or other outcomes. To the extent permitted by law, Jonny Lab is not liable for indirect, incidental, or consequential losses arising from use of the app.",
+    title: "Disclaimer and Liability",
+    body: "Serenity is provided on an as-is and as-available basis to the extent permitted by law. We do not guarantee uninterrupted operation or any particular sleep or wellness outcome. To the extent permitted by law, Jonny Lab is not liable for indirect, incidental, or consequential losses arising from use of the app.",
   },
   {
     title: "Contact",
@@ -59,7 +59,7 @@ export default function SerenityTermsPage() {
         Serenity Terms of Use
       </h1>
       <p className="mb-12 text-sm text-zinc-500">
-        Effective date: June 14, 2026
+        Effective date: June 19, 2026
       </p>
       <Link
         href="/serenity/terms/ko"

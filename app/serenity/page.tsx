@@ -2,174 +2,251 @@ import type { Metadata } from "next";
 import Link from "next/link";
 
 export const metadata: Metadata = {
-  title: "Serenity - Sleep & Relax",
+  title: "Serenity | Android Sleep & Relax",
   description:
-    "Mix sleep sounds, white noise, rain, and nature sounds to create your perfect sleep environment.",
+    "Serenity is an Android sleep and relaxation app with 30 sounds, 5-channel mixing, presets, and a sleep timer. Coming soon on Google Play.",
 };
 
 const features = [
   {
     icon: "🌧",
-    title: "30+ Premium Sounds",
+    title: "30 Sound Library",
     description:
-      "Choose from rain, ocean, forest, fireplace, urban ambience, and a full range of white noise.",
+      "Mix rain, ocean, forest, fireplace, city ambience, brown noise, and white noise into your own sleep scene.",
   },
   {
     icon: "🎚",
-    title: "Personal Sound Mixer",
+    title: "5-Channel Mixer",
     description:
-      "Play up to five sounds together, fine-tune each volume, and save your favorite combinations.",
+      "Blend up to five sounds at once and tune each channel individually for the exact balance you want.",
   },
   {
-    icon: "🌙",
+    icon: "💾",
+    title: "Presets",
+    description:
+      "Save your favorite mixes and come back to the same setup whenever you need it.",
+  },
+  {
+    icon: "⏳",
     title: "Sleep Timer",
     description:
-      "Set a custom timer and let gentle fade-out ease you into restful sleep.",
+      "Set a timer and let Serenity fade out gradually when it is time to sleep.",
   },
   {
-    icon: "▶",
+    icon: "📱",
     title: "Background Playback",
     description:
-      "Keep your sounds playing reliably while using other apps or with the screen turned off.",
+      "Keep audio playing while the screen is off or while you are using other Android apps.",
   },
   {
-    icon: "◐",
-    title: "Comfortable Themes",
+    icon: "🌐",
+    title: "Korean and English",
     description:
-      "Use the refined dark theme at night or switch to a light theme whenever you prefer.",
-  },
-  {
-    icon: "✦",
-    title: "Made for Your Routine",
-    description:
-      "Create a calmer setting for sleep, focus, meditation, yoga, or quiet moments.",
+      "Serenity ships with both Korean and English UI copy so the core experience stays easy to use.",
   },
 ];
 
-const proBenefits = [
-  "Full library of 30+ premium sounds",
-  "Unlimited saved mix presets",
-  "Priority access to new sounds",
-  "Continuous content updates",
+const freeHighlights = [
+  "15 sounds available for free",
+  "2 saved presets on the free tier",
+  "Core mixer and timer features",
+];
+
+const proHighlights = [
+  "Full 30-sound library",
+  "Expanded preset saving",
+  "Built for uninterrupted nightly use",
+];
+
+const workflow = [
+  "Choose the sounds that fit your routine.",
+  "Mix up to five channels and save the blend you like.",
+  "Set the timer, start playback, and let the mix fade out gently.",
 ];
 
 export default function SerenityPage() {
   return (
-    <main className="mx-auto max-w-4xl px-6 py-20">
-      <section className="relative overflow-hidden rounded-3xl bg-[#0A0E1A] px-6 py-16 text-center shadow-xl sm:px-12">
-        <div className="absolute inset-0 bg-[radial-gradient(circle_at_top,_rgba(108,99,255,0.35),_transparent_52%)]" />
+    <main className="mx-auto max-w-5xl px-6 py-16 sm:py-20">
+      <section className="relative overflow-hidden rounded-[2rem] bg-[#08111F] px-6 py-16 text-white shadow-[0_30px_120px_rgba(8,17,31,0.35)] sm:px-10 lg:px-12">
+        <div className="absolute inset-0 bg-[radial-gradient(circle_at_top_left,_rgba(56,189,248,0.24),_transparent_45%),radial-gradient(circle_at_bottom_right,_rgba(59,130,246,0.2),_transparent_38%)]" />
         <div className="relative">
-          <div className="mx-auto mb-6 flex h-24 w-24 items-center justify-center rounded-3xl bg-gradient-to-br from-violet-500 to-indigo-700 text-6xl text-white shadow-lg shadow-indigo-950/50 select-none">
-            ☾
+          <div className="mb-8 flex items-center justify-between gap-4">
+            <span className="inline-flex rounded-full border border-sky-400/30 bg-white/5 px-3 py-1 text-xs font-semibold uppercase tracking-[0.24em] text-sky-200">
+              Android-only
+            </span>
+            <span className="text-xs text-sky-100/70">Google Play launch page</span>
           </div>
-          <p className="mb-3 text-sm font-medium tracking-[0.2em] text-indigo-300 uppercase">
-            Sleep Sounds &amp; White Noise Mixer
-          </p>
-          <h1 className="mb-4 text-4xl font-bold tracking-tight text-white sm:text-5xl">
-            Serenity - Sleep &amp; Relax
-          </h1>
-          <p className="mx-auto mb-8 max-w-2xl text-lg leading-relaxed text-indigo-100/80">
-            Mix calming sounds to create your perfect environment for restful
-            sleep, deeper focus, and quiet relaxation.
-          </p>
-          <div className="mb-8 flex flex-wrap justify-center gap-2">
-            {["30+ Sounds", "Custom Mixes", "Sleep Timer", "No Ads"].map(
-              (badge) => (
-                <span
-                  key={badge}
-                  className="rounded-full border border-indigo-300/20 bg-white/10 px-3 py-1 text-xs font-medium text-indigo-100"
-                >
-                  {badge}
-                </span>
-              )
-            )}
+
+          <div className="grid gap-10 lg:grid-cols-[1.1fr_0.9fr] lg:items-center">
+            <div>
+              <p className="mb-4 text-sm font-medium uppercase tracking-[0.28em] text-sky-200/80">
+                Sleep sounds and white noise
+              </p>
+              <h1 className="max-w-2xl text-4xl font-semibold tracking-tight text-white sm:text-5xl lg:text-6xl">
+                Serenity for Android. Calm audio that stays out of the way.
+              </h1>
+              <p className="mt-6 max-w-2xl text-lg leading-8 text-sky-100/80">
+                Serenity combines 30 sounds, a 5-channel mixer, presets, and a
+                sleep timer so you can build the exact background sound you
+                want for sleep, focus, or quiet downtime.
+              </p>
+
+              <div className="mt-8 flex flex-wrap gap-2">
+                {[
+                  "30 sounds",
+                  "5-channel mixing",
+                  "Presets",
+                  "Sleep timer",
+                  "Korean + English",
+                  "Local data only",
+                ].map((badge) => (
+                  <span
+                    key={badge}
+                    className="rounded-full border border-white/12 bg-white/6 px-3 py-1 text-sm text-sky-50/90"
+                  >
+                    {badge}
+                  </span>
+                ))}
+              </div>
+
+              <button
+                type="button"
+                disabled
+                className="mt-10 inline-flex cursor-not-allowed items-center rounded-xl bg-sky-500 px-5 py-3 text-sm font-semibold text-slate-950 opacity-90"
+              >
+                Coming Soon on Google Play
+              </button>
+            </div>
+
+            <div className="rounded-[1.75rem] border border-white/10 bg-white/8 p-6 backdrop-blur-sm">
+              <p className="text-sm font-semibold uppercase tracking-[0.22em] text-sky-200/80">
+                Built for a simple nightly flow
+              </p>
+              <div className="mt-6 space-y-4">
+                {workflow.map((step, index) => (
+                  <div
+                    key={step}
+                    className="flex gap-4 rounded-2xl border border-white/8 bg-slate-950/30 p-4"
+                  >
+                    <div className="flex h-8 w-8 shrink-0 items-center justify-center rounded-full bg-sky-400 text-sm font-semibold text-slate-950">
+                      {index + 1}
+                    </div>
+                    <p className="text-sm leading-6 text-sky-50/90">{step}</p>
+                  </div>
+                ))}
+              </div>
+            </div>
           </div>
-          <button
-            disabled
-            className="cursor-not-allowed rounded-xl bg-indigo-500 px-6 py-3 font-medium text-white opacity-70"
-          >
-            Coming Soon to Google Play
-          </button>
         </div>
       </section>
 
       <section className="py-16">
-        <div className="mb-8 text-center">
-          <h2 className="mb-3 text-2xl font-bold text-zinc-950">
-            Your sound, your space
+        <div className="flex max-w-2xl flex-col gap-3">
+          <p className="text-sm font-semibold uppercase tracking-[0.24em] text-sky-700">
+            What you get
+          </p>
+          <h2 className="text-3xl font-semibold tracking-tight text-slate-950 sm:text-4xl">
+            Everything is focused on sound, not accounts or tracking.
           </h2>
-          <p className="mx-auto max-w-2xl leading-relaxed text-zinc-600">
-            From a quiet rainfall to rich brown noise, Serenity gives you the
-            tools to shape a soundscape that fits your routine.
+          <p className="text-base leading-7 text-slate-600">
+            Serenity keeps settings and presets on the device. There is no
+            account, no ads, and no analytics or crash reporting SDK in the app
+            build.
           </p>
         </div>
-        <div className="grid grid-cols-1 gap-4 sm:grid-cols-2 lg:grid-cols-3">
+
+        <div className="mt-10 grid gap-4 md:grid-cols-2 xl:grid-cols-3">
           {features.map((feature) => (
-            <div
+            <article
               key={feature.title}
-              className="rounded-2xl border border-zinc-200 bg-white p-5 shadow-sm"
+              className="rounded-3xl border border-slate-200 bg-white p-6 shadow-[0_12px_40px_rgba(15,23,42,0.06)]"
             >
-              <div className="mb-3 text-2xl">{feature.icon}</div>
-              <h3 className="mb-1 font-semibold text-zinc-950">
+              <div className="text-2xl">{feature.icon}</div>
+              <h3 className="mt-4 text-lg font-semibold text-slate-950">
                 {feature.title}
               </h3>
-              <p className="text-sm leading-relaxed text-zinc-600">
+              <p className="mt-2 text-sm leading-6 text-slate-600">
                 {feature.description}
               </p>
-            </div>
+            </article>
           ))}
         </div>
       </section>
 
-      <section className="mb-12 grid gap-4 md:grid-cols-2">
-        <div className="rounded-2xl border border-zinc-200 bg-white p-8 shadow-sm">
-          <p className="mb-2 text-sm font-semibold text-indigo-600">
-            Start free
+      <section className="grid gap-4 lg:grid-cols-2">
+        <article className="rounded-[1.75rem] border border-slate-200 bg-slate-50 p-8">
+          <p className="text-sm font-semibold uppercase tracking-[0.22em] text-sky-700">
+            Free tier
           </p>
-          <h2 className="mb-3 text-xl font-bold text-zinc-950">
-            Find your calm at no cost
+          <h2 className="mt-3 text-2xl font-semibold text-slate-950">
+            Enough to build a reliable bedtime mix.
           </h2>
-          <p className="leading-relaxed text-zinc-600">
-            Enjoy 15 sounds and the core mixer for free. No account is required,
-            and your settings and presets stay on your device.
-          </p>
-        </div>
-        <div className="rounded-2xl bg-indigo-600 p-8 text-white shadow-sm">
-          <p className="mb-2 text-sm font-semibold text-indigo-200">
-            Serenity Pro
-          </p>
-          <h2 className="mb-4 text-xl font-bold">Unlock the full library</h2>
-          <ul className="space-y-2">
-            {proBenefits.map((benefit) => (
-              <li key={benefit} className="flex gap-2 text-sm text-indigo-50">
-                <span className="font-bold">✓</span>
-                {benefit}
+          <ul className="mt-6 space-y-3">
+            {freeHighlights.map((item) => (
+              <li key={item} className="flex gap-3 text-sm leading-6 text-slate-700">
+                <span className="mt-1 text-sky-600">•</span>
+                <span>{item}</span>
               </li>
             ))}
           </ul>
-        </div>
+        </article>
+
+        <article className="rounded-[1.75rem] border border-sky-200 bg-sky-600 p-8 text-white shadow-[0_24px_80px_rgba(2,132,199,0.24)]">
+          <p className="text-sm font-semibold uppercase tracking-[0.22em] text-sky-100/80">
+            Serenity Pro
+          </p>
+          <h2 className="mt-3 text-2xl font-semibold">
+            Unlock the full sound library and save more mixes.
+          </h2>
+          <ul className="mt-6 space-y-3">
+            {proHighlights.map((item) => (
+              <li key={item} className="flex gap-3 text-sm leading-6 text-sky-50">
+                <span className="mt-1 text-sky-200">•</span>
+                <span>{item}</span>
+              </li>
+            ))}
+          </ul>
+        </article>
       </section>
 
-      <div className="flex flex-wrap gap-6 text-sm">
-        <Link
-          href="/serenity/privacy"
-          className="text-indigo-600 transition-colors hover:text-indigo-500"
-        >
-          Privacy Policy
-        </Link>
-        <Link
-          href="/serenity/terms"
-          className="text-indigo-600 transition-colors hover:text-indigo-500"
-        >
-          Terms of Use
-        </Link>
-        <Link
-          href="/serenity/support"
-          className="text-indigo-600 transition-colors hover:text-indigo-500"
-        >
-          Support
-        </Link>
-      </div>
+      <section className="mt-16 rounded-[1.75rem] border border-slate-200 bg-white p-8 shadow-[0_14px_48px_rgba(15,23,42,0.06)]">
+        <div className="grid gap-8 lg:grid-cols-[1fr_auto] lg:items-end">
+          <div>
+            <p className="text-sm font-semibold uppercase tracking-[0.22em] text-sky-700">
+              Privacy posture
+            </p>
+            <h2 className="mt-3 text-2xl font-semibold text-slate-950">
+              Local by default.
+            </h2>
+            <p className="mt-3 max-w-2xl text-sm leading-6 text-slate-600">
+              Settings, presets, and playback preferences stay on the device.
+              We do not use analytics, ads, or tracking SDKs, and we do not
+              require an account to use the app.
+            </p>
+          </div>
+
+          <div className="flex gap-3 text-sm">
+            <Link
+              href="/serenity/privacy"
+              className="rounded-full border border-slate-200 px-4 py-2 font-medium text-slate-700 transition-colors hover:border-slate-300 hover:text-slate-950"
+            >
+              Privacy Policy
+            </Link>
+            <Link
+              href="/serenity/terms"
+              className="rounded-full border border-slate-200 px-4 py-2 font-medium text-slate-700 transition-colors hover:border-slate-300 hover:text-slate-950"
+            >
+              Terms of Use
+            </Link>
+            <Link
+              href="/serenity/support"
+              className="rounded-full border border-slate-200 px-4 py-2 font-medium text-slate-700 transition-colors hover:border-slate-300 hover:text-slate-950"
+            >
+              Support
+            </Link>
+          </div>
+        </div>
+      </section>
     </main>
   );
 }

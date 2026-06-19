@@ -3,67 +3,67 @@ import Link from "next/link";
 
 export const metadata: Metadata = {
   title: "Privacy Policy — Serenity",
-  description: "Privacy Policy for Serenity - Sleep & Relax.",
+  description: "Privacy Policy for Serenity, the Android sleep and relaxation app.",
 };
 
 const sections = [
   {
+    title: "Overview",
+    body: [
+      "Serenity is designed to work without an account. The app keeps your settings, mixer levels, and presets on your device.",
+      "We do not use analytics, advertising, or tracking SDKs in the app build.",
+    ],
+  },
+  {
     title: "Information We Collect",
     body: [
-      "Serenity collects minimal data to provide and improve the app experience.",
-      "Purchase information: When you purchase or subscribe to Serenity Pro, the transaction is processed by Google Play Billing. We do not directly collect or store your payment details.",
-      "Usage data: We may collect anonymous usage statistics, such as which sounds are played and session duration, to improve the app experience. This data is not linked to your identity.",
-      "Device information: Basic device information, such as operating system version and device model, and crash logs may be collected for crash reporting, compatibility, and app stability purposes.",
+      "Serenity does not ask for your name, email address, phone number, location, contacts, photos, files, or health data.",
+      "We do not record audio from your device or collect usage analytics.",
     ],
   },
   {
     title: "Information We Do Not Collect",
     body: [
-      "We do not collect personal identification information, such as your name, email address, or mailing address, unless you contact us directly.",
-      "We do not collect location or health data, record audio from your device, or access your contacts, photos, or files.",
+      "We do not collect personal identifiers, ad identifiers, or background activity history from the app.",
+      "Any sound selection, volume adjustment, or preset you save stays local to the device running Serenity.",
     ],
   },
   {
-    title: "Data Sharing",
+    title: "Payments",
     body: [
-      "We do not sell or trade your personal information. Anonymous analytics and diagnostic data may be processed by service providers that help us operate and improve Serenity.",
+      "Serenity Pro is sold through Google Play. Google processes payment information, subscriptions, cancellations, and refunds under its own terms and policies.",
+      "Jonny Lab does not receive or store your card details.",
     ],
   },
   {
     title: "Data Storage and Deletion",
     body: [
-      "App settings and mix presets are stored locally on your device. Serenity does not maintain a user account system or cloud storage for this data.",
-      "You can delete locally stored Serenity data by clearing the app's data in your device settings or uninstalling the app.",
+      "Because Serenity uses local storage only, you can remove the app's data through Android system settings or by uninstalling the app.",
+      "Uninstalling the app or clearing app data removes the local settings and presets stored by Serenity.",
     ],
   },
   {
-    title: "Subscriptions and Purchases",
+    title: "Sharing",
     body: [
-      "Serenity Pro subscriptions and purchases are managed through Google Play Billing. Subscription management, billing, cancellations, and refunds are handled by Google Play and are subject to Google's applicable terms and policies.",
+      "We do not sell your data. Since Serenity does not collect analytics or ad data, there is no data-sharing program for those purposes.",
     ],
   },
   {
-    title: "Data Security",
+    title: "Children",
     body: [
-      "We use reasonable safeguards designed to protect data processed in connection with Serenity. Data transmitted to service providers is encrypted in transit where applicable.",
+      "Serenity is not directed to children under 13, and we do not knowingly collect personal information from children.",
     ],
   },
   {
-    title: "Children's Privacy",
+    title: "Changes",
     body: [
-      "Serenity is not directed at children under 13, and we do not knowingly collect personal information from children.",
+      "We may update this policy from time to time. When we do, we will update the effective date on this page.",
     ],
   },
   {
-    title: "Changes to This Policy",
+    title: "Contact",
     body: [
-      "We may update this Privacy Policy from time to time. Changes will be posted on this page with an updated effective date.",
-    ],
-  },
-  {
-    title: "Contact Us",
-    body: [
-      "If you have questions about this Privacy Policy, contact us at support@jonnylab.app.",
+      "If you have questions about this Privacy Policy, contact support@jonnylab.app.",
     ],
   },
 ];
@@ -82,7 +82,7 @@ export default function SerenityPrivacyPage() {
         Serenity Privacy Policy
       </h1>
       <p className="mb-12 text-sm text-zinc-500">
-        Effective date: June 14, 2026
+        Effective date: June 19, 2026
       </p>
       <Link
         href="/serenity/privacy/ko"
