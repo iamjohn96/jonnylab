@@ -3,7 +3,8 @@ import Link from "next/link";
 
 export const metadata: Metadata = {
   title: "Privacy Policy — ClearSpace",
-  description: "Privacy Policy for ClearSpace.",
+  description:
+    "Privacy Policy for ClearSpace, an Android photo and video cleaner by JonnyLab.",
 };
 
 const sections = [
@@ -18,6 +19,7 @@ const sections = [
     title: "Photos and Videos",
     body: [
       "ClearSpace requests access to photos and videos solely to scan, analyze, display, compare, organize, and move selected items to trash.",
+      "The current scan scope includes images from MediaStore, videos from MediaStore, screenshots visible in your media library, common chat media folders when visible through media access, large videos, and old videos.",
       "All photo and video analysis happens locally on your device. Your media is never uploaded to JonnyLab servers or shared with third parties.",
       "ClearSpace is a media cleaner for photos and videos. It does not request Android All files access and does not scan arbitrary documents, APKs, cache files, app-private folders, or every file on your device.",
     ],
@@ -25,14 +27,14 @@ const sections = [
   {
     title: "Local Data",
     body: [
-      "ClearSpace stores scan history, bytes freed, trash metadata, app settings, and reminder state locally on your device using Android storage such as Room and DataStore. This information is not transmitted externally.",
+      "ClearSpace stores scan history, bytes freed, trash metadata, app settings, and reminder state locally on your device using Android storage such as Room and DataStore. This information is not transmitted externally by the current Android-native app.",
       "You can remove local data by clearing ClearSpace's app data in Android settings or uninstalling the app.",
     ],
   },
   {
     title: "Information We Do Not Collect",
     body: [
-      "ClearSpace does not collect personal information, photo or video content, usage analytics, diagnostics, advertising identifiers, location, contacts, or other user data.",
+      "ClearSpace does not collect personal information, photo or video content, usage analytics, diagnostics, advertising identifiers, location, contacts, or other user data in the current Android-native build.",
       "ClearSpace does not use analytics, advertising, or tracking SDKs.",
     ],
   },
@@ -41,7 +43,7 @@ const sections = [
     body: [
       "READ_MEDIA_IMAGES is used to access images so ClearSpace can find duplicates, similar photos, screenshots, visible chat media, and quality issues.",
       "READ_MEDIA_VIDEO is used to access videos for large and old video cleanup.",
-      "READ_EXTERNAL_STORAGE may be used only for Android 12 and below compatibility. ClearSpace does not request MANAGE_EXTERNAL_STORAGE.",
+      "READ_EXTERNAL_STORAGE may be used only for Android 12 and below compatibility, with maxSdkVersion 32. ClearSpace does not request MANAGE_EXTERNAL_STORAGE.",
       "POST_NOTIFICATIONS is used only for optional monthly cleanup reminders that you can disable at any time.",
     ],
   },
@@ -49,15 +51,15 @@ const sections = [
     title: "Deletion and Trash",
     body: [
       "ClearSpace does not silently delete media. When you choose items to remove, the app provides a five-second undo period before starting the removal flow.",
-      "On Android 11 and later, ClearSpace uses Android's system trash confirmation. On Android 10 and below, Android may require direct deletion through ContentResolver.",
-      "The in-app Trash screen is not a complete restore and delete management tool. Restore behavior depends on the Android or device gallery trash system.",
+      "On Android 11 and later, ClearSpace uses Android's system trash confirmation through MediaStore.createTrashRequest. On Android 10 and below, Android may require direct deletion through ContentResolver.",
+      "If you cancel the Android system prompt, selected items are restored in the ClearSpace UI. The in-app Trash screen is not a complete restore and delete management tool, so restore behavior depends on the Android or device gallery trash system.",
     ],
   },
   {
     title: "Network, Purchases, and Data Sharing",
     body: [
       "ClearSpace does not use network access to process or transfer your photo or video data. We do not sell, share, or transmit your media to third parties.",
-      "ClearSpace Pro purchases, if available, are processed through Google Play and RevenueCat for billing, restore, and entitlement status. JonnyLab does not receive or store your payment card details.",
+      "ClearSpace Pro purchases, if available, are processed through Google Play and RevenueCat for billing, restore, customer-info refresh, and entitlement status. JonnyLab does not receive or store your payment card details.",
     ],
   },
   {
@@ -94,7 +96,7 @@ export default function ClearspacePrivacyPage() {
         ClearSpace Privacy Policy
       </h1>
       <p className="mb-12 text-sm text-zinc-500">
-        Effective date: June 17, 2026
+        Effective date: June 22, 2026
       </p>
       <Link
         href="/clearspace/privacy/ko"

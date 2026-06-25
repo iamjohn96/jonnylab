@@ -3,7 +3,8 @@ import Link from "next/link";
 
 export const metadata: Metadata = {
   title: "Terms of Use — ClearSpace",
-  description: "Terms of Use for ClearSpace.",
+  description:
+    "Terms of Use for ClearSpace, an Android photo and video cleaner by JonnyLab.",
 };
 
 const sections = [
@@ -13,11 +14,11 @@ const sections = [
   },
   {
     title: "About ClearSpace",
-    body: "ClearSpace is an Android media cleaner for photos and videos. It analyzes media available through Android media permissions and provides cleanup suggestions for duplicate photos, similar photos, burst-style groups, quality issues, screenshots, visible chat media, and large or old videos.",
+    body: "ClearSpace is an Android media cleaner, photo cleaner, duplicate finder, and storage helper for photos and videos. It analyzes media available through Android media permissions and provides cleanup suggestions for duplicate photos, similar photos, burst-style groups, quality issues, screenshots, visible chat media, and large or old videos.",
   },
   {
     title: "Media Scope",
-    body: "ClearSpace is not an all-files storage cleaner. It does not request Android All files access and does not claim to scan arbitrary documents, APKs, cache files, app-private folders, or every folder on your device.",
+    body: "ClearSpace is not an all-files storage cleaner. It does not request Android All files access and does not claim to scan arbitrary documents, APKs, cache files, app-private folders, or every folder on your device. Results are limited to media available through the permissions you grant and Android's media access rules.",
   },
   {
     title: "Detection Results",
@@ -25,7 +26,7 @@ const sections = [
   },
   {
     title: "Review Before Removing Media",
-    body: "You are responsible for reviewing all selected items before confirming removal. ClearSpace provides a five-second undo period before starting the removal flow. On Android 11 and later, selected media is moved through Android's system trash confirmation. On Android 10 and below, removal may use direct deletion through Android's media APIs. Keep backups of important photos and videos.",
+    body: "You are responsible for reviewing all selected items before confirming removal. ClearSpace provides a five-second undo period before starting the removal flow. On Android 11 and later, selected media is moved through Android's system trash confirmation using MediaStore.createTrashRequest. On Android 10 and below, removal may use direct deletion through Android's media APIs. The in-app Trash screen is not a complete restore manager, so keep backups of important photos and videos.",
   },
   {
     title: "Permissions and Reminders",
@@ -33,7 +34,7 @@ const sections = [
   },
   {
     title: "ClearSpace Pro",
-    body: "ClearSpace may offer paid Pro features through Google Play. Planned purchase options may include weekly, monthly, annual, and lifetime plans, and the prices and available options shown in the app or Google Play before purchase control. Purchases, cancellations, restore flows, and refunds are managed through Google Play and related billing services and are subject to their applicable terms.",
+    body: "ClearSpace may offer paid Pro features through Google Play. Planned purchase options may include weekly, monthly, annual, and lifetime plans, and the prices and available options shown in the app or Google Play before purchase control. Purchases, cancellations, restore flows, refunds, and entitlement availability are managed through Google Play, RevenueCat, and related billing services and are subject to their applicable terms.",
   },
   {
     title: "License and Acceptable Use",
@@ -63,7 +64,7 @@ export default function ClearspaceTermsPage() {
         ClearSpace Terms of Use
       </h1>
       <p className="mb-12 text-sm text-zinc-500">
-        Effective date: June 17, 2026
+        Effective date: June 22, 2026
       </p>
       <Link
         href="/clearspace/terms/ko"

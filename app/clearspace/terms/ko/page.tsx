@@ -3,7 +3,7 @@ import Link from "next/link";
 
 export const metadata: Metadata = {
   title: "이용약관 — ClearSpace",
-  description: "ClearSpace 이용약관",
+  description: "JonnyLab Android 사진 및 동영상 정리 앱 ClearSpace 이용약관",
 };
 
 const sections = [
@@ -13,11 +13,11 @@ const sections = [
   },
   {
     title: "ClearSpace 소개",
-    body: "ClearSpace는 Android용 사진 및 동영상 미디어 정리 앱입니다. Android 미디어 권한으로 접근 가능한 미디어를 분석하고 중복 사진, 유사 사진, 연속 촬영 형태의 그룹, 품질 문제, 스크린샷, 표시 가능한 채팅 미디어, 대용량 또는 오래된 동영상에 대한 정리 제안을 제공합니다.",
+    body: "ClearSpace는 Android용 사진 및 동영상 미디어 정리 앱이자 사진 클리너, 중복 찾기, 사진 및 동영상 저장공간 관리 도우미입니다. Android 미디어 권한으로 접근 가능한 미디어를 분석하고 중복 사진, 유사 사진, 연속 촬영 형태의 그룹, 품질 문제, 스크린샷, 표시 가능한 채팅 미디어, 대용량 또는 오래된 동영상에 대한 정리 제안을 제공합니다.",
   },
   {
     title: "미디어 범위",
-    body: "ClearSpace는 전체 파일 저장공간 정리 앱이 아닙니다. Android 전체 파일 접근 권한을 요청하지 않으며, 임의의 문서, APK, 캐시 파일, 앱 전용 폴더 또는 기기의 모든 폴더를 스캔한다고 주장하지 않습니다.",
+    body: "ClearSpace는 전체 파일 저장공간 정리 앱이 아닙니다. Android 전체 파일 접근 권한을 요청하지 않으며, 임의의 문서, APK, 캐시 파일, 앱 전용 폴더 또는 기기의 모든 폴더를 스캔한다고 주장하지 않습니다. 결과는 사용자가 부여한 권한과 Android 미디어 접근 규칙에 따라 접근 가능한 미디어로 제한됩니다.",
   },
   {
     title: "탐지 결과",
@@ -25,7 +25,7 @@ const sections = [
   },
   {
     title: "미디어 제거 전 검토",
-    body: "제거를 확정하기 전에 선택한 모든 항목을 검토할 책임은 사용자에게 있습니다. ClearSpace는 제거 절차를 시작하기 전에 5초 실행 취소 시간을 제공합니다. Android 11 이상에서는 선택한 미디어가 Android 시스템 휴지통 확인 절차를 통해 이동됩니다. Android 10 이하에서는 Android 미디어 API를 통한 직접 삭제가 사용될 수 있습니다. 중요한 사진과 동영상은 백업해 두세요.",
+    body: "제거를 확정하기 전에 선택한 모든 항목을 검토할 책임은 사용자에게 있습니다. ClearSpace는 제거 절차를 시작하기 전에 5초 실행 취소 시간을 제공합니다. Android 11 이상에서는 선택한 미디어가 MediaStore.createTrashRequest를 사용하는 Android 시스템 휴지통 확인 절차를 통해 이동됩니다. Android 10 이하에서는 Android 미디어 API를 통한 직접 삭제가 사용될 수 있습니다. 앱 내 휴지통 화면은 완전한 복원 관리 도구가 아니므로 중요한 사진과 동영상은 백업해 두세요.",
   },
   {
     title: "권한 및 알림",
@@ -33,7 +33,7 @@ const sections = [
   },
   {
     title: "ClearSpace Pro",
-    body: "ClearSpace는 Google Play를 통해 유료 Pro 기능을 제공할 수 있습니다. 주간, 월간, 연간 및 평생 플랜이 구매 옵션으로 제공될 수 있으며, 구매 전에 앱 또는 Google Play에 표시되는 가격과 옵션이 우선합니다. 구매, 취소, 복원 및 환불은 Google Play 및 관련 결제 서비스를 통해 관리되며 해당 약관이 적용됩니다.",
+    body: "ClearSpace는 Google Play를 통해 유료 Pro 기능을 제공할 수 있습니다. 주간, 월간, 연간 및 평생 플랜이 구매 옵션으로 제공될 수 있으며, 구매 전에 앱 또는 Google Play에 표시되는 가격과 옵션이 우선합니다. 구매, 취소, 복원, 환불 및 권한 제공 여부는 Google Play, RevenueCat 및 관련 결제 서비스를 통해 관리되며 해당 약관이 적용됩니다.",
   },
   {
     title: "라이선스 및 허용되는 사용",
@@ -62,7 +62,7 @@ export default function ClearspaceTermsKoPage() {
       <h1 className="mt-6 mb-2 text-3xl font-bold tracking-tight text-zinc-950">
         ClearSpace 이용약관
       </h1>
-      <p className="mb-12 text-sm text-zinc-500">시행일: 2026년 6월 17일</p>
+      <p className="mb-12 text-sm text-zinc-500">시행일: 2026년 6월 22일</p>
       <Link
         href="/clearspace/terms"
         className="mb-10 inline-block text-sm text-teal-700 transition-colors hover:text-teal-600"

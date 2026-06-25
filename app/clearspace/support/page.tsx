@@ -3,7 +3,8 @@ import Link from "next/link";
 
 export const metadata: Metadata = {
   title: "Support — ClearSpace",
-  description: "Support and frequently asked questions for ClearSpace.",
+  description:
+    "Support and frequently asked questions for ClearSpace Photo Cleaner.",
 };
 
 const faqs = [
@@ -16,6 +17,10 @@ const faqs = [
     a: "The free version includes unlimited scanning, full results review, manual review tools, and moving up to 50 selected items per month to trash.",
   },
   {
+    q: "What is included in ClearSpace Pro?",
+    a: "The planned Pro tier includes unlimited deletion allowance, swipe review mode, faster review tools, the home screen widget, advanced filters, similar and burst groups, advanced quality analysis, chat media detection, large or old video cleanup, and priority support. Purchase availability depends on Google Play and RevenueCat production configuration.",
+  },
+  {
     q: "Why is ClearSpace asking for photo and video access?",
     a: "Android requires these permissions so ClearSpace can scan and display duplicates, similar photos, quality issues, screenshots, visible chat media, and large or old videos. Your media remains on your device.",
   },
@@ -24,12 +29,20 @@ const faqs = [
     a: "No. ClearSpace uses scoped Android media permissions for photos and videos. It does not request All files access and does not scan arbitrary documents, APKs, cache files, or app-private folders.",
   },
   {
+    q: "Which chat apps can ClearSpace detect?",
+    a: "ClearSpace looks for common visible chat media folders such as WhatsApp, Telegram, and KakaoTalk. Android permissions and device storage rules control which folders are visible to the app.",
+  },
+  {
     q: "Why are some duplicates or blurry photos not detected?",
-    a: "Automated detection is not perfect. Results can vary based on image format, similarity, and sensitivity settings. Try adjusting the sensitivity setting and scan again.",
+    a: "Automated detection is not perfect. Results can vary based on image format, lighting, motion blur, edits, compression, grouping thresholds, and media access limits. Review suggestions before removing anything important.",
   },
   {
     q: "Can I recover removed media?",
-    a: "Use the five-second undo immediately when available. On Android 11 and later, ClearSpace uses Android system trash confirmation, so Android or your gallery app may keep removed items in Trash for a limited time. The in-app Trash screen is not a complete restore manager, so keep backups of important media.",
+    a: "Use the five-second undo immediately when available. On Android 11 and later, ClearSpace uses Android system trash confirmation, so Android or your gallery app may keep removed items in Trash for a limited time. On Android 10 and below, removal may use direct deletion. The in-app Trash screen is not a complete restore manager, so keep backups of important media.",
+  },
+  {
+    q: "Can I finish swipe review before the last item?",
+    a: "Yes. After you review at least one item, the Finish action lets you submit only the items you marked for deletion. Back navigation cancels the current swipe review session without applying choices.",
   },
   {
     q: "How do I disable cleanup reminders?",
@@ -59,7 +72,8 @@ export default function ClearspaceSupportPage() {
         ClearSpace Support
       </h1>
       <p className="mb-12 text-zinc-600">
-        Help with scanning, permissions, cleanup, and Pro features.
+        Help with scanning, permissions, media cleanup, purchases, and restore
+        behavior.
       </p>
 
       <section className="mb-16">
@@ -85,7 +99,9 @@ export default function ClearspaceSupportPage() {
         </h2>
         <p className="mb-4 text-zinc-600">
           Include your device model, Android version, and a short description
-          of the issue.
+          of the issue. For scan or deletion issues, include the cleanup
+          category you were using and whether Android showed a trash
+          confirmation prompt.
         </p>
         <a
           href="mailto:support@jonnylab.app?subject=ClearSpace%20Support"
