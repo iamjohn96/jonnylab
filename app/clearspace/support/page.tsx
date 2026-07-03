@@ -18,7 +18,7 @@ const faqs = [
   },
   {
     q: "What is included in ClearSpace Pro?",
-    a: "The planned Pro tier includes unlimited deletion allowance, swipe review mode, faster review tools, the home screen widget, advanced filters, similar and burst groups, advanced quality analysis, chat media detection, large or old video cleanup, and priority support. Purchase availability depends on Google Play and RevenueCat production configuration.",
+    a: "ClearSpace Pro includes unlimited deletion allowance, swipe review mode, faster review tools, the home screen widget, advanced filters, similar and burst groups, advanced quality analysis, chat media detection, large or old video cleanup, and priority support. Available purchase options and prices are shown in the app before checkout.",
   },
   {
     q: "Why is ClearSpace asking for photo and video access?",

@@ -15,13 +15,13 @@ const apps = [
   {
     icon: "C",
     iconBg: "bg-teal-600 text-white font-bold",
-    name: "Clearspace",
+    name: "ClearSpace",
     tagline: "Find duplicates, blurry photos, and forgotten screenshots",
     tags: ["Android", "Tools", "Photo Cleaner", "On-Device"],
     href: "/clearspace",
     external: false,
-    status: "Coming Soon",
-    statusGreen: false,
+    status: "Live",
+    statusGreen: true,
   },
   {
     icon: "🐦",

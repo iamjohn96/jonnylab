@@ -1,6 +1,9 @@
 import type { Metadata } from "next";
 import Link from "next/link";
 
+const googlePlayUrl =
+  "https://play.google.com/store/apps/details?id=com.jonnylab.clearspace";
+
 export const metadata: Metadata = {
   title: "ClearSpace - Photo Cleaner for Android",
   description:
@@ -181,12 +184,14 @@ export default function ClearspacePage() {
             </p>
 
             <div className="mt-8 flex flex-wrap gap-3">
-              <button
-                disabled
-                className="cursor-not-allowed rounded-lg bg-zinc-950 px-5 py-3 text-sm font-semibold text-white opacity-70"
+              <a
+                href={googlePlayUrl}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="rounded-lg bg-zinc-950 px-5 py-3 text-sm font-semibold text-white transition-colors hover:bg-zinc-800"
               >
-                Coming soon to Google Play
-              </button>
+                Get it on Google Play
+              </a>
               <Link
                 href="/clearspace/support"
                 className="rounded-lg border border-zinc-300 bg-white px-5 py-3 text-sm font-semibold text-zinc-950 transition-colors hover:border-zinc-500"
@@ -328,8 +333,8 @@ export default function ClearspacePage() {
               ))}
             </ul>
             <p className="mt-5 text-xs leading-5 text-zinc-400">
-              Purchase availability depends on Google Play and RevenueCat
-              production configuration.
+              Available purchase options and prices are shown in the app before
+              checkout.
             </p>
           </article>
         </div>
@@ -341,6 +346,14 @@ export default function ClearspacePage() {
             Support, privacy, and terms for ClearSpace - Photo Cleaner.
           </p>
           <div className="flex flex-wrap gap-5">
+            <a
+              href={googlePlayUrl}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="font-medium text-zinc-950 transition-colors hover:text-emerald-700"
+            >
+              Google Play
+            </a>
             <Link
               href="/clearspace/privacy"
               className="font-medium text-zinc-950 transition-colors hover:text-emerald-700"
