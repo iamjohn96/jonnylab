@@ -4,7 +4,7 @@ import { createPageMetadata } from "@/lib/siteMetadata";
 export const metadata = createPageMetadata({
   title: "Privacy Policy — Fileio",
   description:
-    "Privacy Policy for Fileio, including local file access, account information, Dropbox, analytics, and purchase processing.",
+    "Privacy Policy for Fileio, including local file access, read-only Google Drive and Dropbox access, analytics, and purchase processing.",
   path: "/fileio/privacy",
 });
 
@@ -19,11 +19,11 @@ const sections = [
   },
   {
     title: "File Access",
-    body: "Fileio accesses your files solely to display and manage them within the app. Files are not uploaded to our servers.",
+    body: "Fileio accesses locally imported files solely to display and manage them within the app. Local file-management actions, including rename and delete, apply to these local files. Locally imported files are not uploaded to Fileio servers.",
   },
   {
     title: "Cloud Services",
-    body: "When you connect Dropbox, your data is governed by Dropbox's privacy policy. We use OAuth for secure authentication and do not store your cloud credentials.",
+    body: "Fileio Pro can connect Google Drive and Dropbox through OAuth. Cloud access is read-only: you can browse cloud folders, view file names and sizes, and temporarily download supported files to Fileio’s app cache for viewing. Google Docs and Google Sheets files may be exported into supported formats before opening. Google Slides files may be exported as PPTX, but local PPTX preview is not currently supported. Fileio does not upload, edit, rename, move, or delete files stored in Google Drive or Dropbox, does not synchronize local files between devices, and does not provide its own cloud backup or cloud-storage service. Information processed by Google Drive and Dropbox remains subject to those services’ privacy practices, and Fileio does not store your cloud credentials.",
   },
   {
     title: "Analytics & Tracking",

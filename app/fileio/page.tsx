@@ -8,7 +8,7 @@ const googlePlayUrl =
 export const metadata = createPageMetadata({
   title: "Fileio — File Manager, Document Viewer & Scanner",
   description:
-    "Fileio is available on Android for file management, document viewing, and scanning. An iOS version is in development.",
+    "Fileio is available on Android for local file management, document viewing, scanning, and read-only Google Drive and Dropbox access with Fileio Pro. An iOS version is in development.",
   path: "/fileio",
 });
 
@@ -35,8 +35,9 @@ const features = [
   },
   {
     icon: "☁️",
-    title: "Dropbox Integration",
-    description: "Connect Dropbox to access and download your cloud files.",
+    title: "Read-Only Cloud Access",
+    description:
+      "With Fileio Pro, browse supported files in Google Drive and Dropbox without changing the originals.",
   },
   {
     icon: "💾",
@@ -53,9 +54,32 @@ const workflow = [
 
 const trustPoints = [
   "Local files are not uploaded to Fileio servers",
-  "Dropbox connects through OAuth",
+  "Google Drive and Dropbox access is read-only",
   "No third-party analytics or advertising SDKs",
   "Payment information is handled by Google Play",
+];
+
+const cloudAccessDetails = [
+  {
+    title: "Browse without changing cloud files",
+    description:
+      "Fileio Pro lets you browse Google Drive and Dropbox folders and view file names and sizes. Fileio cannot upload, edit, rename, move, or delete cloud files.",
+  },
+  {
+    title: "Temporary downloads for viewing",
+    description:
+      "Supported cloud files may be downloaded temporarily to Fileio’s app cache so they can be opened in a supported viewer.",
+  },
+  {
+    title: "Google Workspace exports",
+    description:
+      "Google Docs and Google Sheets files may be exported into supported formats before opening. Google Slides may be exported as PPTX, but local PPTX preview is not currently supported.",
+  },
+  {
+    title: "No cloud sync or backup",
+    description:
+      "Fileio does not synchronize local files between devices and does not provide its own cloud backup or cloud-storage service.",
+  },
 ];
 
 export default function FileioPage() {
@@ -83,8 +107,8 @@ export default function FileioPage() {
             </h1>
             <p className="mt-5 max-w-2xl text-lg leading-8 text-zinc-600">
               Fileio brings file management, document viewing, camera scanning,
-              favorites, recent files, storage overview, and Dropbox access into
-              one Android app.
+              favorites, recent files, storage overview, and read-only Google
+              Drive and Dropbox access into one Android app.
             </p>
             <div className="mt-8 flex flex-wrap gap-3">
               <a
@@ -155,9 +179,40 @@ export default function FileioPage() {
         </div>
       </section>
 
+      <section className="border-t border-zinc-200 bg-white">
+        <div className="mx-auto max-w-6xl px-6 py-16">
+          <div className="mb-8 max-w-2xl">
+            <p className="mb-2 text-sm font-semibold text-indigo-700">
+              Fileio Pro cloud access
+            </p>
+            <h2 className="text-3xl font-bold tracking-tight text-zinc-950">
+              Read-only access to Google Drive and Dropbox
+            </h2>
+            <p className="mt-4 leading-7 text-zinc-600">
+              Cloud access is separate from Fileio’s local file-management
+              tools. Rename, move, and delete actions apply to locally imported
+              files, not files stored in Google Drive or Dropbox.
+            </p>
+          </div>
+          <div className="grid gap-4 sm:grid-cols-2">
+            {cloudAccessDetails.map((detail) => (
+              <article
+                key={detail.title}
+                className="rounded-2xl border border-zinc-200 bg-zinc-50 p-5"
+              >
+                <h3 className="font-semibold text-zinc-950">{detail.title}</h3>
+                <p className="mt-2 text-sm leading-6 text-zinc-600">
+                  {detail.description}
+                </p>
+              </article>
+            ))}
+          </div>
+        </div>
+      </section>
+
       <TrustSection
         title="Clear boundaries for your files and accounts"
-        description="Fileio manages local files on your device and does not upload them to Fileio servers. Connected cloud files remain subject to Dropbox's service and privacy practices."
+        description="Fileio manages locally imported files on your device and does not upload them to Fileio servers. Fileio Pro provides read-only access to Google Drive and Dropbox; supported files may be downloaded temporarily to the app cache for viewing, but cloud files cannot be changed through Fileio."
         points={trustPoints}
         privacyHref="/fileio/privacy"
         supportHref="/fileio/support"

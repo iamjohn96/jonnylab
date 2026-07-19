@@ -4,18 +4,30 @@ import { createPageMetadata } from "@/lib/siteMetadata";
 export const metadata = createPageMetadata({
   title: "Support — Fileio",
   description:
-    "Support and frequently asked questions for Fileio file management, document viewing, scanning, and subscriptions.",
+    "Support and frequently asked questions for Fileio local file management, scanning, subscriptions, and read-only Google Drive and Dropbox access.",
   path: "/fileio/support",
 });
 
 const faqs = [
   {
     q: "What cloud services does Fileio support?",
-    a: "Fileio currently supports Dropbox for accessing and downloading cloud files.",
+    a: "Fileio Pro supports read-only access to Google Drive and Dropbox. You can browse cloud folders, view file names and sizes, and temporarily download supported files to Fileio’s app cache for viewing.",
+  },
+  {
+    q: "Can Fileio change files in Google Drive or Dropbox?",
+    a: "No. Fileio cannot upload, edit, rename, move, or delete files stored in Google Drive or Dropbox. Local file-management actions such as rename and delete apply only to locally imported files.",
+  },
+  {
+    q: "How does Fileio open Google Docs, Sheets, and Slides?",
+    a: "Google Docs and Google Sheets files may be exported into supported formats before opening. Google Slides files may be exported as PPTX, but local PPTX preview is not currently supported.",
+  },
+  {
+    q: "Does Fileio sync or back up my files?",
+    a: "No. Fileio does not synchronize local files between devices and does not provide its own cloud backup or cloud-storage service.",
   },
   {
     q: "Is my data safe?",
-    a: "Yes. Fileio does not upload your files to any server. Cloud integrations use secure OAuth authentication.",
+    a: "Fileio does not upload locally imported files to Fileio servers. Google Drive and Dropbox connections use OAuth, and supported cloud files are downloaded only temporarily to the app cache when needed for viewing.",
   },
   {
     q: "How do I restore my purchase?",
