@@ -8,7 +8,7 @@ export default function Nav() {
           href="/"
           className="text-zinc-950 font-bold text-lg tracking-tight"
         >
-          Jonny Lab
+          JonnyLab
         </Link>
         <Link
           href="/#apps"
