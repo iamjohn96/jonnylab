@@ -1,14 +1,16 @@
-import type { Metadata } from "next";
 import Link from "next/link";
+import TrustSection from "@/components/TrustSection";
+import { createPageMetadata } from "@/lib/siteMetadata";
 
 const googlePlayUrl =
   "https://play.google.com/store/apps/details?id=com.jonnylab.clearspace";
 
-export const metadata: Metadata = {
+export const metadata = createPageMetadata({
   title: "ClearSpace — Private Photo Cleaner",
   description:
     "ClearSpace is available on Android for private, on-device photo cleanup. An iOS version is in development.",
-};
+  path: "/clearspace",
+});
 
 const featureGroups = [
   {
@@ -276,33 +278,14 @@ export default function ClearspacePage() {
         </div>
       </section>
 
-      <section className="border-y border-zinc-200 bg-zinc-950 text-white">
-        <div className="mx-auto grid max-w-6xl gap-10 px-6 py-16 lg:grid-cols-[0.8fr_1fr]">
-          <div>
-            <p className="mb-2 text-sm font-semibold text-emerald-300">
-              Privacy by design
-            </p>
-            <h2 className="text-3xl font-bold tracking-tight">
-              Your media stays on your device
-            </h2>
-            <p className="mt-4 leading-7 text-zinc-300">
-              ClearSpace is a media cleaner, duplicate finder, and storage
-              helper for photos and videos. It is not an all-files cleaner and
-              does not request Android All files access.
-            </p>
-          </div>
-          <div className="grid gap-3 sm:grid-cols-2">
-            {privacyPoints.map((point) => (
-              <div
-                key={point}
-                className="rounded-lg border border-white/10 bg-white/5 p-4 text-sm text-zinc-100"
-              >
-                {point}
-              </div>
-            ))}
-          </div>
-        </div>
-      </section>
+      <TrustSection
+        title="Your media stays on your device"
+        description="ClearSpace analyzes the photos and videos you choose through Android media permissions. It is not an all-files cleaner and does not request Android All files access."
+        points={privacyPoints}
+        privacyHref="/clearspace/privacy"
+        termsHref="/clearspace/terms"
+        supportHref="/clearspace/support"
+      />
 
       <section className="bg-white">
         <div className="mx-auto grid max-w-6xl gap-6 px-6 py-16 md:grid-cols-2">

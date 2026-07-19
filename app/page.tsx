@@ -27,6 +27,7 @@ type App = {
   external: boolean;
   status: string;
   statusGreen: boolean;
+  ctaLabel: string;
   secondaryStatus?: string;
 };
 
@@ -41,6 +42,7 @@ const apps: App[] = [
     external: false,
     status: "Live on Android",
     statusGreen: true,
+    ctaLabel: "Explore Serenity",
     secondaryStatus: "iOS in development",
   },
   {
@@ -53,6 +55,7 @@ const apps: App[] = [
     external: false,
     status: "Live on Android",
     statusGreen: true,
+    ctaLabel: "Explore ClearSpace",
     secondaryStatus: "iOS in development",
   },
   {
@@ -65,6 +68,7 @@ const apps: App[] = [
     external: true,
     status: "Live Web App",
     statusGreen: true,
+    ctaLabel: "Open SafeUnfollow",
   },
   {
     icon: "📁",
@@ -76,6 +80,7 @@ const apps: App[] = [
     external: false,
     status: "Live on Android",
     statusGreen: true,
+    ctaLabel: "Explore Fileio",
     secondaryStatus: "iOS in development",
   },
 ];
@@ -174,6 +179,9 @@ function AppCard({ app }: { app: App }) {
           </span>
         ))}
       </div>
+      <p className="mt-5 text-sm font-semibold text-indigo-700">
+        {app.ctaLabel} <span aria-hidden="true">→</span>
+      </p>
     </div>
   );
 }
@@ -192,10 +200,12 @@ export default function Home() {
           </span>
         </div>
         <h1 className="mb-4 text-5xl font-bold tracking-tight text-zinc-950">
-          Jonny Lab
+          JonnyLab
         </h1>
-        <p className="max-w-lg text-xl leading-relaxed text-zinc-600">
-          Building privacy-first apps for people who care about their data.
+        <p className="max-w-2xl text-xl leading-relaxed text-zinc-600">
+          Android apps for better sleep, cleaner photo libraries, and simpler
+          file management—plus privacy-first web tools built to minimize data
+          collection.
         </p>
       </section>
 
@@ -215,18 +225,6 @@ export default function Home() {
           )}
         </div>
       </section>
-
-      <footer className="mt-24 flex flex-col items-center justify-between gap-4 border-t border-zinc-200 pt-8 text-sm text-zinc-500 sm:flex-row">
-        <p>© 2026 Jonny Lab · jonnylab.app</p>
-        <div className="flex flex-wrap items-center justify-center gap-4">
-          <a href="mailto:support@jonnylab.app" className="transition-colors hover:text-zinc-950">
-            support@jonnylab.app
-          </a>
-          <a href="https://github.com/iamjohn96" target="_blank" rel="noopener noreferrer" className="transition-colors hover:text-zinc-950">
-            GitHub
-          </a>
-        </div>
-      </footer>
     </main>
   );
 }

@@ -1,11 +1,12 @@
-import type { Metadata } from "next";
 import Link from "next/link";
+import { createPageMetadata } from "@/lib/siteMetadata";
 
-export const metadata: Metadata = {
+export const metadata = createPageMetadata({
   title: "Privacy Policy — ClearSpace",
   description:
     "Privacy Policy for ClearSpace, an Android photo and video cleaner by JonnyLab.",
-};
+  path: "/clearspace/privacy",
+});
 
 const sections = [
   {

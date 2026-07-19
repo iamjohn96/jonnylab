@@ -1,10 +1,11 @@
-import type { Metadata } from "next";
 import Link from "next/link";
+import { createPageMetadata } from "@/lib/siteMetadata";
 
-export const metadata: Metadata = {
+export const metadata = createPageMetadata({
   title: "Support — Serenity",
   description: "Support and frequently asked questions for Serenity.",
-};
+  path: "/serenity/support",
+});
 
 const faqs = [
   {

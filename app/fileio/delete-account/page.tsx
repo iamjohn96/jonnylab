@@ -1,13 +1,14 @@
-import type { Metadata } from "next";
 import Link from "next/link";
+import { createPageMetadata } from "@/lib/siteMetadata";
 
 const contactEmail = "support@jonnylab.app";
 const deletionSubject = "Fileio Account Deletion Request";
 
-export const metadata: Metadata = {
+export const metadata = createPageMetadata({
   title: "Fileio Account Deletion Request",
   description: "Request deletion of your Fileio account and associated data.",
-};
+  path: "/fileio/delete-account",
+});
 
 const faqs = [
   {

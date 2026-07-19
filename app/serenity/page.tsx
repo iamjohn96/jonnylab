@@ -1,14 +1,15 @@
-import type { Metadata } from "next";
-import Link from "next/link";
+import TrustSection from "@/components/TrustSection";
+import { createPageMetadata } from "@/lib/siteMetadata";
 
 const googlePlayUrl =
   "https://play.google.com/store/apps/details?id=com.jonnylab.serenity";
 
-export const metadata: Metadata = {
+export const metadata = createPageMetadata({
   title: "Serenity — Sleep Sounds and Sound Mixer",
   description:
     "Serenity is available on Android with 30 sounds, five-channel mixing, saved mixes, and a sleep timer. An iOS version is in development.",
-};
+  path: "/serenity",
+});
 
 const features = [
   {
@@ -65,6 +66,13 @@ const workflow = [
   "Choose the sounds that fit your routine.",
   "Mix up to five channels and save the blend you like.",
   "Set the timer, start playback, and let the mix fade out gently.",
+];
+
+const trustPoints = [
+  "Settings and presets stay on your device",
+  "No account required",
+  "No ads",
+  "No analytics or advertising tracking SDKs",
 ];
 
 export default function SerenityPage() {
@@ -215,44 +223,16 @@ export default function SerenityPage() {
         </article>
       </section>
 
-      <section className="mt-16 rounded-[1.75rem] border border-slate-200 bg-white p-8 shadow-[0_14px_48px_rgba(15,23,42,0.06)]">
-        <div className="grid gap-8 lg:grid-cols-[1fr_auto] lg:items-end">
-          <div>
-            <p className="text-sm font-semibold uppercase tracking-[0.22em] text-sky-700">
-              Privacy posture
-            </p>
-            <h2 className="mt-3 text-2xl font-semibold text-slate-950">
-              Local by default.
-            </h2>
-            <p className="mt-3 max-w-2xl text-sm leading-6 text-slate-600">
-              Settings, presets, and playback preferences stay on the device.
-              We do not use analytics, ads, or tracking SDKs, and we do not
-              require an account to use the app.
-            </p>
-          </div>
-
-          <div className="flex gap-3 text-sm">
-            <Link
-              href="/serenity/privacy"
-              className="rounded-full border border-slate-200 px-4 py-2 font-medium text-slate-700 transition-colors hover:border-slate-300 hover:text-slate-950"
-            >
-              Privacy Policy
-            </Link>
-            <Link
-              href="/serenity/terms"
-              className="rounded-full border border-slate-200 px-4 py-2 font-medium text-slate-700 transition-colors hover:border-slate-300 hover:text-slate-950"
-            >
-              Terms of Use
-            </Link>
-            <Link
-              href="/serenity/support"
-              className="rounded-full border border-slate-200 px-4 py-2 font-medium text-slate-700 transition-colors hover:border-slate-300 hover:text-slate-950"
-            >
-              Support
-            </Link>
-          </div>
-        </div>
-      </section>
+      <div className="mt-16 overflow-hidden rounded-[1.75rem]">
+        <TrustSection
+          title="Local by default."
+          description="Settings, presets, and playback preferences stay on the device. Serenity does not require an account to use the app."
+          points={trustPoints}
+          privacyHref="/serenity/privacy"
+          termsHref="/serenity/terms"
+          supportHref="/serenity/support"
+        />
+      </div>
     </main>
   );
 }

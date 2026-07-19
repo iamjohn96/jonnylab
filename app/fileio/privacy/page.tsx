@@ -1,9 +1,12 @@
-import type { Metadata } from "next";
 import Link from "next/link";
+import { createPageMetadata } from "@/lib/siteMetadata";
 
-export const metadata: Metadata = {
+export const metadata = createPageMetadata({
   title: "Privacy Policy — Fileio",
-};
+  description:
+    "Privacy Policy for Fileio, including local file access, account information, Dropbox, analytics, and purchase processing.",
+  path: "/fileio/privacy",
+});
 
 const sections = [
   {
