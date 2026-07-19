@@ -1,92 +1,44 @@
 import type { Metadata } from "next";
-import Link from "next/link";
+import SerenityLegalPage from "@/components/SerenityLegalPage";
+
+const url = "https://jonnylab.app/serenity/terms";
 
 export const metadata: Metadata = {
-  title: "Terms of Use — Serenity",
-  description: "Terms of Use for Serenity, the Android sleep and relaxation app.",
+  title: "Terms of Use — Serenity: Sleep Sound Mixer",
+  description: "Terms of Use for Serenity: Sleep Sound Mixer on Android and iOS, including subscriptions and Lifetime purchases.",
+  alternates: { canonical: url, languages: { en: url, ko: `${url}/ko`, "x-default": url } },
+  openGraph: { title: "Serenity Terms of Use", description: "Terms for using Serenity on Android and iOS.", url, siteName: "JonnyLab", type: "website", locale: "en_US", alternateLocale: ["ko_KR"] },
+  robots: { index: true, follow: true },
 };
 
 const sections = [
-  {
-    title: "Acceptance",
-    body: "By downloading, accessing, purchasing, or using Serenity, you agree to these Terms of Use. If you do not agree, do not use the app.",
-  },
-  {
-    title: "Product Scope",
-    body: "Serenity is an Android app for sleep, relaxation, focus, and similar personal routines. It provides sound playback, sound mixing, presets, and a sleep timer.",
-  },
-  {
-    title: "Wellness Notice",
-    body: "Serenity is a general wellness app and is not medical advice, diagnosis, or treatment. It is not a medical device and is not a substitute for professional care.",
-  },
-  {
-    title: "Safe Listening",
-    body: "Use a comfortable volume and do not use Serenity where reduced awareness could be unsafe, including while driving, cycling, or operating machinery.",
-  },
-  {
-    title: "Purchases",
-    body: "Serenity Pro may offer monthly, yearly, and lifetime options. Prices are shown before purchase. Google Play handles payment processing, renewals, cancellations, and refunds under its own terms and policies.",
-  },
-  {
-    title: "License",
-    body: "We grant you a limited, personal, non-exclusive, non-transferable, revocable license to use Serenity. You may not copy, redistribute, resell, reverse engineer, interfere with, or misuse the app or its sound content except where applicable law allows it.",
-  },
-  {
-    title: "Availability and Changes",
-    body: "We may add, change, suspend, or discontinue features or sound content. We may also update these terms, and the new version will appear on this page with a new effective date.",
-  },
-  {
-    title: "Disclaimer and Liability",
-    body: "Serenity is provided on an as-is and as-available basis to the extent permitted by law. We do not guarantee uninterrupted operation or any particular sleep or wellness outcome. To the extent permitted by law, Jonny Lab is not liable for indirect, incidental, or consequential losses arising from use of the app.",
-  },
-  {
-    title: "Contact",
-    body: "Questions about these Terms of Use can be sent to support@jonnylab.app.",
-  },
+  { title: "Acceptance of Terms", content: <><p>These Terms of Use (“Terms”) are an agreement between you and JonnyLab for <strong>Serenity: Sleep Sound Mixer</strong> (“Serenity” or the “App”) on Android and iOS. By downloading, accessing, purchasing, or using Serenity, you agree to these Terms. If you do not agree, do not use the App.</p><p>For the iOS App, Apple’s <a href="https://www.apple.com/legal/internet-services/itunes/dev/stdeula/">Standard Licensed Application End User License Agreement (“Standard EULA”)</a> also applies unless Apple presents another applicable license. These Terms supplement that license and do not replace rights that cannot legally be limited.</p></> },
+  { title: "Eligibility", content: <p>You must be legally capable of agreeing to these Terms. If you are a minor where you live, use Serenity only with permission and supervision from a parent or legal guardian, who must review these Terms and any purchase.</p> },
+  { title: "License to Use the App", content: <><p>Subject to these Terms and the applicable platform rules, JonnyLab grants you a limited, personal, non-exclusive, non-transferable, non-sublicensable, and revocable license to use Serenity on supported devices you own or control for personal, non-commercial purposes.</p><p>On iOS, the license is also subject to Apple’s Standard EULA and App Store Usage Rules. On Android, use and distribution through Google Play are also subject to Google Play’s applicable terms.</p></> },
+  { title: "App Features and Availability", content: <><p>Serenity provides ambient sound playback for sleep, relaxation, and focus, including mixing up to five sounds, individual volume controls, Saved Mixes, a Sleep Timer, fade-out, and background playback. Sounds are included in the App bundle.</p><h3>Platform-specific features</h3><p>Features tied to an operating system are available only on that platform. For example, Lock Screen and Control Center playback controls described for iOS are iOS-only. Android background controls and system integrations are Android-only. Availability may vary by device, operating-system version, permissions, and platform policy.</p></> },
+  { title: "User Responsibilities", content: <p>You are responsible for using Serenity safely, maintaining a compatible device and operating system, protecting your store account, reviewing purchase details before confirming payment, and complying with applicable laws and platform terms.</p> },
+  { title: "Pro Features", content: <p>Serenity Pro unlocks features identified in the App’s purchase screen. Entitlements are checked using RevenueCat on Android and iOS. Pro availability or included features may differ by platform where a feature depends on platform capabilities; any platform-exclusive feature will be identified as such.</p> },
+  { title: "Auto-Renewable Subscriptions", content: <><p>Monthly and Yearly plans are auto-renewable subscriptions for the billing period you select. Unless you cancel before renewal under your store’s rules, the subscription automatically renews for another period and the applicable store account is charged the price shown for your region at the time of renewal.</p><h3>Android — Google Play</h3><p>Google Play bills the Google Account used to subscribe. Renewal, billing timing, and available management options are governed by Google Play.</p><h3>iOS — Apple App Store</h3><p>Apple bills the Apple Account used to subscribe. Renewal, billing timing, and available management options are governed by the App Store and StoreKit.</p></> },
+  { title: "Lifetime Purchase", content: <><p>Lifetime is a one-time, non-consumable in-app purchase with no recurring charge. It provides access to the applicable Serenity Pro features for as long as the App and those features are offered and supported. “Lifetime” does not guarantee the permanent existence of JonnyLab, Serenity, a store, an operating system, or any platform.</p><p>To the extent permitted by law, features may change because of technical requirements, platform policies, security needs, or service availability. Restore availability depends on the original purchase account, store records, platform rules, and continued App availability.</p></> },
+  { title: "Billing and Payment", content: <><p>Prices and currencies shown on the Google Play or App Store purchase confirmation are the controlling localized prices. Google processes Android payments; Apple processes iOS payments. JonnyLab does not directly collect or store your full payment-card information.</p><p>RevenueCat supports purchase validation and entitlement management but does not replace the applicable store as the merchant and billing manager for these in-app purchases.</p></> },
+  { title: "Cancellation and Subscription Management", content: <><p>Deleting or uninstalling Serenity does not cancel a subscription.</p><h3>Android</h3><p>Manage or cancel through the subscriptions section of the Google Play account used to purchase. See <a href="https://support.google.com/googleplay/answer/7018481">Google Play subscription management</a>.</p><h3>iOS</h3><p>Manage or cancel in your Apple Account subscription settings, including Settings &gt; your name &gt; Subscriptions on supported iOS versions. See <a href="https://support.apple.com/118428">Apple subscription management</a>.</p></> },
+  { title: "Restore Purchases", content: <><p>Serenity provides a Restore Purchases option. Restoration requires the same Google Account on Android or Apple Account on iOS that made the original purchase, and is subject to the applicable store’s records and rules.</p><p>A Lifetime purchase is generally restorable on the same platform and store account. A purchase made on one platform is not guaranteed to transfer to the other platform because Apple and Google maintain separate purchase systems. RevenueCat is used to check entitlements but does not merge unrelated store accounts or guarantee cross-platform portability.</p></> },
+  { title: "Refunds", content: <><h3>Android</h3><p>Google Play’s refund process and policies apply to Android purchases. Eligibility and the party handling a request may depend on timing, location, and applicable law. See <a href="https://support.google.com/googleplay/answer/15574908">Google Play refund policies</a>.</p><h3>iOS</h3><p>Apple decides refund requests for App Store purchases under its policies and applicable law. JonnyLab cannot issue an Apple App Store refund directly. See <a href="https://support.apple.com/118223">Apple’s refund request guidance</a>.</p></> },
+  { title: "Changes to Pricing or Features", content: <p>Prices, available purchase options, and Pro features may change. Store notices and consent rules apply to subscription price changes where required. Changes do not remove consumer rights provided by applicable law. We will describe the currently offered features and price before a new purchase.</p> },
+  { title: "Intellectual Property", content: <p>Serenity, its code, design, sound library, text, graphics, trademarks, and other content are owned by or licensed to JonnyLab and protected by applicable intellectual-property laws. Except for the limited license above, no rights are transferred to you.</p> },
+  { title: "Prohibited Uses", content: <><p>You may not:</p><ul><li>copy, distribute, publicly exploit, or commercially resell the App, its sounds, or its code without authorization;</li><li>reverse engineer, decompile, disassemble, modify, or attempt to derive source code except where applicable law expressly permits it;</li><li>bypass or interfere with a purchase, subscription, entitlement, or security system;</li><li>gain unauthorized or abnormal access to the App or related services;</li><li>disrupt normal operation or use Serenity in a way that harms others; or</li><li>use the App in violation of applicable law or platform rules.</li></ul></> },
+  { title: "Health and Wellness Disclaimer", content: <><p>Serenity is an ambient sound and general wellness App. It is not a medical device and is not intended to diagnose, treat, cure, or prevent any disease or condition. Results vary, and the App does not guarantee sleep, relaxation, focus, or any health outcome.</p><p>Do not use Serenity while driving, operating machinery, cycling in traffic, or in any hazardous environment where reduced awareness or drowsiness could be unsafe. Use a comfortable volume, limit exposure when appropriate, and protect your hearing.</p></> },
+  { title: "No Medical Advice", content: <p>Serenity does not provide medical or mental-health advice and is not a substitute for care from a qualified professional regarding sleep disorders, mental health, hearing concerns, or other persistent health issues. Seek advice from an appropriate healthcare professional when needed, and contact emergency services in an emergency.</p> },
+  { title: "Availability and Service Changes", content: <p>We may update, add, limit, suspend, or discontinue features, sounds, platform support, or the App itself. We do not guarantee uninterrupted or error-free operation. We will respect applicable consumer rights and store obligations when making changes.</p> },
+  { title: "Disclaimer of Warranties", content: <p>To the maximum extent permitted by applicable law, Serenity is provided “as is” and “as available.” JonnyLab disclaims warranties that may legally be disclaimed, including implied warranties of merchantability, fitness for a particular purpose, and non-infringement. Nothing in these Terms excludes warranties or statutory rights that cannot be excluded in your jurisdiction.</p> },
+  { title: "Limitation of Liability", content: <p>To the maximum extent permitted by applicable law, JonnyLab will not be liable for indirect, incidental, special, consequential, or punitive losses, or loss of data, profits, or opportunity, arising from Serenity. This limitation does not apply where liability cannot legally be limited, including liability for fraud, willful misconduct, or other non-excludable matters.</p> },
+  { title: "Indemnification", content: <p>To the extent permitted by law, you agree to be responsible for reasonable claims, losses, and costs arising from your intentional misuse of Serenity, your violation of these Terms, or your infringement of another person’s rights. This does not apply to the extent a claim results from JonnyLab’s own conduct or where applicable consumer law does not permit it.</p> },
+  { title: "Termination", content: <p>You may stop using Serenity at any time. Your license may terminate if you materially violate these Terms. Provisions that by their nature should survive termination—including intellectual-property, disclaimer, and liability provisions—will survive. Termination does not automatically cancel a store subscription; you must cancel it through Google Play or your Apple Account.</p> },
+  { title: "Governing Law", content: <p>These Terms are governed by the laws applicable to JonnyLab’s place of establishment, without prejudice to any mandatory consumer protection rights available under the laws of your country or region.</p> },
+  { title: "Changes to Terms", content: <p>We may update these Terms to reflect changes to Serenity, platform requirements, services, or law. We will post updated Terms at this same URL and revise the “Last updated” date. Where required, we will provide additional notice. Continued use after an update takes effect means you accept the updated Terms to the extent permitted by law.</p> },
+  { title: "Contact Us", content: <p>Questions about these Terms may be sent to JonnyLab at <a href="mailto:support@jonnylab.app">support@jonnylab.app</a>.</p> },
 ];
 
 export default function SerenityTermsPage() {
-  return (
-    <main className="mx-auto max-w-2xl px-6 py-20">
-      <Link
-        href="/serenity"
-        className="text-sm text-zinc-500 transition-colors hover:text-zinc-950"
-      >
-        ← Serenity
-      </Link>
-
-      <h1 className="mt-6 mb-2 text-3xl font-bold tracking-tight text-zinc-950">
-        Serenity Terms of Use
-      </h1>
-      <p className="mb-12 text-sm text-zinc-500">
-        Effective date: June 19, 2026
-      </p>
-      <Link
-        href="/serenity/terms/ko"
-        className="mb-10 inline-block text-sm text-indigo-600 transition-colors hover:text-indigo-500"
-      >
-        한국어로 보기
-      </Link>
-
-      <div className="space-y-10">
-        {sections.map((section, index) => (
-          <section key={section.title}>
-            <h2 className="mb-2 text-base font-semibold text-zinc-950">
-              {index + 1}. {section.title}
-            </h2>
-            <p className="leading-relaxed text-zinc-600">{section.body}</p>
-          </section>
-        ))}
-      </div>
-
-      <div className="mt-12 border-t border-zinc-200 pt-6 text-sm">
-        <a
-          href="mailto:support@jonnylab.app"
-          className="text-indigo-600 transition-colors hover:text-indigo-500"
-        >
-          Contact support@jonnylab.app
-        </a>
-      </div>
-    </main>
-  );
+  return <SerenityLegalPage lang="en" title="Terms of Use" updatedLabel="Last updated: July 19, 2026" alternateHref="/serenity/terms/ko" alternateLabel="한국어로 보기" sections={sections} otherDocumentHref="/serenity/privacy" otherDocumentLabel="Privacy Policy" />;
 }
