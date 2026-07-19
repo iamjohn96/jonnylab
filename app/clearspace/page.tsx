@@ -5,9 +5,9 @@ const googlePlayUrl =
   "https://play.google.com/store/apps/details?id=com.jonnylab.clearspace";
 
 export const metadata: Metadata = {
-  title: "ClearSpace - Photo Cleaner for Android",
+  title: "ClearSpace — Private Photo Cleaner",
   description:
-    "Find duplicate photos, similar shots, screenshots, chat media, blurry photos, and large or old videos with private on-device analysis.",
+    "ClearSpace is available on Android for private, on-device photo cleanup. An iOS version is in development.",
 };
 
 const featureGroups = [
@@ -169,7 +169,7 @@ export default function ClearspacePage() {
                 <p className="text-sm font-semibold text-zinc-500">
                   ClearSpace - Photo Cleaner
                 </p>
-                <p className="text-sm text-zinc-500">Android by JonnyLab</p>
+                <p className="text-sm text-zinc-500">Live on Android · JonnyLab</p>
               </div>
             </div>
 
@@ -198,6 +198,9 @@ export default function ClearspacePage() {
               >
                 Support
               </Link>
+              <span className="inline-flex items-center rounded-lg border border-sky-200 bg-sky-50 px-4 py-3 text-sm font-semibold text-sky-700">
+                iOS in development
+              </span>
             </div>
 
             <div className="mt-8 grid max-w-2xl gap-3 text-sm text-zinc-600 sm:grid-cols-2">

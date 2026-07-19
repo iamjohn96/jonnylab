@@ -1,16 +1,47 @@
+import type { Metadata } from "next";
 import Link from "next/link";
 
-const apps = [
+export const metadata: Metadata = {
+  title: "JonnyLab — Privacy-First Apps and Tools",
+  description:
+    "Explore JonnyLab products: Serenity, ClearSpace, and Fileio for Android, plus the SafeUnfollow privacy-first Instagram Data ZIP analyzer.",
+  alternates: { canonical: "https://jonnylab.app" },
+  openGraph: {
+    title: "JonnyLab — Privacy-First Apps and Tools",
+    description:
+      "Android apps for sleep, photo cleanup, and file management, plus a privacy-first Instagram Data ZIP analyzer.",
+    url: "https://jonnylab.app",
+    siteName: "JonnyLab",
+    type: "website",
+  },
+  robots: { index: true, follow: true },
+};
+
+type App = {
+  icon: string;
+  iconBg: string;
+  name: string;
+  tagline: string;
+  tags: string[];
+  href: string;
+  external: boolean;
+  status: string;
+  statusGreen: boolean;
+  secondaryStatus?: string;
+};
+
+const apps: App[] = [
   {
     icon: "☾",
     iconBg: "bg-violet-600",
     name: "Serenity",
-    tagline: "Sleep sounds, white noise, and your perfect mix",
+    tagline: "Sleep sounds, white noise, and a five-channel sound mixer",
     tags: ["Android", "Sleep", "Relaxation", "White Noise"],
     href: "/serenity",
     external: false,
-    status: "Coming Soon",
-    statusGreen: false,
+    status: "Live on Android",
+    statusGreen: true,
+    secondaryStatus: "iOS in development",
   },
   {
     icon: "C",
@@ -20,18 +51,19 @@ const apps = [
     tags: ["Android", "Tools", "Photo Cleaner", "On-Device"],
     href: "/clearspace",
     external: false,
-    status: "Live",
+    status: "Live on Android",
     statusGreen: true,
+    secondaryStatus: "iOS in development",
   },
   {
-    icon: "🐦",
-    iconBg: "bg-indigo-600",
+    icon: "◎",
+    iconBg: "bg-fuchsia-600",
     name: "SafeUnfollow",
-    tagline: "Track and manage your Twitter/X followers",
-    tags: ["Web App", "Social"],
+    tagline: "Analyze your Instagram Data ZIP without Instagram login, OAuth, or account connection",
+    tags: ["Web App", "Instagram Data ZIP", "Privacy-First"],
     href: "https://safeunfollow.com",
     external: true,
-    status: "Live",
+    status: "Live Web App",
     statusGreen: true,
   },
   {
@@ -42,36 +74,102 @@ const apps = [
     tags: ["Android", "Productivity", "Documents"],
     href: "/fileio",
     external: false,
-    status: "Live",
+    status: "Live on Android",
     statusGreen: true,
+    secondaryStatus: "iOS in development",
   },
 ];
 
-function AppCard({ app }: { app: (typeof apps)[number] }) {
+const structuredData = {
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "Organization",
+      "@id": "https://jonnylab.app/#organization",
+      name: "JonnyLab",
+      url: "https://jonnylab.app",
+      email: "support@jonnylab.app",
+    },
+    {
+      "@type": "ItemList",
+      "@id": "https://jonnylab.app/#products",
+      name: "JonnyLab products",
+      itemListElement: [
+      {
+        "@type": "ListItem",
+        position: 1,
+        item: {
+          "@type": "SoftwareApplication",
+          name: "Serenity",
+          url: "https://jonnylab.app/serenity",
+          operatingSystem: "Android",
+          applicationCategory: "HealthApplication",
+          description: "An ambient sound and sleep sound mixer available on Android, with an iOS version in development.",
+        },
+      },
+      {
+        "@type": "ListItem",
+        position: 2,
+        item: {
+          "@type": "SoftwareApplication",
+          name: "ClearSpace",
+          url: "https://jonnylab.app/clearspace",
+          operatingSystem: "Android",
+          applicationCategory: "UtilitiesApplication",
+          description: "An on-device photo cleanup tool available on Android, with an iOS version in development.",
+        },
+      },
+      {
+        "@type": "ListItem",
+        position: 3,
+        item: {
+          "@type": "SoftwareApplication",
+          name: "Fileio",
+          url: "https://jonnylab.app/fileio",
+          operatingSystem: "Android",
+          applicationCategory: "UtilitiesApplication",
+          description: "A file manager, document viewer, and scanner available on Android, with an iOS version in development.",
+        },
+      },
+      {
+        "@type": "ListItem",
+        position: 4,
+        item: {
+          "@type": "WebApplication",
+          name: "SafeUnfollow",
+          url: "https://safeunfollow.com",
+          applicationCategory: "UtilitiesApplication",
+          description: "A privacy-first Instagram Data ZIP analyzer that does not use Instagram login, OAuth, or account connection.",
+        },
+      },
+      ],
+    },
+  ],
+};
+
+function AppCard({ app }: { app: App }) {
   return (
-    <div className="bg-white border border-zinc-200 rounded-2xl p-6 shadow-sm hover:border-indigo-300 hover:shadow-md transition-all">
-      <div className="flex items-start justify-between mb-4">
-        <div className={`w-12 h-12 ${app.iconBg} rounded-xl flex items-center justify-center text-2xl`}>
+    <div className="h-full rounded-2xl border border-zinc-200 bg-white p-6 shadow-sm transition-all hover:border-indigo-300 hover:shadow-md">
+      <div className="mb-4 flex items-start justify-between gap-3">
+        <div className={`flex h-12 w-12 shrink-0 items-center justify-center rounded-xl text-2xl text-white ${app.iconBg}`}>
           {app.icon}
         </div>
-        <span
-          className={`text-xs px-2.5 py-1 rounded-full font-medium ${
-            app.statusGreen
-              ? "bg-green-100 text-green-700"
-              : "bg-zinc-100 text-zinc-600"
-          }`}
-        >
-          {app.status}
-        </span>
+        <div className="flex flex-wrap justify-end gap-1.5">
+          <span className={`rounded-full px-2.5 py-1 text-xs font-medium ${app.statusGreen ? "bg-green-100 text-green-700" : "bg-zinc-100 text-zinc-600"}`}>
+            {app.status}
+          </span>
+          {app.secondaryStatus ? (
+            <span className="rounded-full bg-sky-50 px-2.5 py-1 text-xs font-medium text-sky-700">
+              {app.secondaryStatus}
+            </span>
+          ) : null}
+        </div>
       </div>
-      <h3 className="text-lg font-semibold text-zinc-950 mb-1">{app.name}</h3>
-      <p className="text-sm text-zinc-600 mb-4">{app.tagline}</p>
+      <h3 className="mb-1 text-lg font-semibold text-zinc-950">{app.name}</h3>
+      <p className="mb-4 text-sm leading-6 text-zinc-600">{app.tagline}</p>
       <div className="flex flex-wrap gap-2">
         {app.tags.map((tag) => (
-          <span
-            key={tag}
-            className="text-xs text-zinc-600 bg-zinc-100 px-2 py-0.5 rounded"
-          >
+          <span key={tag} className="rounded bg-zinc-100 px-2 py-0.5 text-xs text-zinc-600">
             {tag}
           </span>
         ))}
@@ -83,52 +181,51 @@ function AppCard({ app }: { app: (typeof apps)[number] }) {
 export default function Home() {
   return (
     <main className="mx-auto max-w-4xl px-6 py-20">
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(structuredData) }}
+      />
       <section className="mb-20">
         <div className="mb-4">
-          <span className="text-sm text-zinc-600 bg-white border border-zinc-200 px-3 py-1 rounded-full shadow-sm">
+          <span className="rounded-full border border-zinc-200 bg-white px-3 py-1 text-sm text-zinc-600 shadow-sm">
             Seoul, Korea 🇰🇷
           </span>
         </div>
-        <h1 className="text-5xl font-bold text-zinc-950 mb-4 tracking-tight">
+        <h1 className="mb-4 text-5xl font-bold tracking-tight text-zinc-950">
           Jonny Lab
         </h1>
-        <p className="text-xl text-zinc-600 max-w-lg leading-relaxed">
+        <p className="max-w-lg text-xl leading-relaxed text-zinc-600">
           Building privacy-first apps for people who care about their data.
         </p>
       </section>
 
       <section id="apps">
-        <h2 className="text-2xl font-bold text-zinc-950 mb-6">Apps</h2>
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+        <h2 className="mb-6 text-2xl font-bold text-zinc-950">Apps</h2>
+        <div className="grid grid-cols-1 gap-4 md:grid-cols-2">
           {apps.map((app) =>
             app.external ? (
-              <a
-                key={app.name}
-                href={app.href}
-                target="_blank"
-                rel="noopener noreferrer"
-              >
+              <a key={app.name} href={app.href} target="_blank" rel="noopener noreferrer">
                 <AppCard app={app} />
               </a>
             ) : (
               <Link key={app.name} href={app.href}>
                 <AppCard app={app} />
               </Link>
-            )
+            ),
           )}
         </div>
       </section>
 
-      <footer className="mt-24 pt-8 border-t border-zinc-200 flex flex-col sm:flex-row items-center justify-between gap-4 text-sm text-zinc-500">
+      <footer className="mt-24 flex flex-col items-center justify-between gap-4 border-t border-zinc-200 pt-8 text-sm text-zinc-500 sm:flex-row">
         <p>© 2026 Jonny Lab · jonnylab.app</p>
-        <a
-          href="https://github.com/iamjohn96"
-          target="_blank"
-          rel="noopener noreferrer"
-          className="hover:text-zinc-950 transition-colors"
-        >
-          GitHub
-        </a>
+        <div className="flex flex-wrap items-center justify-center gap-4">
+          <a href="mailto:support@jonnylab.app" className="transition-colors hover:text-zinc-950">
+            support@jonnylab.app
+          </a>
+          <a href="https://github.com/iamjohn96" target="_blank" rel="noopener noreferrer" className="transition-colors hover:text-zinc-950">
+            GitHub
+          </a>
+        </div>
       </footer>
     </main>
   );

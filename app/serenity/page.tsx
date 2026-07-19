@@ -1,10 +1,13 @@
 import type { Metadata } from "next";
 import Link from "next/link";
 
+const googlePlayUrl =
+  "https://play.google.com/store/apps/details?id=com.jonnylab.serenity";
+
 export const metadata: Metadata = {
-  title: "Serenity | Android Sleep & Relax",
+  title: "Serenity — Sleep Sounds and Sound Mixer",
   description:
-    "Serenity is an Android sleep and relaxation app with 30 sounds, 5-channel mixing, presets, and a sleep timer. Coming soon on Google Play.",
+    "Serenity is available on Android with 30 sounds, five-channel mixing, saved mixes, and a sleep timer. An iOS version is in development.",
 };
 
 const features = [
@@ -70,11 +73,13 @@ export default function SerenityPage() {
       <section className="relative overflow-hidden rounded-[2rem] bg-[#08111F] px-6 py-16 text-white shadow-[0_30px_120px_rgba(8,17,31,0.35)] sm:px-10 lg:px-12">
         <div className="absolute inset-0 bg-[radial-gradient(circle_at_top_left,_rgba(56,189,248,0.24),_transparent_45%),radial-gradient(circle_at_bottom_right,_rgba(59,130,246,0.2),_transparent_38%)]" />
         <div className="relative">
-          <div className="mb-8 flex items-center justify-between gap-4">
+          <div className="mb-8 flex flex-wrap items-center justify-between gap-3">
             <span className="inline-flex rounded-full border border-sky-400/30 bg-white/5 px-3 py-1 text-xs font-semibold uppercase tracking-[0.24em] text-sky-200">
-              Android-only
+              Live on Android
             </span>
-            <span className="text-xs text-sky-100/70">Google Play launch page</span>
+            <span className="rounded-full border border-white/10 bg-white/5 px-3 py-1 text-xs text-sky-100/80">
+              iOS in development
+            </span>
           </div>
 
           <div className="grid gap-10 lg:grid-cols-[1.1fr_0.9fr] lg:items-center">
@@ -109,13 +114,14 @@ export default function SerenityPage() {
                 ))}
               </div>
 
-              <button
-                type="button"
-                disabled
-                className="mt-10 inline-flex cursor-not-allowed items-center rounded-xl bg-sky-500 px-5 py-3 text-sm font-semibold text-slate-950 opacity-90"
+              <a
+                href={googlePlayUrl}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="mt-10 inline-flex items-center rounded-xl bg-sky-500 px-5 py-3 text-sm font-semibold text-slate-950 transition-colors hover:bg-sky-400"
               >
-                Coming Soon on Google Play
-              </button>
+                Get it on Google Play
+              </a>
             </div>
 
             <div className="rounded-[1.75rem] border border-white/10 bg-white/8 p-6 backdrop-blur-sm">

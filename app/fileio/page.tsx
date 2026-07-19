@@ -6,7 +6,8 @@ const googlePlayUrl =
 
 export const metadata: Metadata = {
   title: "Fileio — File Manager, Document Viewer & Scanner",
-  description: "Manage, view, and scan documents — all in one place.",
+  description:
+    "Fileio is available on Android for file management, document viewing, and scanning. An iOS version is in development.",
 };
 
 const features = [
@@ -56,7 +57,7 @@ export default function FileioPage() {
           Manage, view, and scan documents — all in one place.
         </p>
         <div className="flex flex-wrap justify-center gap-2 mb-8">
-          {["Android", "Document Scanner", "Dropbox"].map((badge) => (
+          {["Live on Android", "iOS in development", "Document Scanner", "Dropbox"].map((badge) => (
             <span
               key={badge}
               className="text-xs font-medium bg-indigo-50 text-indigo-700 border border-indigo-200 px-3 py-1 rounded-full"

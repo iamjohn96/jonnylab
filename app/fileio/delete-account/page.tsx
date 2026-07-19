@@ -1,7 +1,7 @@
 import type { Metadata } from "next";
 import Link from "next/link";
 
-const contactEmail = "jjcontact96@gmail.com";
+const contactEmail = "support@jonnylab.app";
 const deletionSubject = "Fileio Account Deletion Request";
 
 export const metadata: Metadata = {
