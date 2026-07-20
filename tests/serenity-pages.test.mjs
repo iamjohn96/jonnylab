@@ -15,7 +15,7 @@ test("Serenity web pages reflect the current Android release", () => {
 
   assert.match(main, /Live on Android/);
   assert.match(main, /Get it on Google Play/);
-  assert.match(main, /play\.google\.com\/store\/apps\/details\?id=com\.jonnylab\.serenity/);
+  assert.match(main, /play\.google\.com\/store\/apps\/details\?id=com\.serenity\.sleep/);
   assert.match(main, /iOS in development/i);
   assert.doesNotMatch(main, /App Store|priority access to new sounds|continuous content updates/i);
 

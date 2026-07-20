@@ -2,7 +2,7 @@ import TrustSection from "@/components/TrustSection";
 import { createPageMetadata } from "@/lib/siteMetadata";
 
 const googlePlayUrl =
-  "https://play.google.com/store/apps/details?id=com.jonnylab.serenity";
+  "https://play.google.com/store/apps/details?id=com.serenity.sleep";
 
 export const metadata = createPageMetadata({
   title: "Serenity — Sleep Sounds and Sound Mixer",
