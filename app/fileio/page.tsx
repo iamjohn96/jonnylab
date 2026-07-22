@@ -16,8 +16,9 @@ export const metadata = createPageMetadata({
 const features = [
   {
     icon: "01",
-    title: "File Manager",
-    description: "Browse, search, rename, share, and delete local files.",
+    title: "Manage local files",
+    description:
+      "Browse, organize, rename, delete, and share files stored on your Android device.",
   },
   {
     icon: "02",
@@ -27,7 +28,8 @@ const features = [
   {
     icon: "03",
     title: "Document Scanner",
-    description: "Scan paper documents with your camera and save them as PDFs.",
+    description:
+      "Scan paper documents into PDF files using your device camera.",
   },
   {
     icon: "04",
@@ -168,17 +170,17 @@ export default function FileioPage() {
         <div className="mx-auto max-w-6xl px-6 py-16">
           <div className="mb-8 max-w-2xl">
             <p className="mb-2 text-sm font-semibold text-indigo-700">
-              How Google Drive access works
+              Google Drive read-only permission
             </p>
             <h2 className="text-3xl font-bold tracking-tight text-zinc-950">
-              Browse and download without changing your Drive
+              Why Google Drive access is required
             </h2>
             <p className="mt-4 leading-7 text-zinc-600">
-              Fileio requests read-only access so you can browse, preview, and
-              download files from Google Drive. Fileio cannot modify, upload,
-              delete, or sync files in your Google Drive. Google Drive data is
-              processed on your device and is not transferred to JonnyLab
-              servers.
+              Fileio requests Google Drive read-only permission only to let you
+              browse, preview, and download your own files. Fileio cannot
+              upload, modify, delete, or synchronize files in your Google
+              Drive. Google Drive data is processed on your device and is not
+              transferred to JonnyLab servers.
             </p>
           </div>
           <div className="grid gap-4 sm:grid-cols-2">
