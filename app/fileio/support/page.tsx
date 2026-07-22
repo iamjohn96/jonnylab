@@ -27,7 +27,7 @@ const faqs = [
   },
   {
     q: "Is my data safe?",
-    a: "Fileio does not upload locally imported files to Fileio servers. Google Drive and Dropbox connections use OAuth, and supported cloud files are downloaded only temporarily to the app cache when needed for viewing.",
+    a: "Fileio does not upload locally imported files to Fileio servers. Google Drive and Dropbox connections use OAuth, and supported cloud files are downloaded only temporarily to the app cache when needed for viewing. Cloud data is processed on your device and is not transferred to JonnyLab servers.",
   },
   {
     q: "How do I restore my purchase?",
@@ -88,6 +88,11 @@ export default function FileioSupportPage() {
           support@jonnylab.app
         </a>
       </section>
+      <nav aria-label="Fileio legal links" className="mt-10 flex flex-wrap gap-5 text-sm">
+        <Link href="/fileio/privacy" className="font-medium text-indigo-700 hover:text-indigo-600">Privacy Policy</Link>
+        <Link href="/fileio/terms" className="font-medium text-indigo-700 hover:text-indigo-600">Terms of Use</Link>
+        <Link href="/fileio/delete-account" className="font-medium text-indigo-700 hover:text-indigo-600">Delete Account</Link>
+      </nav>
     </main>
   );
 }

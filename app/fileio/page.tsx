@@ -1,48 +1,44 @@
 import Link from "next/link";
 import TrustSection from "@/components/TrustSection";
+import FileioBrand from "@/components/FileioBrand";
 import { createPageMetadata } from "@/lib/siteMetadata";
 
 const googlePlayUrl =
   "https://play.google.com/store/apps/details?id=com.jonnylab.fileio";
 
 export const metadata = createPageMetadata({
-  title: "Fileio — File Manager, Document Viewer & Scanner",
+  title: "Fileio – File Manager & Document Scanner",
   description:
-    "Fileio is available on Android for local file management, document viewing, scanning, and read-only Google Drive and Dropbox access with Fileio Pro. An iOS version is in development.",
+    "Fileio is a privacy-first Android file manager and document scanner with read-only Google Drive and Dropbox access.",
   path: "/fileio",
 });
 
 const features = [
   {
-    icon: "🗂",
+    icon: "01",
     title: "File Manager",
-    description: "Browse, organize, rename, and manage files on your device.",
+    description: "Browse, search, rename, share, and delete local files.",
   },
   {
-    icon: "📄",
+    icon: "02",
     title: "Document Viewer",
     description: "Open PDF, DOCX, XLSX, PPTX, JPG, PNG, and more.",
   },
   {
-    icon: "📷",
+    icon: "03",
     title: "Document Scanner",
     description: "Scan paper documents with your camera and save them as PDFs.",
   },
   {
-    icon: "⭐",
-    title: "Favorites & Recent Files",
-    description: "Quickly access important documents and recently opened files.",
+    icon: "04",
+    title: "Google Drive",
+    description: "Browse and download Google Drive files using read-only access.",
   },
   {
-    icon: "☁️",
-    title: "Read-Only Cloud Access",
+    icon: "05",
+    title: "Dropbox",
     description:
-      "With Fileio Pro, browse supported files in Google Drive and Dropbox without changing the originals.",
-  },
-  {
-    icon: "💾",
-    title: "Storage Overview",
-    description: "Monitor storage usage and available space on your device.",
+      "Browse and download Dropbox files using read-only access.",
   },
 ];
 
@@ -88,27 +84,18 @@ export default function FileioPage() {
       <section className="border-b border-zinc-200 bg-white">
         <div className="mx-auto grid max-w-6xl gap-10 px-6 py-16 lg:grid-cols-[1fr_360px] lg:items-center lg:py-20">
           <div>
-            <div className="mb-6 flex items-center gap-3">
-              <div
-                className="flex h-12 w-12 items-center justify-center rounded-2xl bg-indigo-600 text-2xl"
-                aria-hidden="true"
-              >
-                📁
-              </div>
-              <div>
-                <p className="text-sm font-semibold text-zinc-700">Fileio</p>
-                <p className="text-sm text-zinc-500">
-                  Live on Android · JonnyLab
-                </p>
-              </div>
-            </div>
+            <div className="mb-7"><FileioBrand /></div>
             <h1 className="max-w-3xl text-4xl font-bold tracking-tight text-zinc-950 sm:text-6xl">
-              Manage, view, and scan documents in one place.
+              Fileio – Private File Manager &amp; Document Scanner
             </h1>
             <p className="mt-5 max-w-2xl text-lg leading-8 text-zinc-600">
-              Fileio brings file management, document viewing, camera scanning,
-              favorites, recent files, storage overview, and read-only Google
-              Drive and Dropbox access into one Android app.
+              Fileio is a privacy-first Android file manager and document
+              scanner. Browse and manage local files, scan documents to PDF,
+              and open files from Google Drive and Dropbox with read-only cloud
+              access.
+            </p>
+            <p className="mt-5 max-w-2xl text-base font-semibold text-indigo-800">
+              No cloud uploads. No sync. No backups.
             </p>
             <div className="mt-8 flex flex-wrap gap-3">
               <a
@@ -125,9 +112,7 @@ export default function FileioPage() {
               >
                 Support
               </Link>
-              <span className="inline-flex items-center rounded-lg border border-sky-200 bg-sky-50 px-4 py-3 text-sm font-semibold text-sky-700">
-                iOS in development
-              </span>
+              <Link href="/fileio/privacy" className="rounded-lg px-2 py-3 text-sm font-semibold text-indigo-700 underline underline-offset-4">Privacy Policy</Link>
             </div>
           </div>
 
@@ -156,10 +141,10 @@ export default function FileioPage() {
         <div className="mx-auto max-w-6xl px-6 py-16">
           <div className="mb-8 max-w-2xl">
             <p className="mb-2 text-sm font-semibold text-indigo-700">
-              Core tools
+              What Fileio does
             </p>
             <h2 className="text-3xl font-bold tracking-tight text-zinc-950">
-              Keep everyday files and documents accessible
+              Local file tools and optional read-only cloud access
             </h2>
           </div>
           <div className="grid grid-cols-1 gap-4 sm:grid-cols-2 lg:grid-cols-3">
@@ -168,7 +153,7 @@ export default function FileioPage() {
               key={f.title}
               className="rounded-2xl border border-zinc-200 bg-white p-5 shadow-sm"
             >
-              <div className="mb-3 text-2xl" aria-hidden="true">
+              <div className="mb-3 font-mono text-xs font-bold text-indigo-700" aria-hidden="true">
                 {f.icon}
               </div>
               <h3 className="mb-1 font-semibold text-zinc-950">{f.title}</h3>
@@ -183,15 +168,17 @@ export default function FileioPage() {
         <div className="mx-auto max-w-6xl px-6 py-16">
           <div className="mb-8 max-w-2xl">
             <p className="mb-2 text-sm font-semibold text-indigo-700">
-              Fileio Pro cloud access
+              How Google Drive access works
             </p>
             <h2 className="text-3xl font-bold tracking-tight text-zinc-950">
-              Read-only access to Google Drive and Dropbox
+              Browse and download without changing your Drive
             </h2>
             <p className="mt-4 leading-7 text-zinc-600">
-              Cloud access is separate from Fileio’s local file-management
-              tools. Rename, move, and delete actions apply to locally imported
-              files, not files stored in Google Drive or Dropbox.
+              Fileio requests read-only access so you can browse, preview, and
+              download files from Google Drive. Fileio cannot modify, upload,
+              delete, or sync files in your Google Drive. Google Drive data is
+              processed on your device and is not transferred to JonnyLab
+              servers.
             </p>
           </div>
           <div className="grid gap-4 sm:grid-cols-2">
@@ -216,6 +203,7 @@ export default function FileioPage() {
         points={trustPoints}
         privacyHref="/fileio/privacy"
         supportHref="/fileio/support"
+        termsHref="/fileio/terms"
       />
 
       <section className="bg-white">
@@ -243,6 +231,7 @@ export default function FileioPage() {
             >
               Delete Account
             </Link>
+            <Link href="/fileio/terms" className="self-center font-medium text-indigo-700 hover:text-indigo-600">Terms of Use</Link>
           </div>
         </div>
       </section>

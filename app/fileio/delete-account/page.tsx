@@ -157,12 +157,11 @@ export default function FileioDeleteAccountPage() {
           <h2 className="text-base font-semibold text-zinc-950 mb-2">
             Related Links
           </h2>
-          <Link
-            href="/fileio/privacy"
-            className="text-indigo-600 hover:text-indigo-500 transition-colors"
-          >
-            Privacy Policy
-          </Link>
+          <div className="flex flex-wrap gap-5">
+            <Link href="/fileio/privacy" className="text-indigo-600 hover:text-indigo-500 transition-colors">Privacy Policy</Link>
+            <Link href="/fileio/terms" className="text-indigo-600 hover:text-indigo-500 transition-colors">Terms of Use</Link>
+            <Link href="/fileio/support" className="text-indigo-600 hover:text-indigo-500 transition-colors">Support</Link>
+          </div>
         </section>
       </div>
     </main>

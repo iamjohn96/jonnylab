@@ -14,6 +14,7 @@ const routes = [
   "/fileio/delete-account",
   "/fileio/privacy",
   "/fileio/support",
+  "/fileio/terms",
   "/serenity",
   "/serenity/privacy",
   "/serenity/privacy/ko",

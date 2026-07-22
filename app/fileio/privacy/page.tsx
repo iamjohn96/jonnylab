@@ -11,7 +11,7 @@ export const metadata = createPageMetadata({
 const sections = [
   {
     title: "Overview",
-    body: "Fileio is a file manager, document viewer, and document scanner that helps you organize and manage local files and documents.",
+    body: "Fileio is a privacy-first Android file manager, document viewer, and document scanner. It helps you manage local files, scan documents to PDF, and optionally browse Google Drive and Dropbox using read-only access.",
   },
   {
     title: "Information We Collect",
@@ -23,7 +23,7 @@ const sections = [
   },
   {
     title: "Cloud Services",
-    body: "Fileio Pro can connect Google Drive and Dropbox through OAuth. Cloud access is read-only: you can browse cloud folders, view file names and sizes, and temporarily download supported files to Fileio’s app cache for viewing. Google Docs and Google Sheets files may be exported into supported formats before opening. Google Slides files may be exported as PPTX, but local PPTX preview is not currently supported. Fileio does not upload, edit, rename, move, or delete files stored in Google Drive or Dropbox, does not synchronize local files between devices, and does not provide its own cloud backup or cloud-storage service. Information processed by Google Drive and Dropbox remains subject to those services’ privacy practices, and Fileio does not store your cloud credentials.",
+    body: "Fileio Pro can connect Google Drive and Dropbox through OAuth. Cloud access is read-only: you can browse cloud folders, view file names and sizes, and temporarily download supported files to Fileio’s app cache for viewing. Google Docs and Google Sheets files may be exported into supported formats before opening. Google Slides files may be exported as PPTX, but local PPTX preview is not currently supported. Fileio does not upload, edit, rename, move, or delete files stored in Google Drive or Dropbox, does not synchronize local files between devices, and does not provide its own cloud backup or cloud-storage service. Google Drive and Dropbox data is processed on your device and is not transferred to JonnyLab servers. Information processed by Google Drive and Dropbox remains subject to those services’ privacy practices, and Fileio does not store your cloud credentials.",
   },
   {
     title: "Analytics & Tracking",
@@ -58,7 +58,7 @@ export default function FileioPrivacyPage() {
       <h1 className="text-3xl font-bold text-zinc-950 mt-6 mb-2 tracking-tight">
         Fileio Privacy Policy
       </h1>
-      <p className="text-sm text-zinc-500 mb-12">Last updated: June 2026</p>
+      <p className="text-sm text-zinc-500 mb-12">Last updated: July 22, 2026</p>
 
       <div className="space-y-10">
         {sections.map((s, i) => (
@@ -69,6 +69,11 @@ export default function FileioPrivacyPage() {
             <p className="text-zinc-600 leading-relaxed">{s.body}</p>
           </section>
         ))}
+      </div>
+      <div className="mt-12 flex flex-wrap gap-5 border-t border-zinc-200 pt-6 text-sm">
+        <Link href="/fileio/terms" className="font-medium text-indigo-700 hover:text-indigo-600">Terms of Use</Link>
+        <Link href="/fileio/support" className="font-medium text-indigo-700 hover:text-indigo-600">Support</Link>
+        <Link href="/fileio/delete-account" className="font-medium text-indigo-700 hover:text-indigo-600">Delete Account</Link>
       </div>
     </main>
   );
