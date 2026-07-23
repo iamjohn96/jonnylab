@@ -2,79 +2,134 @@ import Link from "next/link";
 import { createPageMetadata } from "@/lib/siteMetadata";
 
 export const metadata = createPageMetadata({
-  title: "Privacy Policy — Fileio",
+  title: "Fileio Privacy Policy | JonnyLab",
   description:
-    "Privacy Policy for Fileio, including local file access, read-only Google Drive and Dropbox access, analytics, and purchase processing.",
+    "Learn how Fileio handles files and privacy. Fileio works locally without accounts, cloud connections, ads, analytics, or tracking.",
   path: "/fileio/privacy",
 });
 
 const sections = [
   {
     title: "Overview",
-    body: "Fileio is a privacy-first Android file manager, document viewer, and document scanner. It helps you manage local files, scan documents to PDF, and optionally browse Google Drive and Dropbox using read-only access.",
+    paragraphs: [
+      "Fileio: File Manager & Scanner is a local file manager, document viewer, and document scanner for Android. Its app features operate on your device, and no Fileio account is required.",
+      "Fileio is a privacy-first local file manager and document scanner. It does not require an account, connect to cloud storage, display ads, or use analytics or tracking SDKs.",
+    ],
   },
   {
-    title: "Information We Collect",
-    body: "Account information when you sign in with Google or Apple (name, email, profile photo). We do not store your files on our servers.",
+    title: "Information Fileio Does Not Collect",
+    paragraphs: [
+      "Fileio does not collect or transmit your name, email address, contacts, location, advertising identifier, payment or subscription information, imported or scanned file contents, Google Drive or Dropbox data, app usage analytics, or behavioral tracking information to JonnyLab servers.",
+      "To provide its features, Fileio may process file names, file URIs, recent-file records, favorites, settings, and similar metadata locally on your device. This local processing does not mean that the information is collected by JonnyLab.",
+    ],
   },
   {
-    title: "File Access",
-    body: "Fileio accesses locally imported files solely to display and manage them within the app. Local file-management actions, including rename and delete, apply to these local files. Locally imported files are not uploaded to Fileio servers.",
+    title: "Local Files and Metadata",
+    paragraphs: [
+      "Imported files, scanned PDFs, recent-file information, favorites, and settings are stored on your device. They are not automatically uploaded to JonnyLab servers. Fileio does not provide synchronization or cloud backup.",
+      "You can use Reset App Data to delete files managed inside Fileio and the app's local metadata. Uninstalling Fileio may also remove app-specific stored data according to Android and device behavior. Keep separate copies of important files before resetting or uninstalling the app.",
+    ],
   },
   {
-    title: "Cloud Services",
-    body: "Fileio Pro can connect Google Drive and Dropbox through OAuth. Cloud access is read-only: you can browse cloud folders, view file names and sizes, and temporarily download supported files to Fileio’s app cache for viewing. Google Docs and Google Sheets files may be exported into supported formats before opening. Google Slides files may be exported as PPTX, but local PPTX preview is not currently supported. Fileio does not upload, edit, rename, move, or delete files stored in Google Drive or Dropbox, does not synchronize local files between devices, and does not provide its own cloud backup or cloud-storage service. Google Drive and Dropbox data is processed on your device and is not transferred to JonnyLab servers. Information processed by Google Drive and Dropbox remains subject to those services’ privacy practices, and Fileio does not store your cloud credentials.",
+    title: "Document and Photo Selection",
+    paragraphs: [
+      "Fileio uses the Android system Document Picker and Photo Picker. The app imports only files or images that you explicitly select and does not request broad access to your entire photo, video, or storage library.",
+      "Selected items are processed locally on your device to perform the feature you requested.",
+    ],
   },
   {
-    title: "Analytics & Tracking",
-    body: "We do not use third-party analytics or advertising SDKs.",
+    title: "Camera",
+    paragraphs: [
+      "Fileio uses the camera only when you choose the document scanning feature. Captured images are processed on your device to create and locally store a PDF.",
+      "Fileio does not use the microphone or location for scanning.",
+    ],
   },
   {
-    title: "In-App Purchases",
-    body: "Subscription purchases are processed by Google Play via RevenueCat. We do not receive or store payment information.",
+    title: "Sharing and Open With",
+    paragraphs: [
+      "A selected file is provided to an external app or service only when you explicitly choose Share or Open With and select a destination. Fileio does not automatically share files externally without your action.",
+      "After a file is provided to another app or service, that third party's privacy policy and practices apply.",
+    ],
+  },
+  {
+    title: "Cloud Services and Accounts",
+    paragraphs: [
+      "Fileio does not connect to Google Drive or Dropbox. Those integrations have been removed. Fileio has no OAuth login, Fileio account, or server-side user authentication.",
+      "Fileio does not collect or store user credentials or cloud access tokens.",
+    ],
+  },
+  {
+    title: "Advertising, Analytics, and Tracking",
+    paragraphs: [
+      "Fileio displays no ads, includes no AdMob or other advertising SDK, and does not use the Android Advertising ID.",
+      "Fileio includes no analytics or tracking SDK.",
+    ],
+  },
+  {
+    title: "Payments and Subscriptions",
+    paragraphs: [
+      "Fileio is completely free. It does not use RevenueCat or another payment SDK and has no subscription, in-app purchase, paid feature restriction, Premium tier, or Pro tier. All core features are available without payment.",
+      "Google Play may independently process information related to downloading the app and operating its store under Google's own policies. That processing is separate from Fileio's local file handling.",
+    ],
+  },
+  {
+    title: "Security",
+    paragraphs: [
+      "Fileio is designed around local processing and minimum necessary access, including Android system pickers instead of broad media or storage permissions. Android backup is disabled for the app.",
+      "No system can guarantee absolute security. JonnyLab does not control the security of your device, its operating system, or an external app or service that you choose for sharing. Keep your device protected and review a destination before sharing a file.",
+    ],
   },
   {
     title: "Children's Privacy",
-    body: "Fileio does not knowingly collect information from children under 13.",
+    paragraphs: [
+      "Fileio does not intentionally collect children's personal information. The app does not provide user accounts or server-side storage of Fileio files.",
+    ],
+  },
+  {
+    title: "Changes to This Policy",
+    paragraphs: [
+      "We may update this Privacy Policy when Fileio or its practices change. We will post the revised policy on this page and update the Last Updated date.",
+    ],
   },
   {
     title: "Contact",
-    body: "Questions? Email: support@jonnylab.app",
+    paragraphs: [
+      "Questions about this Privacy Policy may be sent to JonnyLab at support@jonnylab.app.",
+    ],
   },
 ];
 
 export default function FileioPrivacyPage() {
   return (
     <main className="mx-auto max-w-2xl px-6 py-20">
-      <div className="mb-2">
-        <Link
-          href="/fileio"
-          className="text-sm text-zinc-500 hover:text-zinc-950 transition-colors"
-        >
-          ← Fileio
-        </Link>
-      </div>
-
-      <h1 className="text-3xl font-bold text-zinc-950 mt-6 mb-2 tracking-tight">
+      <Link href="/fileio" className="text-sm text-zinc-500 transition-colors hover:text-zinc-950">
+        ← Fileio
+      </Link>
+      <h1 className="mt-6 mb-2 text-3xl font-bold tracking-tight text-zinc-950">
         Fileio Privacy Policy
       </h1>
-      <p className="text-sm text-zinc-500 mb-12">Last updated: July 22, 2026</p>
-
+      <p className="text-sm text-zinc-500">Last updated: July 23, 2026</p>
+      <Link href="/fileio/privacy/ko" className="mt-6 mb-10 inline-block text-sm text-indigo-700 hover:text-indigo-600">
+        한국어로 보기
+      </Link>
       <div className="space-y-10">
-        {sections.map((s, i) => (
-          <section key={s.title}>
-            <h2 className="text-base font-semibold text-zinc-950 mb-2">
-              {i + 1}. {s.title}
+        {sections.map((section, index) => (
+          <section key={section.title}>
+            <h2 className="mb-3 text-base font-semibold text-zinc-950">
+              {index + 1}. {section.title}
             </h2>
-            <p className="text-zinc-600 leading-relaxed">{s.body}</p>
+            <div className="space-y-3">
+              {section.paragraphs.map((paragraph) => (
+                <p key={paragraph} className="leading-relaxed text-zinc-600">{paragraph}</p>
+              ))}
+            </div>
           </section>
         ))}
       </div>
-      <div className="mt-12 flex flex-wrap gap-5 border-t border-zinc-200 pt-6 text-sm">
-        <Link href="/fileio/terms" className="font-medium text-indigo-700 hover:text-indigo-600">Terms of Use</Link>
+      <nav aria-label="Fileio legal links" className="mt-12 flex flex-wrap gap-5 border-t border-zinc-200 pt-6 text-sm">
+        <Link href="/fileio/terms" className="font-medium text-indigo-700 hover:text-indigo-600">Terms of Service</Link>
         <Link href="/fileio/support" className="font-medium text-indigo-700 hover:text-indigo-600">Support</Link>
-        <Link href="/fileio/delete-account" className="font-medium text-indigo-700 hover:text-indigo-600">Delete Account</Link>
-      </div>
+      </nav>
     </main>
   );
 }

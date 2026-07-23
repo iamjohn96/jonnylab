@@ -7,9 +7,9 @@ const googlePlayUrl =
   "https://play.google.com/store/apps/details?id=com.jonnylab.fileio";
 
 export const metadata = createPageMetadata({
-  title: "Fileio – File Manager & Document Scanner",
+  title: "Fileio: File Manager & Scanner | JonnyLab",
   description:
-    "Fileio is a privacy-first Android file manager and document scanner with read-only Google Drive and Dropbox access.",
+    "Fileio is a privacy-first local file manager and document scanner for Android. Completely free, with no account, cloud connection, ads, or tracking.",
   path: "/fileio",
 });
 
@@ -18,66 +18,45 @@ const features = [
     icon: "01",
     title: "Manage local files",
     description:
-      "Browse, organize, rename, delete, and share files stored on your Android device.",
+      "Import, search, sort, rename, delete, favorite, share, and open files on your Android device.",
   },
   {
     icon: "02",
-    title: "Document Viewer",
-    description: "Open PDF, DOCX, XLSX, PPTX, JPG, PNG, and more.",
+    title: "View documents and images",
+    description:
+      "Open supported documents and images without connecting a cloud account.",
   },
   {
     icon: "03",
-    title: "Document Scanner",
+    title: "Scan documents to PDF",
     description:
-      "Scan paper documents into PDF files using your device camera.",
+      "Use the camera when you choose to scan, then create and store the PDF locally.",
   },
   {
     icon: "04",
-    title: "Google Drive",
-    description: "Browse and download Google Drive files using read-only access.",
+    title: "Choose only what you need",
+    description:
+      "Import explicitly selected items through Android's system Document Picker and Photo Picker.",
   },
   {
     icon: "05",
-    title: "Dropbox",
+    title: "Share on your terms",
     description:
-      "Browse and download Dropbox files using read-only access.",
+      "A file leaves Fileio only when you choose Share or Open With and select an external app.",
   },
 ];
 
 const workflow = [
-  "Browse and organize files stored on your device.",
-  "Open common document and image formats in one place.",
-  "Scan paper documents with your camera and save them as PDFs.",
+  "Choose a file or image with an Android system picker.",
+  "Manage, view, or scan documents locally on your device.",
+  "Share a selected file only when you decide to.",
 ];
 
 const trustPoints = [
-  "Local files are not uploaded to Fileio servers",
-  "Google Drive and Dropbox access is read-only",
-  "No third-party analytics or advertising SDKs",
-  "Payment information is handled by Google Play",
-];
-
-const cloudAccessDetails = [
-  {
-    title: "Browse without changing cloud files",
-    description:
-      "Fileio Pro lets you browse Google Drive and Dropbox folders and view file names and sizes. Fileio cannot upload, edit, rename, move, or delete cloud files.",
-  },
-  {
-    title: "Temporary downloads for viewing",
-    description:
-      "Supported cloud files may be downloaded temporarily to Fileio’s app cache so they can be opened in a supported viewer.",
-  },
-  {
-    title: "Google Workspace exports",
-    description:
-      "Google Docs and Google Sheets files may be exported into supported formats before opening. Google Slides may be exported as PPTX, but local PPTX preview is not currently supported.",
-  },
-  {
-    title: "No cloud sync or backup",
-    description:
-      "Fileio does not synchronize local files between devices and does not provide its own cloud backup or cloud-storage service.",
-  },
+  "Completely free, with no subscriptions or in-app purchases",
+  "No account, cloud connection, synchronization, or cloud backup",
+  "No ads, Advertising ID, analytics, or tracking SDKs",
+  "Files and app metadata are processed and stored on your device",
 ];
 
 export default function FileioPage() {
@@ -88,46 +67,33 @@ export default function FileioPage() {
           <div>
             <div className="mb-7"><FileioBrand /></div>
             <h1 className="max-w-3xl text-4xl font-bold tracking-tight text-zinc-950 sm:text-6xl">
-              Fileio – Private File Manager &amp; Document Scanner
+              Privacy-first local file manager and document scanner
             </h1>
             <p className="mt-5 max-w-2xl text-lg leading-8 text-zinc-600">
-              Fileio is a privacy-first Android file manager and document
-              scanner. Browse and manage local files, scan documents to PDF,
-              and open files from Google Drive and Dropbox with read-only cloud
-              access.
+              Fileio: File Manager &amp; Scanner helps you manage local files,
+              view documents and images, and scan paper documents to PDF.
+              Everything is designed to work on your Android device.
             </p>
             <p className="mt-5 max-w-2xl text-base font-semibold text-indigo-800">
-              No cloud uploads. No sync. No backups.
+              Completely free. No account. No cloud connection. No ads. No tracking.
             </p>
             <div className="mt-8 flex flex-wrap gap-3">
-              <a
-                href={googlePlayUrl}
-                target="_blank"
-                rel="noopener noreferrer"
-                className="rounded-lg bg-indigo-600 px-5 py-3 text-sm font-semibold text-white transition-colors hover:bg-indigo-500"
-              >
+              <a href={googlePlayUrl} target="_blank" rel="noopener noreferrer" className="rounded-lg bg-indigo-600 px-5 py-3 text-sm font-semibold text-white transition-colors hover:bg-indigo-500">
                 Get it on Google Play
               </a>
-              <Link
-                href="/fileio/support"
-                className="rounded-lg border border-zinc-300 bg-white px-5 py-3 text-sm font-semibold text-zinc-950 transition-colors hover:border-zinc-500"
-              >
+              <Link href="/fileio/support" className="rounded-lg border border-zinc-300 bg-white px-5 py-3 text-sm font-semibold text-zinc-950 transition-colors hover:border-zinc-500">
                 Support
               </Link>
-              <Link href="/fileio/privacy" className="rounded-lg px-2 py-3 text-sm font-semibold text-indigo-700 underline underline-offset-4">Privacy Policy</Link>
+              <Link href="/fileio/privacy" className="rounded-lg px-2 py-3 text-sm font-semibold text-indigo-700 underline underline-offset-4">
+                Privacy Policy
+              </Link>
             </div>
           </div>
-
           <div className="rounded-[2rem] border border-indigo-200 bg-indigo-50 p-6 shadow-sm">
-            <p className="text-sm font-semibold text-indigo-800">
-              A simple document workflow
-            </p>
+            <p className="text-sm font-semibold text-indigo-800">A local document workflow</p>
             <div className="mt-5 space-y-3">
               {workflow.map((step, index) => (
-                <div
-                  key={step}
-                  className="flex gap-3 rounded-xl border border-indigo-100 bg-white p-4"
-                >
+                <div key={step} className="flex gap-3 rounded-xl border border-indigo-100 bg-white p-4">
                   <span className="flex h-7 w-7 shrink-0 items-center justify-center rounded-full bg-indigo-600 text-xs font-bold text-white">
                     {index + 1}
                   </span>
@@ -142,66 +108,41 @@ export default function FileioPage() {
       <section className="bg-zinc-50">
         <div className="mx-auto max-w-6xl px-6 py-16">
           <div className="mb-8 max-w-2xl">
-            <p className="mb-2 text-sm font-semibold text-indigo-700">
-              What Fileio does
-            </p>
+            <p className="mb-2 text-sm font-semibold text-indigo-700">What Fileio does</p>
             <h2 className="text-3xl font-bold tracking-tight text-zinc-950">
-              Local file tools and optional read-only cloud access
+              Useful file tools, without an account
             </h2>
           </div>
           <div className="grid grid-cols-1 gap-4 sm:grid-cols-2 lg:grid-cols-3">
-          {features.map((f) => (
-            <article
-              key={f.title}
-              className="rounded-2xl border border-zinc-200 bg-white p-5 shadow-sm"
-            >
-              <div className="mb-3 font-mono text-xs font-bold text-indigo-700" aria-hidden="true">
-                {f.icon}
-              </div>
-              <h3 className="mb-1 font-semibold text-zinc-950">{f.title}</h3>
-              <p className="text-sm leading-6 text-zinc-600">{f.description}</p>
-            </article>
-          ))}
-          </div>
-        </div>
-      </section>
-
-      <section className="border-t border-zinc-200 bg-white">
-        <div className="mx-auto max-w-6xl px-6 py-16">
-          <div className="mb-8 max-w-2xl">
-            <p className="mb-2 text-sm font-semibold text-indigo-700">
-              Google Drive read-only permission
-            </p>
-            <h2 className="text-3xl font-bold tracking-tight text-zinc-950">
-              Why Google Drive access is required
-            </h2>
-            <p className="mt-4 leading-7 text-zinc-600">
-              Fileio requests Google Drive read-only permission only to let you
-              browse, preview, and download your own files. Fileio cannot
-              upload, modify, delete, or synchronize files in your Google
-              Drive. Google Drive data is processed on your device and is not
-              transferred to JonnyLab servers.
-            </p>
-          </div>
-          <div className="grid gap-4 sm:grid-cols-2">
-            {cloudAccessDetails.map((detail) => (
-              <article
-                key={detail.title}
-                className="rounded-2xl border border-zinc-200 bg-zinc-50 p-5"
-              >
-                <h3 className="font-semibold text-zinc-950">{detail.title}</h3>
-                <p className="mt-2 text-sm leading-6 text-zinc-600">
-                  {detail.description}
-                </p>
+            {features.map((feature) => (
+              <article key={feature.title} className="rounded-2xl border border-zinc-200 bg-white p-5 shadow-sm">
+                <div className="mb-3 font-mono text-xs font-bold text-indigo-700" aria-hidden="true">{feature.icon}</div>
+                <h3 className="mb-1 font-semibold text-zinc-950">{feature.title}</h3>
+                <p className="text-sm leading-6 text-zinc-600">{feature.description}</p>
               </article>
             ))}
           </div>
         </div>
       </section>
 
+      <section className="border-t border-zinc-200 bg-white">
+        <div className="mx-auto max-w-6xl px-6 py-16">
+          <div className="max-w-3xl">
+            <p className="mb-2 text-sm font-semibold text-indigo-700">Local by design</p>
+            <h2 className="text-3xl font-bold tracking-tight text-zinc-950">Your files stay on your device</h2>
+            <p className="mt-4 leading-7 text-zinc-600">
+              Imported files, scanned PDFs, recent-file information, favorites,
+              and settings are stored locally. Fileio does not upload them to a
+              JonnyLab server, connect to cloud storage, synchronize between
+              devices, or provide cloud backup.
+            </p>
+          </div>
+        </div>
+      </section>
+
       <TrustSection
-        title="Clear boundaries for your files and accounts"
-        description="Fileio manages locally imported files on your device and does not upload them to Fileio servers. Fileio Pro provides read-only access to Google Drive and Dropbox; supported files may be downloaded temporarily to the app cache for viewing, but cloud files cannot be changed through Fileio."
+        title="Clear privacy boundaries"
+        description="Fileio uses Android system pickers for selected files and images, and the camera only when you start a document scan. A selected file is passed to another app only when you choose Share or Open With."
         points={trustPoints}
         privacyHref="/fileio/privacy"
         supportHref="/fileio/support"
@@ -211,29 +152,14 @@ export default function FileioPage() {
       <section className="bg-white">
         <div className="mx-auto flex max-w-6xl flex-col gap-5 px-6 py-12 sm:flex-row sm:items-center sm:justify-between">
           <div>
-            <h2 className="text-2xl font-bold text-zinc-950">
-              Ready to organize your files?
-            </h2>
-            <p className="mt-2 text-zinc-600">
-              Fileio is available now on Android.
-            </p>
+            <h2 className="text-2xl font-bold text-zinc-950">Ready to organize your files?</h2>
+            <p className="mt-2 text-zinc-600">Fileio is available on Android.</p>
           </div>
           <div className="flex flex-wrap gap-4 text-sm">
-            <a
-              href={googlePlayUrl}
-              target="_blank"
-              rel="noopener noreferrer"
-              className="rounded-lg bg-indigo-600 px-5 py-3 font-semibold text-white transition-colors hover:bg-indigo-500"
-            >
+            <a href={googlePlayUrl} target="_blank" rel="noopener noreferrer" className="rounded-lg bg-indigo-600 px-5 py-3 font-semibold text-white transition-colors hover:bg-indigo-500">
               Get it on Google Play
             </a>
-            <Link
-              href="/fileio/delete-account"
-              className="self-center font-medium text-indigo-700 hover:text-indigo-600"
-            >
-              Delete Account
-            </Link>
-            <Link href="/fileio/terms" className="self-center font-medium text-indigo-700 hover:text-indigo-600">Terms of Use</Link>
+            <Link href="/fileio/terms" className="self-center font-medium text-indigo-700 hover:text-indigo-600">Terms of Service</Link>
           </div>
         </div>
       </section>

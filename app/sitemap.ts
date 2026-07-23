@@ -13,8 +13,10 @@ const routes = [
   "/fileio",
   "/fileio/delete-account",
   "/fileio/privacy",
+  "/fileio/privacy/ko",
   "/fileio/support",
   "/fileio/terms",
+  "/fileio/terms/ko",
   "/privune",
   "/privune/privacy",
   "/privune/privacy/ko",
@@ -56,6 +58,30 @@ const localizedRoutes: Record<
     languages: {
       en: `${baseUrl}/clearspace/terms`,
       ko: `${baseUrl}/clearspace/terms/ko`,
+    },
+  },
+  "/fileio/privacy": {
+    languages: {
+      en: `${baseUrl}/fileio/privacy`,
+      ko: `${baseUrl}/fileio/privacy/ko`,
+    },
+  },
+  "/fileio/privacy/ko": {
+    languages: {
+      en: `${baseUrl}/fileio/privacy`,
+      ko: `${baseUrl}/fileio/privacy/ko`,
+    },
+  },
+  "/fileio/terms": {
+    languages: {
+      en: `${baseUrl}/fileio/terms`,
+      ko: `${baseUrl}/fileio/terms/ko`,
+    },
+  },
+  "/fileio/terms/ko": {
+    languages: {
+      en: `${baseUrl}/fileio/terms`,
+      ko: `${baseUrl}/fileio/terms/ko`,
     },
   },
   "/serenity/privacy": {
