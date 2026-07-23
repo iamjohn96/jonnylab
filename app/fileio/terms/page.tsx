@@ -47,7 +47,6 @@ const sections = [
     title: "Camera and Scanning",
     paragraphs: [
       "You must have the lawful right to photograph or scan a document. Fileio uses the camera only when you start document scanning and processes captured images locally to create a PDF.",
-      "JonnyLab does not guarantee scan quality, document accuracy, or the suitability of a scanned PDF for a particular purpose. Fileio does not provide OCR.",
     ],
   },
   {
