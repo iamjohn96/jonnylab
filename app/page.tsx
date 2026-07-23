@@ -4,12 +4,12 @@ import Link from "next/link";
 export const metadata: Metadata = {
   title: "JonnyLab — Privacy-First Apps and Tools",
   description:
-    "Explore JonnyLab products: Serenity, ClearSpace, and Fileio for Android, plus the SafeUnfollow privacy-first Instagram Data ZIP analyzer.",
+    "Explore privacy-first JonnyLab products for iPhone, Android, and the web, including Privune, Serenity, ClearSpace, Fileio, and SafeUnfollow.",
   alternates: { canonical: "https://jonnylab.app" },
   openGraph: {
     title: "JonnyLab — Privacy-First Apps and Tools",
     description:
-      "Android apps for sleep, photo cleanup, and file management, plus a privacy-first Instagram Data ZIP analyzer.",
+      "Privacy-first apps and tools for iPhone, Android, and the web, built to minimize data collection.",
     url: "https://jonnylab.app",
     siteName: "JonnyLab",
     type: "website",
@@ -57,6 +57,20 @@ const apps: App[] = [
     statusGreen: true,
     ctaLabel: "Explore ClearSpace",
     secondaryStatus: "iOS in development",
+  },
+  {
+    icon: "P",
+    iconBg: "bg-gradient-to-br from-indigo-500 to-teal-500 text-white font-bold",
+    name: "Privune",
+    tagline:
+      "Protect private details in photos on-device, review redaction areas, and create a sanitized Safe Copy",
+    tags: ["iPhone", "Privacy", "On-Device", "Photo Redaction"],
+    href: "/privune",
+    external: false,
+    status: "Coming soon",
+    statusGreen: false,
+    ctaLabel: "Explore Privune",
+    secondaryStatus: "App Store release preparation",
   },
   {
     icon: "◎",
@@ -129,6 +143,18 @@ const structuredData = {
         position: 3,
         item: {
           "@type": "SoftwareApplication",
+          name: "Privune",
+          url: "https://jonnylab.app/privune",
+          operatingSystem: "iOS 17 or later",
+          applicationCategory: "UtilitiesApplication",
+          description: "An on-device photo redaction tool that creates sanitized Safe Copies without modifying the original.",
+        },
+      },
+      {
+        "@type": "ListItem",
+        position: 4,
+        item: {
+          "@type": "SoftwareApplication",
           name: "Fileio",
           url: "https://jonnylab.app/fileio",
           operatingSystem: "Android",
@@ -138,7 +164,7 @@ const structuredData = {
       },
       {
         "@type": "ListItem",
-        position: 4,
+        position: 5,
         item: {
           "@type": "WebApplication",
           name: "SafeUnfollow",
@@ -203,9 +229,8 @@ export default function Home() {
           JonnyLab
         </h1>
         <p className="max-w-2xl text-xl leading-relaxed text-zinc-600">
-          Android apps for better sleep, cleaner photo libraries, and simpler
-          file management—plus privacy-first web tools built to minimize data
-          collection.
+          Privacy-first apps and tools for iPhone, Android, and the web—built
+          to keep data collection to a minimum.
         </p>
       </section>
 

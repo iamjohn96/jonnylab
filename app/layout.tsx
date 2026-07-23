@@ -12,7 +12,7 @@ const inter = Inter({
 export const metadata: Metadata = {
   title: "JonnyLab",
   description:
-    "Privacy-first Android apps and web tools from JonnyLab, with iOS versions of Serenity, ClearSpace, and Fileio in development.",
+    "Privacy-first apps and tools for iPhone, Android, and the web from JonnyLab.",
 };
 
 export default function RootLayout({

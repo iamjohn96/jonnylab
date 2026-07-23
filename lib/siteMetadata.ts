@@ -29,5 +29,6 @@ export function createPageMetadata({
       type: "website",
       locale,
     },
+    robots: { index: true, follow: true },
   };
 }

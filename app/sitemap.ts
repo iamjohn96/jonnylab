@@ -15,6 +15,13 @@ const routes = [
   "/fileio/privacy",
   "/fileio/support",
   "/fileio/terms",
+  "/privune",
+  "/privune/privacy",
+  "/privune/privacy/ko",
+  "/privune/support",
+  "/privune/support/ko",
+  "/privune/terms",
+  "/privune/terms/ko",
   "/serenity",
   "/serenity/privacy",
   "/serenity/privacy/ko",
@@ -73,6 +80,42 @@ const localizedRoutes: Record<
     languages: {
       en: `${baseUrl}/serenity/terms`,
       ko: `${baseUrl}/serenity/terms/ko`,
+    },
+  },
+  "/privune/privacy": {
+    languages: {
+      en: `${baseUrl}/privune/privacy`,
+      ko: `${baseUrl}/privune/privacy/ko`,
+    },
+  },
+  "/privune/privacy/ko": {
+    languages: {
+      en: `${baseUrl}/privune/privacy`,
+      ko: `${baseUrl}/privune/privacy/ko`,
+    },
+  },
+  "/privune/support": {
+    languages: {
+      en: `${baseUrl}/privune/support`,
+      ko: `${baseUrl}/privune/support/ko`,
+    },
+  },
+  "/privune/support/ko": {
+    languages: {
+      en: `${baseUrl}/privune/support`,
+      ko: `${baseUrl}/privune/support/ko`,
+    },
+  },
+  "/privune/terms": {
+    languages: {
+      en: `${baseUrl}/privune/terms`,
+      ko: `${baseUrl}/privune/terms/ko`,
+    },
+  },
+  "/privune/terms/ko": {
+    languages: {
+      en: `${baseUrl}/privune/terms`,
+      ko: `${baseUrl}/privune/terms/ko`,
     },
   },
 };

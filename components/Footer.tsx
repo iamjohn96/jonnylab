@@ -3,6 +3,7 @@ import Link from "next/link";
 const productLinks = [
   { href: "/serenity", label: "Serenity" },
   { href: "/clearspace", label: "ClearSpace" },
+  { href: "/privune", label: "Privune" },
   { href: "/fileio", label: "Fileio" },
 ];
 
