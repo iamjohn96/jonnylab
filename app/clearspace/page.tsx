@@ -1,3 +1,4 @@
+import Image from "next/image";
 import Link from "next/link";
 import TrustSection from "@/components/TrustSection";
 import { createPageMetadata } from "@/lib/siteMetadata";
@@ -164,9 +165,7 @@ export default function ClearspacePage() {
         <div className="mx-auto grid max-w-6xl gap-10 px-6 py-16 lg:grid-cols-[1fr_420px] lg:items-center lg:py-20">
           <div>
             <div className="mb-6 flex items-center gap-3">
-              <div className="flex h-12 w-12 items-center justify-center rounded-2xl bg-zinc-950 text-xl font-bold text-white">
-                C
-              </div>
+              <Image src="/apps/clearspace-icon.png" alt="ClearSpace app icon" width={48} height={48} priority className="h-12 w-12 shrink-0 rounded-xl" />
               <div>
                 <p className="text-sm font-semibold text-zinc-500">
                   ClearSpace - Photo Cleaner

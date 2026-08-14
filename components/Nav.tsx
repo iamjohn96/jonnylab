@@ -1,3 +1,4 @@
+import Image from "next/image";
 import Link from "next/link";
 
 export default function Nav() {
@@ -6,9 +7,10 @@ export default function Nav() {
       <div className="mx-auto max-w-4xl flex items-center justify-between px-6 py-4">
         <Link
           href="/"
-          className="text-zinc-950 font-bold text-lg tracking-tight"
+          aria-label="JonnyLab home"
+          className="shrink-0"
         >
-          JonnyLab
+          <Image src="/brand/jonnylab-logo-with-words.png" alt="JonnyLab" width={139} height={50} priority className="h-8 w-auto" />
         </Link>
         <Link
           href="/#apps"

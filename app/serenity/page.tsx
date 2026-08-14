@@ -1,3 +1,4 @@
+import Image from "next/image";
 import TrustSection from "@/components/TrustSection";
 import { createPageMetadata } from "@/lib/siteMetadata";
 
@@ -92,6 +93,7 @@ export default function SerenityPage() {
 
           <div className="grid gap-10 lg:grid-cols-[1.1fr_0.9fr] lg:items-center">
             <div>
+              <Image src="/apps/serenity-icon.png" alt="Serenity app icon" width={72} height={72} priority className="mb-6 h-[72px] w-[72px] rounded-2xl" />
               <p className="mb-4 text-sm font-medium uppercase tracking-[0.28em] text-sky-200/80">
                 Sleep sounds and white noise
               </p>

@@ -1,3 +1,4 @@
+import Image from "next/image";
 import Link from "next/link";
 
 const productLinks = [
@@ -12,8 +13,8 @@ export default function Footer() {
     <footer className="border-t border-zinc-200 bg-white">
       <div className="mx-auto flex max-w-6xl flex-col gap-5 px-6 py-8 text-sm text-zinc-600 sm:flex-row sm:items-center sm:justify-between">
         <div>
-          <Link href="/" className="font-semibold text-zinc-950">
-            JonnyLab
+          <Link href="/" aria-label="JonnyLab home" className="inline-block">
+            <Image src="/brand/jonnylab-logo-with-words.png" alt="JonnyLab" width={125} height={45} className="h-7 w-auto" />
           </Link>
           <p className="mt-1">Privacy-first apps and tools from Seoul.</p>
         </div>

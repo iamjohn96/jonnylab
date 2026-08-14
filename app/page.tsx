@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import Image from "next/image";
 import Link from "next/link";
 
 export const metadata: Metadata = {
@@ -18,8 +19,9 @@ export const metadata: Metadata = {
 };
 
 type App = {
-  icon: string;
-  iconBg: string;
+  icon?: string;
+  iconBg?: string;
+  iconSrc?: string;
   name: string;
   tagline: string;
   tags: string[];
@@ -33,8 +35,7 @@ type App = {
 
 const apps: App[] = [
   {
-    icon: "☾",
-    iconBg: "bg-violet-600",
+    iconSrc: "/apps/serenity-icon.png",
     name: "Serenity",
     tagline: "Sleep sounds, white noise, and a five-channel sound mixer",
     tags: ["Android", "Sleep", "Relaxation", "White Noise"],
@@ -46,8 +47,7 @@ const apps: App[] = [
     secondaryStatus: "iOS in development",
   },
   {
-    icon: "C",
-    iconBg: "bg-teal-600 text-white font-bold",
+    iconSrc: "/apps/clearspace-icon.png",
     name: "ClearSpace",
     tagline: "Find duplicates, blurry photos, and forgotten screenshots",
     tags: ["Android", "Tools", "Photo Cleaner", "On-Device"],
@@ -85,8 +85,7 @@ const apps: App[] = [
     ctaLabel: "Open SafeUnfollow",
   },
   {
-    icon: "📁",
-    iconBg: "bg-indigo-600",
+    iconSrc: "/apps/fileio-icon.png",
     name: "Fileio",
     tagline: "Manage, view, and scan documents in one place",
     tags: ["Android", "Productivity", "Documents"],
@@ -107,6 +106,7 @@ const structuredData = {
       "@id": "https://jonnylab.app/#organization",
       name: "JonnyLab",
       url: "https://jonnylab.app",
+      logo: "https://jonnylab.app/brand/jonnylab-logo.png",
       email: "support@jonnylab.app",
     },
     {
@@ -121,6 +121,7 @@ const structuredData = {
           "@type": "SoftwareApplication",
           name: "Serenity",
           url: "https://jonnylab.app/serenity",
+          image: "https://jonnylab.app/apps/serenity-icon.png",
           operatingSystem: "Android",
           applicationCategory: "HealthApplication",
           description: "An ambient sound and sleep sound mixer available on Android, with an iOS version in development.",
@@ -133,6 +134,7 @@ const structuredData = {
           "@type": "SoftwareApplication",
           name: "ClearSpace",
           url: "https://jonnylab.app/clearspace",
+          image: "https://jonnylab.app/apps/clearspace-icon.png",
           operatingSystem: "Android",
           applicationCategory: "UtilitiesApplication",
           description: "An on-device photo cleanup tool available on Android, with an iOS version in development.",
@@ -157,6 +159,7 @@ const structuredData = {
           "@type": "SoftwareApplication",
           name: "Fileio",
           url: "https://jonnylab.app/fileio",
+          image: "https://jonnylab.app/apps/fileio-icon.png",
           operatingSystem: "Android",
           applicationCategory: "UtilitiesApplication",
           description: "A file manager, document viewer, and scanner available on Android, with an iOS version in development.",
@@ -182,9 +185,13 @@ function AppCard({ app }: { app: App }) {
   return (
     <div className="h-full rounded-2xl border border-zinc-200 bg-white p-6 shadow-sm transition-all hover:border-indigo-300 hover:shadow-md">
       <div className="mb-4 flex items-start justify-between gap-3">
-        <div className={`flex h-12 w-12 shrink-0 items-center justify-center rounded-xl text-2xl text-white ${app.iconBg}`}>
-          {app.icon}
-        </div>
+        {app.iconSrc ? (
+          <Image src={app.iconSrc} alt={`${app.name} app icon`} width={48} height={48} className="h-12 w-12 shrink-0 rounded-xl" />
+        ) : (
+          <div className={`flex h-12 w-12 shrink-0 items-center justify-center rounded-xl text-2xl text-white ${app.iconBg}`}>
+            {app.icon}
+          </div>
+        )}
         <div className="flex flex-wrap justify-end gap-1.5">
           <span className={`rounded-full px-2.5 py-1 text-xs font-medium ${app.statusGreen ? "bg-green-100 text-green-700" : "bg-zinc-100 text-zinc-600"}`}>
             {app.status}
@@ -225,9 +232,14 @@ export default function Home() {
             Seoul, Korea 🇰🇷
           </span>
         </div>
-        <h1 className="mb-4 text-5xl font-bold tracking-tight text-zinc-950">
-          JonnyLab
-        </h1>
+        <Image
+          src="/brand/jonnylab-logo-with-words.png"
+          alt="JonnyLab"
+          width={330}
+          height={120}
+          priority
+          className="mb-5 h-auto w-[260px] max-w-full sm:w-[330px]"
+        />
         <p className="max-w-2xl text-xl leading-relaxed text-zinc-600">
           Privacy-first apps and tools for iPhone, Android, and the web—built
           to keep data collection to a minimum.
