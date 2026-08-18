@@ -2,9 +2,9 @@ import Link from "next/link";
 import { createPageMetadata } from "@/lib/siteMetadata";
 
 export const metadata = createPageMetadata({
-  title: "Privune — Private Photo Redaction for iPhone | JonnyLab",
+  title: "Privune — Private On-Device Photo Redaction | JonnyLab",
   description:
-    "Privune detects private information in photos on-device and creates sanitized Safe Copies without modifying the original.",
+    "Privune detects private information in photos on-device and creates sanitized Safe Copies without modifying the original, for Android and iPhone.",
   path: "/privune",
 });
 
@@ -13,7 +13,7 @@ const workflow = [
   ["Detect private details", "On-device OCR identifies areas that may contain sensitive information."],
   ["Review and adjust", "Select, deselect, move, resize, or add regions before export."],
   ["Create a Safe Copy", "Apply solid masks or pixelation without changing the original."],
-  ["Save or share", "Save the sanitized result or share it from iPhone."],
+  ["Save or share", "Save the sanitized result or share it from your device."],
 ];
 
 const detectedTypes = [
@@ -38,21 +38,21 @@ const privacyArchitecture = [
   "No photo upload",
   "No user account",
   "No custom backend",
-  "No analytics",
+  "No general-purpose analytics",
   "Original photo is never modified",
   "Temporary generated files are automatically cleaned up",
 ];
 
 const faqs = [
-  ["Does Privune upload my photos?", "No. OCR, detection, review, rendering, and supported metadata removal happen locally on your iPhone."],
+  ["Does Privune upload my photos?", "No. OCR, detection, review, rendering, and supported metadata removal happen locally on your device."],
   ["Does Privune modify the original photo?", "No. Privune creates a separate Safe Copy. Your original photo remains unchanged."],
   ["What information can Privune detect?", "Privune looks for phone numbers, email addresses, resident and foreigner registration numbers, payment cards, bank accounts, vehicle numbers, and addresses."],
   ["Is detection always accurate?", "No. Detection is assistive and may miss or incorrectly select details. Always review every selected area and the finished Safe Copy before sharing."],
   ["What metadata does Privune remove?", "Safe Copies remove supported location, camera, capture-date, EXIF, TIFF, IPTC, author, comment, and copyright fields where present. Proprietary fields in every image format cannot be guaranteed."],
   ["What is included in the Free version?", "Free includes the complete review and editing workflow, solid and pixelated redaction, and up to 3 Safe Copies per local calendar day."],
-  ["What does Privune Pro unlock?", "Privune Pro unlocks unlimited Safe Copies through monthly, annual, or lifetime access. Regional pricing is shown by the App Store."],
+  ["What does Privune Pro unlock?", "Privune Pro unlocks unlimited Safe Copies through monthly, annual, or lifetime access. Regional pricing is shown by Google Play or the App Store."],
   ["Does Privune require an account?", "No. Privune does not have a user account system."],
-  ["How do I restore a purchase?", "Open the purchase screen, use Restore Purchases, and make sure you are signed in with the Apple ID used for the original purchase."],
+  ["How do I restore a purchase?", "Open the purchase screen, use Restore Purchases, and make sure you are signed in to the store account used for the original purchase."],
   ["How do I contact support?", "Visit Privune Support or email support@jonnylab.app. Please remove sensitive information from screenshots before sending them."],
 ];
 
@@ -64,18 +64,18 @@ export default function PrivunePage() {
         <div className="relative grid gap-10 lg:grid-cols-[1.15fr_0.85fr] lg:items-center">
           <div>
             <span className="inline-flex rounded-full border border-indigo-300/30 bg-white/5 px-3 py-1 text-xs font-semibold uppercase tracking-[0.22em] text-indigo-200">
-              iPhone · iOS 17+
+              Android &amp; iPhone
             </span>
             <p className="mt-8 text-sm font-medium uppercase tracking-[0.28em] text-indigo-200/80">Privune</p>
             <h1 className="mt-3 max-w-3xl text-4xl font-semibold tracking-tight sm:text-5xl lg:text-6xl">
               Protect privacy before you share.
             </h1>
             <p className="mt-6 max-w-2xl text-lg leading-8 text-slate-200">
-              Privune detects private information in photos on your iPhone, lets you review what should be hidden, and creates a privacy-safe copy without modifying the original.
+              Privune detects private information in photos on your device, lets you review what should be hidden, and creates a privacy-safe copy without modifying the original.
             </p>
             <div className="mt-8 flex flex-wrap items-center gap-3">
-              <span aria-label="Coming to the App Store" className="inline-flex cursor-not-allowed rounded-xl bg-white/10 px-5 py-3 text-sm font-semibold text-white ring-1 ring-inset ring-white/15">
-                Coming to the App Store
+              <span aria-label="Coming to Google Play and the App Store" className="inline-flex cursor-not-allowed rounded-xl bg-white/10 px-5 py-3 text-sm font-semibold text-white ring-1 ring-inset ring-white/15">
+                Coming to Google Play &amp; the App Store
               </span>
               <Link href="/privune/privacy" className="rounded-xl border border-white/20 px-5 py-3 text-sm font-semibold text-white transition-colors hover:bg-white/10 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-white">
                 Privacy Policy
@@ -97,7 +97,7 @@ export default function PrivunePage() {
               <p>Generate a safe copy.</p>
             </div>
             <p className="mt-5 text-sm leading-6 text-slate-300">
-              OCR, detection, review, rendering, and metadata sanitization happen locally on the device.
+              OCR, detection, review, rendering, and metadata sanitization happen locally on your device.
             </p>
           </div>
         </div>
@@ -172,7 +172,7 @@ export default function PrivunePage() {
           <ul className="mt-6 list-disc space-y-3 pl-5 text-sm leading-6 text-indigo-50">
             <li>Unlimited Safe Copies</li>
             <li>Monthly, annual, or lifetime access</li>
-            <li>Localized prices shown by the App Store before purchase</li>
+            <li>Localized prices shown by Google Play or the App Store before purchase</li>
           </ul>
         </article>
       </section>
@@ -217,6 +217,7 @@ export default function PrivunePage() {
         <nav aria-label="Privune legal and support" className="mt-6 flex flex-wrap gap-3">
           <Link href="/privune/privacy" className="rounded-lg bg-white px-4 py-2.5 text-sm font-semibold text-zinc-950">Privacy Policy</Link>
           <Link href="/privune/terms" className="rounded-lg border border-white/20 px-4 py-2.5 text-sm font-semibold">Terms of Use</Link>
+          <Link href="/privune/data-deletion" className="rounded-lg border border-white/20 px-4 py-2.5 text-sm font-semibold">Data Deletion</Link>
           <Link href="/privune/support" className="rounded-lg border border-white/20 px-4 py-2.5 text-sm font-semibold">Support</Link>
         </nav>
       </section>

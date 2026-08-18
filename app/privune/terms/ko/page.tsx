@@ -20,7 +20,7 @@ const sections = [
   { title: "탐지의 한계", content: <p>Privune은 민감정보 탐지를 돕지만 모든 민감한 콘텐츠 탐지를 보장하지 않습니다. 이미지 품질, 텍스트 배치, 언어 및 기타 요인으로 누락 또는 잘못된 결과가 생길 수 있습니다. Privune은 법률, 규제 준수, 보안 또는 전문 검토를 대신하지 않습니다.</p> },
   { title: "안전한 사본 최종 검토", content: <p>공유하기 전에 모든 선택 영역과 생성된 안전한 사본을 최종 검토해야 합니다. 필요하면 영역을 추가, 해제, 이동 또는 크기 조정하세요. 사용자가 검토 후 공유하기로 선택한 정보에 대해 JonnyLab은 책임지지 않습니다.</p> },
   { title: "원본 사진 처리", content: <p>Privune은 새 결과물을 만들며 원본 사진을 수정하지 않습니다. 사진 보관함, 백업, 메시지 또는 제3자 서비스에 있는 원본과 사본 관리는 사용자의 책임입니다.</p> },
-  { title: "무료 사용 한도", content: <p>무료 사용자는 현지 달력일 기준 하루 최대 3개의 안전한 사본을 만들 수 있습니다. 이 한도는 기기의 로컬 저장소를 사용해 기술적으로 적용될 수 있습니다. 기기 시간, 재설치 또는 저장소를 조작해 한도를 우회해서는 안 됩니다. JonnyLab은 적절한 안내와 함께 향후 앱 버전에서 무료 한도를 합리적으로 조정할 수 있습니다.</p> },
+  { title: "무료 사용 한도", content: <p>무료 사용자는 현지 달력일 기준 하루 최대 3개의 새 안전한 사본을 성공적으로 생성할 수 있습니다. 실패하거나 취소한 시도는 차감되지 않고, 동일한 생성 결과를 반복 처리해도 추가 사용량을 소모하지 않습니다. Pro는 무료 한도를 적용받지 않습니다.</p> },
   { title: "Privune Pro", content: <p>Privune Pro는 해당 이용 권한이 유효한 동안 안전한 사본 생성 횟수 제한을 해제합니다. 월간·연간 구독 또는 Lifetime 구매로 제공될 수 있습니다. 가격은 지역에 따라 다르며 구매 전에 App Store에 표시됩니다.</p> },
   { title: "월간 및 연간 구독", content: <p>월간·연간 구독은 현재 결제 기간이 끝나기 전에 Apple을 통해 취소하지 않으면 자동으로 갱신됩니다. App Store는 확인 전에 가격, 결제 주기 및 체험 조건이 있는 경우 해당 조건을 표시합니다.</p> },
   { title: "Lifetime 구매", content: <p>Lifetime 이용권은 지원되는 Privune 버전에서 Pro에 접근할 수 있는 일회성 비소모성 구매입니다. “Lifetime”은 구매자의 수명이 아니라 Privune 제품 또는 서비스의 상업적 존속 기간을 뜻합니다. 영구 제공, 모든 미래 기기·운영체제 호환 또는 다른 제품 접근을 보장하지 않습니다.</p> },
@@ -42,5 +42,5 @@ const sections = [
 ];
 
 export default function PrivuneTermsKoPage() {
-  return <PrivuneLegalPage lang="ko" title="이용약관" effectiveDate="시행일: 2026년 7월 23일" alternateHref="/privune/terms" alternateLabel="View in English" sections={sections} otherDocumentHref="/privune/privacy/ko" otherDocumentLabel="개인정보 처리방침" />;
+  return <PrivuneLegalPage lang="ko" title="이용약관" effectiveDate="시행일 및 최종 수정일: 2026년 8월 18일" alternateHref="/privune/terms" alternateLabel="View in English" sections={sections} otherDocumentHref="/privune/privacy/ko" otherDocumentLabel="개인정보 처리방침" />;
 }

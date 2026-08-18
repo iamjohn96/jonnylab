@@ -20,6 +20,7 @@ const routes = [
   "/privune",
   "/privune/privacy",
   "/privune/privacy/ko",
+  "/privune/data-deletion",
   "/privune/support",
   "/privune/support/ko",
   "/privune/terms",

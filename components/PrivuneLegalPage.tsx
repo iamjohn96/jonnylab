@@ -46,7 +46,7 @@ export default function PrivuneLegalPage({
 
       <header className="mt-8 border-b border-zinc-200 pb-8">
         <p className="text-sm font-semibold uppercase tracking-[0.16em] text-indigo-600">
-          Privune · iPhone
+          Privune · Android &amp; iPhone
         </p>
         <h1 className="mt-3 text-3xl font-bold tracking-tight text-zinc-950 sm:text-4xl">
           {title}
@@ -83,6 +83,9 @@ export default function PrivuneLegalPage({
         <div className="mt-4 flex flex-wrap gap-x-4 gap-y-2">
           <Link href="/privune">{isKo ? "Privune 제품 페이지" : "Privune Product Page"}</Link>
           <Link href={otherDocumentHref}>{otherDocumentLabel}</Link>
+          <Link href="/privune/data-deletion">
+            {isKo ? "데이터 삭제 요청" : "Data Deletion"}
+          </Link>
           <Link href={isKo ? "/privune/support/ko" : "/privune/support"}>
             {isKo ? "지원" : "Support"}
           </Link>
