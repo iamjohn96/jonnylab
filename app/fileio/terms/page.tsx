@@ -19,14 +19,14 @@ const sections = [
     title: "Description of the Service",
     paragraphs: [
       "Fileio provides local file importing and management, document and image viewing, document scanning and PDF creation, search, sorting, recent files, favorites, rename, delete, Share, and Open With features.",
-      "Fileio does not provide an account, cloud connection, advertising, subscription, in-app purchase, or paid feature tier.",
+      "Fileio does not provide an account, cloud connection, or advertising. Core features are free, while optional Fileio Pro features are available through monthly or yearly auto-renewable subscriptions.",
     ],
   },
   {
     title: "Local-Only Operation",
     paragraphs: [
       "Files and app metadata are processed on your device. JonnyLab does not store, synchronize, or back up your files on its servers, and Fileio does not provide its own cloud backup.",
-      "You are responsible for preserving important files and arranging any device backup you consider appropriate. Fileio's Android backup is disabled, so you should not rely on the app to restore its managed files or local metadata.",
+      "You are responsible for preserving important files and arranging any device backup you consider appropriate. You should not rely on Fileio to restore its managed files or local metadata.",
     ],
   },
   {
@@ -52,14 +52,16 @@ const sections = [
   {
     title: "Third-Party Services",
     paragraphs: [
-      "Fileio may interact with Android system pickers, the system share sheet, external viewer apps, and Google Play. Those operating-system features, apps, and services are controlled by their providers and are subject to their own terms and privacy policies.",
+      "Fileio may interact with Android or iOS system pickers, the system share sheet, external viewer apps, Apple App Store, Google Play, and RevenueCat. Those operating-system features, apps, and services are controlled by their providers and are subject to their own terms and privacy policies.",
       "Fileio does not currently integrate with Google Drive or Dropbox.",
     ],
   },
   {
-    title: "No Paid Services",
+    title: "Fileio Pro Subscriptions",
     paragraphs: [
-      "Fileio is currently free and has no subscriptions or in-app purchases. If the service model changes in the future, any new terms or charges may be communicated separately in the app or its store listing. This statement does not announce a planned paid service.",
+      "Fileio Pro is offered as monthly and yearly auto-renewable subscriptions. The price and billing period shown in the app and applicable app store at the time of purchase apply. Payment is charged to your Apple ID or Google Play account after confirmation of purchase.",
+      "A subscription renews automatically unless it is canceled at least 24 hours before the end of the current period. You can manage or cancel it in your Apple or Google account subscription settings. Deleting Fileio does not cancel a subscription. Restore Purchases can restore eligible access on supported platforms.",
+      "Apple users are also subject to Apple's Standard End User License Agreement: https://www.apple.com/legal/internet-services/itunes/dev/stdeula/.",
     ],
   },
   {
@@ -108,7 +110,7 @@ export default function FileioTermsPage() {
     <main className="mx-auto max-w-2xl px-6 py-20">
       <Link href="/fileio" className="text-sm text-zinc-500 transition-colors hover:text-zinc-950">← Fileio</Link>
       <h1 className="mt-6 mb-2 text-3xl font-bold tracking-tight text-zinc-950">Fileio Terms of Service</h1>
-      <p className="text-sm text-zinc-500">Last updated: July 23, 2026</p>
+      <p className="text-sm text-zinc-500">Last updated: August 25, 2026</p>
       <Link href="/fileio/terms/ko" className="mt-6 mb-10 inline-block text-sm text-indigo-700 hover:text-indigo-600">
         한국어로 보기
       </Link>

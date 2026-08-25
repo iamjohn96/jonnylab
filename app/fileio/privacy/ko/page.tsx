@@ -13,7 +13,7 @@ const sections = [
   {
     title: "개요",
     paragraphs: [
-      "Fileio: File Manager & Scanner는 Android용 로컬 파일 관리자, 문서 뷰어 및 문서 스캐너입니다. 앱 기능은 사용자의 기기에서 동작하며 계정이 필요하지 않습니다.",
+      "Fileio: File Manager & Scanner는 Android 및 iOS용 로컬 파일 관리자, 문서 뷰어 및 문서 스캐너입니다. 파일 관련 기능은 사용자의 기기에서 동작하며 계정이 필요하지 않습니다.",
       "Fileio는 개인정보 보호를 우선하는 로컬 앱입니다. 클라우드 저장소에 연결하지 않고, 광고를 표시하지 않으며, 분석 또는 추적 SDK를 사용하지 않습니다.",
     ],
   },
@@ -28,13 +28,13 @@ const sections = [
     title: "로컬 파일 및 메타데이터",
     paragraphs: [
       "가져온 파일, 스캔한 PDF, 최근 파일 정보, 즐겨찾기 및 설정은 사용자의 기기에 저장됩니다. JonnyLab 서버로 자동 업로드되지 않으며, Fileio는 동기화 또는 클라우드 백업 기능을 제공하지 않습니다.",
-      "Reset App Data를 사용하면 Fileio 앱 내부에서 관리하는 파일과 로컬 메타데이터를 삭제할 수 있습니다. 앱을 제거하면 Android 및 기기의 동작에 따라 앱 전용 저장 데이터가 삭제될 수 있습니다. 초기화 또는 앱 제거 전에 중요한 파일을 별도로 보관하세요.",
+      "Reset App Data를 사용하면 Fileio 앱 내부에서 관리하는 파일과 로컬 메타데이터를 삭제할 수 있습니다. 앱을 제거하면 운영체제 및 기기의 동작에 따라 앱 전용 저장 데이터가 삭제될 수 있습니다. 초기화 또는 앱 제거 전에 중요한 파일을 별도로 보관하세요.",
     ],
   },
   {
     title: "문서 및 사진 선택",
     paragraphs: [
-      "Fileio는 Android 시스템 Document Picker와 Photo Picker를 사용합니다. 사용자가 명시적으로 선택한 파일 또는 이미지만 가져오며, 전체 사진·동영상 또는 저장소 라이브러리에 대한 광범위한 접근 권한을 요청하지 않습니다.",
+      "Fileio는 Android 및 iOS의 운영체제 문서·사진 선택기를 사용합니다. 사용자가 명시적으로 선택한 파일 또는 이미지만 가져오며, 전체 사진·동영상 또는 저장소 라이브러리에 대한 광범위한 접근 권한을 요청하지 않습니다.",
       "선택한 항목은 사용자가 요청한 기능을 수행하기 위해 기기에서 로컬로 처리됩니다.",
     ],
   },
@@ -62,21 +62,21 @@ const sections = [
   {
     title: "광고, 분석 및 추적",
     paragraphs: [
-      "Fileio는 광고를 표시하지 않고 AdMob 또는 다른 광고 SDK를 포함하지 않으며 Android 광고 식별자를 사용하지 않습니다.",
+      "Fileio는 광고를 표시하지 않고 광고 SDK를 포함하지 않으며 광고 식별자를 사용하지 않습니다.",
       "Fileio는 분석 또는 추적 SDK를 사용하지 않습니다.",
     ],
   },
   {
     title: "결제 및 구독",
     paragraphs: [
-      "Fileio는 완전 무료입니다. RevenueCat 또는 다른 결제 SDK를 사용하지 않으며, 구독, 인앱 구매, 유료 기능 제한, Premium 또는 Pro 등급이 없습니다. 모든 핵심 기능을 결제 없이 사용할 수 있습니다.",
-      "Google Play는 앱 다운로드 및 스토어 운영과 관련된 정보를 Google의 정책에 따라 독립적으로 처리할 수 있습니다. 이는 Fileio의 로컬 파일 처리와 별개입니다.",
+      "Fileio는 핵심 기능을 무료로 제공하며 선택 사항인 월간·연간 Fileio Pro 자동 갱신 구독을 제공합니다. 결제는 Apple App Store 또는 Google Play에서 처리하며 JonnyLab은 사용자의 전체 결제 카드 정보를 수신하거나 저장하지 않습니다.",
+      "Fileio는 상품 표시, 구매 검증, 구매 복원 및 Pro 이용 권한 확인을 위해 RevenueCat을 사용합니다. RevenueCat과 해당 앱 스토어는 구독 제공에 필요한 가명 앱 사용자 식별자, 상품 식별자, 구매·갱신 상태, 거래 시각, 국가 또는 스토어 정보 및 진단 정보를 처리할 수 있습니다. Fileio에서 가져오거나 스캔하거나 보관한 파일 내용은 전달되지 않으며, 이 처리에는 각 제공자의 개인정보 처리방침이 적용됩니다.",
     ],
   },
   {
     title: "보안",
     paragraphs: [
-      "Fileio는 로컬 처리와 최소 권한 원칙을 중심으로 설계되었으며, 광범위한 미디어 또는 저장소 권한 대신 Android 시스템 선택기를 사용합니다. 앱의 Android 백업은 비활성화되어 있습니다.",
+      "Fileio는 로컬 처리와 최소 권한 원칙을 중심으로 설계되었으며, 광범위한 미디어 또는 저장소 권한 대신 운영체제 선택기를 사용합니다. Private Vault 파일은 기기에서 로컬로 암호화되며 앱을 벗어나면 Vault가 자동으로 잠깁니다.",
       "어떤 시스템도 절대적인 보안을 보장할 수 없습니다. JonnyLab은 사용자의 기기와 운영체제 또는 사용자가 공유 대상으로 선택한 외부 앱과 서비스의 보안을 통제하지 않습니다. 기기를 안전하게 보호하고 공유 전 대상을 확인하세요.",
     ],
   },
@@ -105,7 +105,7 @@ export default function FileioPrivacyKoPage() {
     <main className="mx-auto max-w-2xl px-6 py-20">
       <Link href="/fileio" className="text-sm text-zinc-500 transition-colors hover:text-zinc-950">← Fileio</Link>
       <h1 className="mt-6 mb-2 text-3xl font-bold tracking-tight text-zinc-950">Fileio 개인정보 처리방침</h1>
-      <p className="text-sm text-zinc-500">최종 업데이트: 2026년 7월 23일</p>
+      <p className="text-sm text-zinc-500">최종 업데이트: 2026년 8월 25일</p>
       <Link href="/fileio/privacy" className="mt-6 mb-10 inline-block text-sm text-indigo-700 hover:text-indigo-600">View in English</Link>
       <div className="space-y-10">
         {sections.map((section, index) => (

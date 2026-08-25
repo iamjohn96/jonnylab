@@ -20,14 +20,14 @@ const sections = [
     title: "서비스 설명",
     paragraphs: [
       "Fileio는 로컬 파일 가져오기 및 관리, 문서·이미지 보기, 문서 스캔 및 PDF 생성, 검색, 정렬, 최근 파일, 즐겨찾기, 이름 변경, 삭제, 공유 및 다른 앱으로 열기 기능을 제공합니다.",
-      "Fileio는 계정, 클라우드 연결, 광고, 구독, 인앱 구매 또는 유료 기능 등급을 제공하지 않습니다.",
+      "Fileio는 계정, 클라우드 연결 또는 광고를 제공하지 않습니다. 핵심 기능은 무료이며 선택 사항인 Fileio Pro 기능은 월간 또는 연간 자동 갱신 구독으로 제공됩니다.",
     ],
   },
   {
     title: "로컬 전용 동작",
     paragraphs: [
       "파일과 앱 메타데이터는 사용자의 기기에서 처리됩니다. JonnyLab은 사용자 파일을 서버에 저장, 동기화 또는 백업하지 않으며 Fileio는 자체 클라우드 백업을 제공하지 않습니다.",
-      "중요한 파일을 보존하고 필요한 기기 백업을 마련할 책임은 사용자에게 있습니다. Fileio의 Android 백업은 비활성화되어 있으므로 앱이 관리하는 파일이나 로컬 메타데이터 복원을 앱에 의존해서는 안 됩니다.",
+      "중요한 파일을 보존하고 필요한 기기 백업을 마련할 책임은 사용자에게 있습니다. 앱이 관리하는 파일이나 로컬 메타데이터 복원을 Fileio에 의존해서는 안 됩니다.",
     ],
   },
   {
@@ -53,14 +53,16 @@ const sections = [
   {
     title: "제3자 서비스",
     paragraphs: [
-      "Fileio는 Android 시스템 선택기, 시스템 공유 화면, 외부 뷰어 앱 및 Google Play와 상호작용할 수 있습니다. 이러한 운영체제 기능, 앱 및 서비스는 각 제공자가 통제하며 해당 약관과 개인정보 처리방침이 적용됩니다.",
+      "Fileio는 Android 또는 iOS 시스템 선택기, 시스템 공유 화면, 외부 뷰어 앱, Apple App Store, Google Play 및 RevenueCat과 상호작용할 수 있습니다. 이러한 운영체제 기능, 앱 및 서비스는 각 제공자가 통제하며 해당 약관과 개인정보 처리방침이 적용됩니다.",
       "Fileio는 현재 Google Drive 또는 Dropbox와 연동하지 않습니다.",
     ],
   },
   {
-    title: "유료 서비스 없음",
+    title: "Fileio Pro 구독",
     paragraphs: [
-      "Fileio는 현재 무료이며 구독 또는 인앱 구매가 없습니다. 향후 서비스 모델이 변경되는 경우 새로운 조건이나 비용을 앱 또는 스토어 등록정보에서 별도로 안내할 수 있습니다. 이 문구는 유료 서비스 계획을 발표하는 것이 아닙니다.",
+      "Fileio Pro는 월간 및 연간 자동 갱신 구독으로 제공됩니다. 구매 시 앱과 해당 앱 스토어에 표시되는 가격 및 결제 기간이 적용되며 구매 확인 후 Apple ID 또는 Google Play 계정으로 결제됩니다.",
+      "구독은 현재 이용 기간이 끝나기 최소 24시간 전에 취소하지 않으면 자동 갱신됩니다. Apple 또는 Google 계정의 구독 설정에서 관리하거나 취소할 수 있습니다. Fileio 앱을 삭제해도 구독은 취소되지 않습니다. 지원되는 플랫폼에서는 구매 복원을 통해 해당 이용 권한을 복원할 수 있습니다.",
+      "Apple 사용자는 Apple 표준 최종 사용자 사용권 계약의 적용도 받습니다: https://www.apple.com/legal/internet-services/itunes/dev/stdeula/.",
     ],
   },
   {
@@ -109,7 +111,7 @@ export default function FileioTermsKoPage() {
     <main className="mx-auto max-w-2xl px-6 py-20">
       <Link href="/fileio" className="text-sm text-zinc-500 transition-colors hover:text-zinc-950">← Fileio</Link>
       <h1 className="mt-6 mb-2 text-3xl font-bold tracking-tight text-zinc-950">Fileio 서비스 이용약관</h1>
-      <p className="text-sm text-zinc-500">최종 업데이트: 2026년 7월 23일</p>
+      <p className="text-sm text-zinc-500">최종 업데이트: 2026년 8월 25일</p>
       <Link href="/fileio/terms" className="mt-6 mb-10 inline-block text-sm text-indigo-700 hover:text-indigo-600">View in English</Link>
       <div className="space-y-10">
         {sections.map((section, index) => (
