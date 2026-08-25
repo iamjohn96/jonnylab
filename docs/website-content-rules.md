@@ -8,11 +8,14 @@ JonnyLab is an everyday problem-solving product lab. Lead with the concrete prob
 
 - **Available:** publicly obtainable and supported now. Name the verified platform.
 - **Coming soon:** release preparation is active and the launch scope is confirmed.
+- **In App Review:** the exact platform build has been submitted to its public app store but is not yet available.
+- **Closed testing:** the platform build is limited to an invited test group and must not be described as publicly available.
 - **In development:** an implementation exists, but is not publicly available.
 - **Experimental:** a prototype or vertical slice exists and its scope may change.
 - Ideas without an implementation stay in the private Product Brain and do not appear as products.
 
 Review status labels whenever a store release, pause, rename, or material scope change occurs.
+Always write platform states separately; one platform's release must not imply availability on another platform.
 
 ## Copy
 

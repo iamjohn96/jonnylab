@@ -64,7 +64,7 @@ export default function PrivunePage() {
         <div className="relative grid gap-10 lg:grid-cols-[1.15fr_0.85fr] lg:items-center">
           <div>
             <span className="inline-flex rounded-full border border-indigo-300/30 bg-white/5 px-3 py-1 text-xs font-semibold uppercase tracking-[0.22em] text-indigo-200">
-              Android &amp; iPhone
+              iOS &amp; Android
             </span>
             <p className="mt-8 text-sm font-medium uppercase tracking-[0.28em] text-indigo-200/80">Privune</p>
             <h1 className="mt-3 max-w-3xl text-4xl font-semibold tracking-tight sm:text-5xl lg:text-6xl">
@@ -74,8 +74,8 @@ export default function PrivunePage() {
               Privune detects private information in photos on your device, lets you review what should be hidden, and creates a privacy-safe copy without modifying the original.
             </p>
             <div className="mt-8 flex flex-wrap items-center gap-3">
-              <span aria-label="Coming to Google Play and the App Store" className="inline-flex cursor-not-allowed rounded-xl bg-white/10 px-5 py-3 text-sm font-semibold text-white ring-1 ring-inset ring-white/15">
-                Coming to Google Play &amp; the App Store
+              <span aria-label="iOS is in App Review and Android is in closed testing" className="inline-flex cursor-not-allowed rounded-xl bg-white/10 px-5 py-3 text-sm font-semibold text-white ring-1 ring-inset ring-white/15">
+                iOS: In App Review · Android: Closed testing
               </span>
               <Link href="/privune/privacy" className="rounded-xl border border-white/20 px-5 py-3 text-sm font-semibold text-white transition-colors hover:bg-white/10 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-white">
                 Privacy Policy
