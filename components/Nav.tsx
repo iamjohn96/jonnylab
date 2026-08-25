@@ -13,10 +13,10 @@ export default function Nav() {
           <Image src="/brand/jonnylab-logo-with-words.png" alt="JonnyLab" width={139} height={50} priority className="h-8 w-auto" />
         </Link>
         <Link
-          href="/#apps"
+          href="/#products"
           className="text-sm text-zinc-600 hover:text-zinc-950 transition-colors"
         >
-          Apps
+          Products
         </Link>
       </div>
     </nav>
