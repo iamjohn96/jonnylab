@@ -16,7 +16,7 @@ export default function Footer() {
           <Link href="/" aria-label="JonnyLab home" className="inline-block">
             <Image src="/brand/jonnylab-logo-with-words.png" alt="JonnyLab" width={125} height={45} className="h-7 w-auto" />
           </Link>
-          <p className="mt-1">Privacy-first apps and tools from Seoul.</p>
+          <p className="mt-1">Simple tools for real everyday problems.</p>
         </div>
         <nav aria-label="Footer" className="flex flex-wrap gap-x-5 gap-y-3">
           {productLinks.map((link) => (

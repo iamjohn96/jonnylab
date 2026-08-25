@@ -3,14 +3,14 @@ import Image from "next/image";
 import Link from "next/link";
 
 export const metadata: Metadata = {
-  title: "JonnyLab — Privacy-First Apps and Tools",
+  title: "JonnyLab — Simple Tools for Everyday Problems",
   description:
-    "Explore privacy-first JonnyLab products for iPhone, Android, and the web, including Privune, Serenity, ClearSpace, Fileio, and SafeUnfollow.",
+    "JonnyLab builds small, focused products that solve real everyday problems with simple software and useful AI.",
   alternates: { canonical: "https://jonnylab.app" },
   openGraph: {
-    title: "JonnyLab — Privacy-First Apps and Tools",
+    title: "JonnyLab — Simple Tools for Everyday Problems",
     description:
-      "Privacy-first apps and tools for iPhone, Android, and the web, built to minimize data collection.",
+      "Small tools for real problems. AI when useful, local when possible, and simple always.",
     url: "https://jonnylab.app",
     siteName: "JonnyLab",
     type: "website",
@@ -95,6 +95,33 @@ const apps: App[] = [
     statusGreen: true,
     ctaLabel: "Explore Fileio",
     secondaryStatus: "iOS in development",
+  },
+];
+
+const inDevelopment: App[] = [
+  {
+    icon: "F",
+    iconBg: "bg-gradient-to-br from-sky-500 to-indigo-600 text-white font-bold",
+    name: "FixShot",
+    tagline: "Turn a screenshot of a Mac problem into a clear explanation and practical next steps",
+    tags: ["macOS", "Visual Troubleshooting", "Privacy by Design"],
+    href: "#principles",
+    external: false,
+    status: "In development",
+    statusGreen: false,
+    ctaLabel: "macOS first",
+  },
+  {
+    icon: "도",
+    iconBg: "bg-gradient-to-br from-amber-400 to-orange-600 text-white font-bold",
+    name: "Doran",
+    tagline: "A digital companion that helps older adults complete safer next steps when smartphone problems feel unclear",
+    tags: ["Android first", "Senior usability", "Experimental"],
+    href: "#principles",
+    external: false,
+    status: "Experimental",
+    statusGreen: false,
+    ctaLabel: "Product lab project",
   },
 ];
 
@@ -241,13 +268,17 @@ export default function Home() {
           className="mb-5 h-auto w-[260px] max-w-full sm:w-[330px]"
         />
         <p className="max-w-2xl text-xl leading-relaxed text-zinc-600">
-          Privacy-first apps and tools for iPhone, Android, and the web—built
-          to keep data collection to a minimum.
+          Small tools for real everyday problems.
+        </p>
+        <p className="mt-5 max-w-2xl text-base leading-7 text-zinc-600">
+          We build focused software that makes useful tasks simpler. AI is used
+          where it genuinely helps; privacy and simplicity are built into the product.
         </p>
       </section>
 
-      <section id="apps">
-        <h2 className="mb-6 text-2xl font-bold text-zinc-950">Apps</h2>
+      <section id="products">
+        <p className="mb-2 text-sm font-semibold uppercase tracking-[0.18em] text-indigo-700">Available and release-ready</p>
+        <h2 className="mb-6 text-2xl font-bold text-zinc-950">Products</h2>
         <div className="grid grid-cols-1 gap-4 md:grid-cols-2">
           {apps.map((app) =>
             app.external ? (
@@ -261,6 +292,22 @@ export default function Home() {
             ),
           )}
         </div>
+      </section>
+
+      <section className="mt-20" aria-labelledby="development-heading">
+        <p className="mb-2 text-sm font-semibold uppercase tracking-[0.18em] text-indigo-700">Product lab</p>
+        <h2 id="development-heading" className="mb-3 text-2xl font-bold text-zinc-950">In development</h2>
+        <p className="mb-6 max-w-2xl leading-7 text-zinc-600">These are active experiments, not released products. Their scope and availability may change as we test what is genuinely useful.</p>
+        <div className="grid grid-cols-1 gap-4 md:grid-cols-2">
+          {inDevelopment.map((app) => <AppCard key={app.name} app={app} />)}
+        </div>
+      </section>
+
+      <section id="principles" className="mt-20 rounded-3xl bg-zinc-950 px-7 py-10 text-white sm:px-10">
+        <p className="text-sm font-semibold uppercase tracking-[0.18em] text-indigo-300">How we build</p>
+        <h2 className="mt-3 text-2xl font-bold">Simple. Useful. Private.</h2>
+        <p className="mt-4 max-w-2xl leading-7 text-zinc-300">We start with the problem, not the technology. We prefer clear value and a simple experience over forced subscriptions or unnecessary features. We collect as little data as practical and prefer local or on-device processing when it fits the product.</p>
+        <p className="mt-4 text-sm text-zinc-400">Privacy is a product principle, not a product category.</p>
       </section>
     </main>
   );
