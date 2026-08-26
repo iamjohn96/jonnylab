@@ -73,8 +73,8 @@ export default function ClearspaceSupportPage() {
         ClearSpace Support
       </h1>
       <p className="mb-12 text-zinc-600">
-        Help with scanning, permissions, media cleanup, purchases, and restore
-        behavior.
+        Help for ClearSpace Android 1.5.3 with screenshot scanning, permissions,
+        review-first cleanup, purchases, and restore behavior.
       </p>
 
       <section className="mb-16">

@@ -49,8 +49,8 @@ const apps: App[] = [
   {
     iconSrc: "/apps/clearspace-icon.png",
     name: "ClearSpace",
-    tagline: "Find duplicates, blurry photos, and forgotten screenshots",
-    tags: ["Android", "Tools", "Photo Cleaner", "On-Device"],
+    tagline: "Fast screenshot cleanup with review tools for duplicates, similar photos, quality issues, and storage-heavy media",
+    tags: ["Android", "Screenshot Cleanup", "Photo Review", "On-Device"],
     href: "/clearspace",
     external: false,
     status: "Android: Available",
@@ -164,7 +164,7 @@ const structuredData = {
           image: "https://jonnylab.app/apps/clearspace-icon.png",
           operatingSystem: "Android",
           applicationCategory: "UtilitiesApplication",
-          description: "An on-device photo cleanup tool available on Android, with the iOS version in App Store review.",
+          description: "A review-first screenshot and photo cleanup tool available on Android, with the iOS version in App Store review.",
         },
       },
       {

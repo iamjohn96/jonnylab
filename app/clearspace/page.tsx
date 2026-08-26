@@ -7,13 +7,19 @@ const googlePlayUrl =
   "https://play.google.com/store/apps/details?id=com.jonnylab.clearspace";
 
 export const metadata = createPageMetadata({
-  title: "ClearSpace — Private Photo Cleaner",
+  title: "ClearSpace — Fast Screenshot Cleanup for Android",
   description:
-    "ClearSpace is available on Android for private, on-device photo cleanup. An iOS version is in development.",
+    "Review screenshots, duplicates, similar photos, quality issues, and storage-heavy media on your Android device. You decide what gets cleaned.",
   path: "/clearspace",
 });
 
 const featureGroups = [
+  {
+    title: "Screenshots",
+    description:
+      "Start with a focused screenshot scan, then sort and review the images you no longer need.",
+    accent: "bg-violet-500",
+  },
   {
     title: "Duplicates",
     description:
@@ -31,12 +37,6 @@ const featureGroups = [
     description:
       "Find photos that may be blurry, dark, overexposed, noisy, or otherwise low quality.",
     accent: "bg-amber-500",
-  },
-  {
-    title: "Screenshots",
-    description:
-      "Detect screenshots from filename, path, and image heuristics visible in your media library.",
-    accent: "bg-violet-500",
   },
   {
     title: "Chat Media",
@@ -92,7 +92,7 @@ function AppPreview() {
         <div className="mb-4 flex items-center justify-between">
           <div>
             <p className="text-xs font-semibold text-zinc-500">ClearSpace</p>
-            <p className="text-lg font-bold text-zinc-950">Scan Results</p>
+            <p className="text-lg font-bold text-zinc-950">Review your photos</p>
           </div>
           <div className="rounded-full bg-emerald-600 px-3 py-1 text-xs font-semibold text-white">
             2.8 GB
@@ -100,7 +100,7 @@ function AppPreview() {
         </div>
 
         <div className="mb-4 grid grid-cols-3 gap-2">
-          {["Dupes", "Similar", "Video"].map((label, index) => (
+          {["Screenshots", "Dupes", "Similar"].map((label, index) => (
             <div
               key={label}
               className="rounded-lg border border-zinc-200 bg-white p-2"
@@ -109,13 +109,13 @@ function AppPreview() {
                 className={[
                   "mb-2 h-10 rounded-md",
                   index === 0
-                    ? "bg-emerald-100"
+                    ? "bg-violet-100"
                     : index === 1
                       ? "bg-cyan-100"
                       : "bg-sky-100",
                 ].join(" ")}
               />
-              <p className="text-[11px] font-semibold text-zinc-700">
+              <p className="truncate text-[11px] font-semibold text-zinc-700">
                 {label}
               </p>
             </div>
@@ -170,18 +170,17 @@ export default function ClearspacePage() {
                 <p className="text-sm font-semibold text-zinc-500">
                   ClearSpace - Photo Cleaner
                 </p>
-                <p className="text-sm text-zinc-500">Live on Android · JonnyLab</p>
+            <p className="text-sm text-zinc-500">Android 1.5.3 · Available now</p>
               </div>
             </div>
 
             <h1 className="max-w-3xl text-4xl font-bold tracking-tight text-zinc-950 sm:text-6xl">
-              See clearly. Free space.
+              Fast screenshot cleanup. You stay in control.
             </h1>
             <p className="mt-5 max-w-2xl text-lg leading-8 text-zinc-600">
-              ClearSpace helps you find duplicate photos, similar shots,
-              screenshots, chat media, low-quality images, and large or old
-              videos, then review everything before moving unwanted media to
-              trash.
+              Start with screenshots, then review duplicates, similar photos,
+              quality issues, chat media, and storage-heavy videos. ClearSpace
+              organizes what may be worth cleaning; you choose what moves to trash.
             </p>
 
             <div className="mt-8 flex flex-wrap gap-3">
@@ -200,7 +199,7 @@ export default function ClearspacePage() {
                 Support
               </Link>
               <span className="inline-flex items-center rounded-lg border border-sky-200 bg-sky-50 px-4 py-3 text-sm font-semibold text-sky-700">
-                iOS in development
+                iOS: In App Review
               </span>
             </div>
 
@@ -225,7 +224,7 @@ export default function ClearspacePage() {
               Cleanup categories
             </p>
             <h2 className="text-3xl font-bold tracking-tight text-zinc-950">
-              Focus on the media that usually wastes space
+              Start with screenshots, then review the rest
             </h2>
           </div>
           <div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
@@ -254,7 +253,7 @@ export default function ClearspacePage() {
               Review-first deletion
             </p>
             <h2 className="text-3xl font-bold tracking-tight text-zinc-950">
-              Fast cleanup without silent deletion
+              You decide what gets cleaned
             </h2>
             <p className="mt-4 leading-7 text-zinc-600">
               ClearSpace organizes scan results into focused tabs and gives you
