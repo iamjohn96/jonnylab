@@ -4,7 +4,7 @@ import { createPageMetadata } from "@/lib/siteMetadata";
 export const metadata = createPageMetadata({
   title: "Fileio Support | JonnyLab",
   description:
-    "Support and frequently asked questions for Fileio local file management and document scanning.",
+    "Support and frequently asked questions for Fileio 2.1 PDF tools, Private Vault, and Fileio Pro.",
   path: "/fileio/support",
 });
 
@@ -14,8 +14,16 @@ const faqs = [
     a: "No. Fileio does not connect to Google Drive or Dropbox and does not provide cloud synchronization or backup.",
   },
   {
-    q: "Does Fileio require an account or payment?",
-    a: "No. Fileio has no account or login and is completely free, with no subscription, in-app purchase, Premium tier, or Pro tier.",
+    q: "Does Fileio require an account?",
+    a: "No. Fileio has no account or login. Core features are free, and optional Fileio Pro features are available through monthly or yearly subscriptions.",
+  },
+  {
+    q: "How do Fileio Pro purchases work?",
+    a: "Google Play processes Android purchases, and RevenueCat is used to show products, confirm Pro access, and restore purchases. Fileio does not send your document contents to RevenueCat.",
+  },
+  {
+    q: "How does Private Vault protect files?",
+    a: "Private Vault files are encrypted locally with AES-256, and the Vault automatically locks when you leave the app. Keep your device protected and maintain separate copies of important documents.",
   },
   {
     q: "Where are my files and settings stored?",

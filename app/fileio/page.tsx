@@ -5,55 +5,57 @@ import { createPageMetadata } from "@/lib/siteMetadata";
 
 const googlePlayUrl =
   "https://play.google.com/store/apps/details?id=com.jonnylab.fileio";
+const productHuntUrl =
+  "https://www.producthunt.com/products/fileio?launch=fileio";
 
 export const metadata = createPageMetadata({
-  title: "Fileio: File Manager & Scanner | JonnyLab",
+  title: "Fileio — Private PDF Workspace for Android | JonnyLab",
   description:
-    "Fileio is a privacy-first local file manager and document scanner for Android. Completely free, with no account, cloud connection, ads, or tracking.",
+    "Scan, edit, merge, split, protect, and privately store PDFs on your Android device with Fileio 2.1.",
   path: "/fileio",
 });
 
 const features = [
   {
     icon: "01",
-    title: "Manage local files",
+    title: "Scan or import documents",
     description:
-      "Import, search, sort, rename, delete, favorite, share, and open files on your Android device.",
+      "Scan paper documents or choose files and images with Android system pickers.",
   },
   {
     icon: "02",
-    title: "View documents and images",
+    title: "Edit PDF pages",
     description:
-      "Open supported documents and images without connecting a cloud account.",
+      "Reorder, rotate, or remove pages before saving the PDF you need.",
   },
   {
     icon: "03",
-    title: "Scan documents to PDF",
+    title: "Merge and split PDFs",
     description:
-      "Use the camera when you choose to scan, then create and store the PDF locally.",
+      "Combine documents into one PDF or extract selected pages into a separate file.",
   },
   {
     icon: "04",
-    title: "Choose only what you need",
+    title: "Create PDFs from images",
     description:
-      "Import explicitly selected items through Android's system Document Picker and Photo Picker.",
+      "Turn selected images into an organized PDF without uploading them to a web service.",
   },
   {
     icon: "05",
-    title: "Share on your terms",
+    title: "Protect sensitive documents",
     description:
-      "A file leaves Fileio only when you choose Share or Open With and select an external app.",
+      "Create password-protected PDF copies and keep private files in an AES-256 encrypted Private Vault.",
   },
 ];
 
 const workflow = [
-  "Choose a file or image with an Android system picker.",
-  "Manage, view, or scan documents locally on your device.",
-  "Share a selected file only when you decide to.",
+  "Scan a document or import selected files and images.",
+  "Edit, combine, split, convert, or protect your PDF.",
+  "Save it locally, keep it in Private Vault, or share it when you choose.",
 ];
 
 const trustPoints = [
-  "Completely free, with no subscriptions or in-app purchases",
+  "Free core tools with optional monthly and yearly Fileio Pro",
   "No account, cloud connection, synchronization, or cloud backup",
   "No ads, Advertising ID, analytics, or tracking SDKs",
   "Files and app metadata are processed and stored on your device",
@@ -67,15 +69,15 @@ export default function FileioPage() {
           <div>
             <div className="mb-7"><FileioBrand /></div>
             <h1 className="max-w-3xl text-4xl font-bold tracking-tight text-zinc-950 sm:text-6xl">
-              Privacy-first local file manager and document scanner
+              Private PDF tools that stay on your device
             </h1>
             <p className="mt-5 max-w-2xl text-lg leading-8 text-zinc-600">
-              Fileio: File Manager &amp; Scanner helps you manage local files,
-              view documents and images, and scan paper documents to PDF.
-              Everything is designed to work on your Android device.
+              Fileio 2.1 is a focused PDF workspace for Android. Scan or import
+              documents, edit pages, merge and split PDFs, convert images, create
+              password-protected copies, and keep sensitive files in Private Vault.
             </p>
             <p className="mt-5 max-w-2xl text-base font-semibold text-indigo-800">
-              Completely free. No account. No cloud connection. No ads. No tracking.
+              No account. No ads. No behavioral tracking. Core document work happens on your device.
             </p>
             <div className="mt-8 flex flex-wrap gap-3">
               <a href={googlePlayUrl} target="_blank" rel="noopener noreferrer" className="rounded-lg bg-indigo-600 px-5 py-3 text-sm font-semibold text-white transition-colors hover:bg-indigo-500">
@@ -87,6 +89,9 @@ export default function FileioPage() {
               <Link href="/fileio/privacy" className="rounded-lg px-2 py-3 text-sm font-semibold text-indigo-700 underline underline-offset-4">
                 Privacy Policy
               </Link>
+              <a href={productHuntUrl} target="_blank" rel="noopener noreferrer" className="rounded-lg px-2 py-3 text-sm font-semibold text-indigo-700 underline underline-offset-4">
+                View on Product Hunt
+              </a>
             </div>
           </div>
           <div className="rounded-[2rem] border border-indigo-200 bg-indigo-50 p-6 shadow-sm">
@@ -110,7 +115,7 @@ export default function FileioPage() {
           <div className="mb-8 max-w-2xl">
             <p className="mb-2 text-sm font-semibold text-indigo-700">What Fileio does</p>
             <h2 className="text-3xl font-bold tracking-tight text-zinc-950">
-              Useful file tools, without an account
+              Everyday PDF work, in one focused app
             </h2>
           </div>
           <div className="grid grid-cols-1 gap-4 sm:grid-cols-2 lg:grid-cols-3">
@@ -131,10 +136,10 @@ export default function FileioPage() {
             <p className="mb-2 text-sm font-semibold text-indigo-700">Local by design</p>
             <h2 className="text-3xl font-bold tracking-tight text-zinc-950">Your files stay on your device</h2>
             <p className="mt-4 leading-7 text-zinc-600">
-              Imported files, scanned PDFs, recent-file information, favorites,
-              and settings are stored locally. Fileio does not upload them to a
-              JonnyLab server, connect to cloud storage, synchronize between
-              devices, or provide cloud backup.
+              Imported files, scanned PDFs, edits, and Private Vault documents are
+              handled on your device. Fileio does not upload document contents to a
+              JonnyLab server or require a Fileio account. RevenueCat and Google Play
+              process limited purchase information when you use Fileio Pro.
             </p>
           </div>
         </div>
@@ -152,8 +157,8 @@ export default function FileioPage() {
       <section className="bg-white">
         <div className="mx-auto flex max-w-6xl flex-col gap-5 px-6 py-12 sm:flex-row sm:items-center sm:justify-between">
           <div>
-            <h2 className="text-2xl font-bold text-zinc-950">Ready to organize your files?</h2>
-            <p className="mt-2 text-zinc-600">Fileio is available on Android.</p>
+            <h2 className="text-2xl font-bold text-zinc-950">Ready to work with your PDFs?</h2>
+            <p className="mt-2 text-zinc-600">Fileio 2.1 is available now on Android.</p>
           </div>
           <div className="flex flex-wrap gap-4 text-sm">
             <a href={googlePlayUrl} target="_blank" rel="noopener noreferrer" className="rounded-lg bg-indigo-600 px-5 py-3 font-semibold text-white transition-colors hover:bg-indigo-500">

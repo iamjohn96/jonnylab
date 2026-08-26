@@ -87,8 +87,8 @@ const apps: App[] = [
   {
     iconSrc: "/apps/fileio-icon.png",
     name: "Fileio",
-    tagline: "Manage, view, and scan documents in one place",
-    tags: ["Android", "Productivity", "Documents"],
+    tagline: "Scan, edit, merge, split, protect, and privately store PDFs on your Android device",
+    tags: ["Android", "PDF Tools", "Private Vault", "On-Device"],
     href: "/fileio",
     external: false,
     status: "Live on Android",
@@ -189,7 +189,7 @@ const structuredData = {
           image: "https://jonnylab.app/apps/fileio-icon.png",
           operatingSystem: "Android",
           applicationCategory: "UtilitiesApplication",
-          description: "A file manager, document viewer, and scanner available on Android, with an iOS version in development.",
+          description: "A private PDF workspace for Android with local scanning, page editing, merge and split tools, password-protected copies, and an encrypted Private Vault.",
         },
       },
       {
