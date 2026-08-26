@@ -105,7 +105,7 @@ const inDevelopment: App[] = [
     name: "FixShot",
     tagline: "Turn a screenshot of a Mac problem into a clear explanation and practical next steps",
     tags: ["macOS", "Visual Troubleshooting", "Privacy by Design"],
-    href: "#principles",
+    href: "/doran",
     external: false,
     status: "In development",
     statusGreen: false,
@@ -121,7 +121,7 @@ const inDevelopment: App[] = [
     external: false,
     status: "Experimental",
     statusGreen: false,
-    ctaLabel: "Product lab project",
+    ctaLabel: "도란 살펴보기",
   },
 ];
 
