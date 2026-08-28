@@ -5,13 +5,15 @@ import { createPageMetadata } from "@/lib/siteMetadata";
 
 const googlePlayUrl =
   "https://play.google.com/store/apps/details?id=com.jonnylab.fileio";
+const appStoreUrl =
+  "https://apps.apple.com/app/id6766760955";
 const productHuntUrl =
   "https://www.producthunt.com/products/fileio?launch=fileio";
 
 export const metadata = createPageMetadata({
-  title: "Fileio — Private PDF Workspace for Android | JonnyLab",
+  title: "Fileio — Private Document & PDF Workspace | JonnyLab",
   description:
-    "Scan, edit, merge, split, protect, and privately store PDFs on your Android device with Fileio 2.1.",
+    "Scan, organize, and privately manage documents and PDFs on iPhone, iPad, and Android with Fileio.",
   path: "/fileio",
 });
 
@@ -72,14 +74,17 @@ export default function FileioPage() {
               Private PDF tools that stay on your device
             </h1>
             <p className="mt-5 max-w-2xl text-lg leading-8 text-zinc-600">
-              Fileio 2.1 is a focused PDF workspace for Android. Scan or import
-              documents, edit pages, merge and split PDFs, convert images, create
-              password-protected copies, and keep sensitive files in Private Vault.
+              Fileio is a privacy-first document and PDF workspace for iPhone,
+              iPad, and Android. Scan or import documents, organize local files,
+              and use the tools available for your platform without creating an account.
             </p>
             <p className="mt-5 max-w-2xl text-base font-semibold text-indigo-800">
               No account. No ads. No behavioral tracking. Core document work happens on your device.
             </p>
             <div className="mt-8 flex flex-wrap gap-3">
+              <a href={appStoreUrl} target="_blank" rel="noopener noreferrer" className="rounded-lg bg-zinc-950 px-5 py-3 text-sm font-semibold text-white transition-colors hover:bg-zinc-800">
+                Download on the App Store
+              </a>
               <a href={googlePlayUrl} target="_blank" rel="noopener noreferrer" className="rounded-lg bg-indigo-600 px-5 py-3 text-sm font-semibold text-white transition-colors hover:bg-indigo-500">
                 Get it on Google Play
               </a>
@@ -158,9 +163,12 @@ export default function FileioPage() {
         <div className="mx-auto flex max-w-6xl flex-col gap-5 px-6 py-12 sm:flex-row sm:items-center sm:justify-between">
           <div>
             <h2 className="text-2xl font-bold text-zinc-950">Ready to work with your PDFs?</h2>
-            <p className="mt-2 text-zinc-600">Fileio 2.1 is available now on Android.</p>
+            <p className="mt-2 text-zinc-600">Fileio is available now on iPhone, iPad, and Android.</p>
           </div>
           <div className="flex flex-wrap gap-4 text-sm">
+            <a href={appStoreUrl} target="_blank" rel="noopener noreferrer" className="rounded-lg bg-zinc-950 px-5 py-3 font-semibold text-white transition-colors hover:bg-zinc-800">
+              Download on the App Store
+            </a>
             <a href={googlePlayUrl} target="_blank" rel="noopener noreferrer" className="rounded-lg bg-indigo-600 px-5 py-3 font-semibold text-white transition-colors hover:bg-indigo-500">
               Get it on Google Play
             </a>

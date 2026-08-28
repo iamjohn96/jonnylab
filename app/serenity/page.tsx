@@ -4,11 +4,13 @@ import { createPageMetadata } from "@/lib/siteMetadata";
 
 const googlePlayUrl =
   "https://play.google.com/store/apps/details?id=com.serenity.sleep";
+const appStoreUrl =
+  "https://apps.apple.com/app/id6791929590";
 
 export const metadata = createPageMetadata({
   title: "Serenity — Sleep Sounds and Sound Mixer",
   description:
-    "Serenity is available on Android with 30 sounds, five-channel mixing, saved mixes, and a sleep timer. An iOS version is in development.",
+    "Serenity is available on iPhone, iPad, and Android with a flexible sound mixer, saved mixes, routines, focus sessions, and a sleep timer.",
   path: "/serenity",
 });
 
@@ -41,7 +43,7 @@ const features = [
     icon: "📱",
     title: "Background Playback",
     description:
-      "Keep audio playing while the screen is off or while you are using other Android apps.",
+      "Keep audio playing while the screen is off or while you are using other apps.",
   },
   {
     icon: "🌐",
@@ -84,10 +86,10 @@ export default function SerenityPage() {
         <div className="relative">
           <div className="mb-8 flex flex-wrap items-center justify-between gap-3">
             <span className="inline-flex rounded-full border border-sky-400/30 bg-white/5 px-3 py-1 text-xs font-semibold uppercase tracking-[0.24em] text-sky-200">
-              Live on Android
+              Available on iOS & Android
             </span>
             <span className="rounded-full border border-white/10 bg-white/5 px-3 py-1 text-xs text-sky-100/80">
-              iOS in development
+              Free to download
             </span>
           </div>
 
@@ -98,7 +100,7 @@ export default function SerenityPage() {
                 Sleep sounds and white noise
               </p>
               <h1 className="max-w-2xl text-4xl font-semibold tracking-tight text-white sm:text-5xl lg:text-6xl">
-                Serenity for Android. Calm audio that stays out of the way.
+                Serenity for iPhone, iPad, and Android. Calm audio that stays out of the way.
               </h1>
               <p className="mt-6 max-w-2xl text-lg leading-8 text-sky-100/80">
                 Serenity combines 30 sounds, a 5-channel mixer, presets, and a
@@ -124,14 +126,24 @@ export default function SerenityPage() {
                 ))}
               </div>
 
-              <a
-                href={googlePlayUrl}
-                target="_blank"
-                rel="noopener noreferrer"
-                className="mt-10 inline-flex items-center rounded-xl bg-sky-500 px-5 py-3 text-sm font-semibold text-slate-950 transition-colors hover:bg-sky-400"
-              >
-                Get it on Google Play
-              </a>
+              <div className="mt-10 flex flex-wrap gap-3">
+                <a
+                  href={appStoreUrl}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="inline-flex items-center rounded-xl bg-white px-5 py-3 text-sm font-semibold text-slate-950 transition-colors hover:bg-sky-50"
+                >
+                  Download on the App Store
+                </a>
+                <a
+                  href={googlePlayUrl}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="inline-flex items-center rounded-xl bg-sky-500 px-5 py-3 text-sm font-semibold text-slate-950 transition-colors hover:bg-sky-400"
+                >
+                  Get it on Google Play
+                </a>
+              </div>
             </div>
 
             <div className="rounded-[1.75rem] border border-white/10 bg-white/8 p-6 backdrop-blur-sm">
