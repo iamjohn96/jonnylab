@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import { headers } from "next/headers";
 import { Inter } from "next/font/google";
 import "./globals.css";
 import Nav from "@/components/Nav";
@@ -15,13 +16,16 @@ export const metadata: Metadata = {
     "Simple software and useful AI for real everyday problems, built by JonnyLab.",
 };
 
-export default function RootLayout({
+export default async function RootLayout({
   children,
 }: Readonly<{
   children: React.ReactNode;
 }>) {
+  const documentLanguage =
+    (await headers()).get("x-document-language") === "ko" ? "ko" : "en";
+
   return (
-    <html lang="en" className={inter.variable}>
+    <html lang={documentLanguage} className={inter.variable}>
       <body className="min-h-screen bg-zinc-50 text-zinc-950 font-sans antialiased">
         <Nav />
         {children}
