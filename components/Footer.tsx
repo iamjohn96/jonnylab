@@ -35,6 +35,12 @@ export default function Footer() {
           >
             Deadline Lens Privacy
           </Link>
+          <Link
+            href="/filingcue/privacy"
+            className="transition-colors hover:text-zinc-950"
+          >
+            FilingCue Privacy
+          </Link>
           <a
             href="mailto:support@jonnylab.app"
             className="transition-colors hover:text-zinc-950"
