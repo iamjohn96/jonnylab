@@ -13,6 +13,10 @@ const routes = [
   "/doran",
   "/doran/privacy",
   "/doran/terms",
+  "/deadline-lens",
+  "/deadline-lens/ko",
+  "/deadline-lens/privacy",
+  "/deadline-lens/privacy/ko",
   "/fileio",
   "/fileio/delete-account",
   "/fileio/privacy",
@@ -40,6 +44,30 @@ const localizedRoutes: Record<
   string,
   MetadataRoute.Sitemap[number]["alternates"]
 > = {
+  "/deadline-lens": {
+    languages: {
+      en: `${baseUrl}/deadline-lens`,
+      ko: `${baseUrl}/deadline-lens/ko`,
+    },
+  },
+  "/deadline-lens/ko": {
+    languages: {
+      en: `${baseUrl}/deadline-lens`,
+      ko: `${baseUrl}/deadline-lens/ko`,
+    },
+  },
+  "/deadline-lens/privacy": {
+    languages: {
+      en: `${baseUrl}/deadline-lens/privacy`,
+      ko: `${baseUrl}/deadline-lens/privacy/ko`,
+    },
+  },
+  "/deadline-lens/privacy/ko": {
+    languages: {
+      en: `${baseUrl}/deadline-lens/privacy`,
+      ko: `${baseUrl}/deadline-lens/privacy/ko`,
+    },
+  },
   "/clearspace/privacy": {
     languages: {
       en: `${baseUrl}/clearspace/privacy`,

@@ -35,6 +35,19 @@ type App = {
 
 const apps: App[] = [
   {
+    icon: "D",
+    iconBg: "bg-gradient-to-br from-indigo-600 to-amber-500 text-white font-bold",
+    name: "Deadline Lens",
+    tagline: "Find dates and actions in documents on-device, then save them as deadlines with local reminders",
+    tags: ["Android", "Productivity", "On-Device OCR", "No Ads"],
+    href: "/deadline-lens",
+    external: false,
+    status: "Coming soon",
+    statusGreen: false,
+    ctaLabel: "Explore Deadline Lens",
+    secondaryStatus: "Android release preparation",
+  },
+  {
     iconSrc: "/apps/serenity-icon.png",
     name: "Serenity",
     tagline: "Sleep sounds, white noise, and a five-channel sound mixer",
@@ -146,6 +159,18 @@ const structuredData = {
         position: 1,
         item: {
           "@type": "SoftwareApplication",
+          name: "Deadline Lens",
+          url: "https://jonnylab.app/deadline-lens",
+          operatingSystem: "Android",
+          applicationCategory: "ProductivityApplication",
+          description: "An on-device document deadline organizer for Android with local reminders.",
+        },
+      },
+      {
+        "@type": "ListItem",
+        position: 2,
+        item: {
+          "@type": "SoftwareApplication",
           name: "Serenity",
           url: "https://jonnylab.app/serenity",
           image: "https://jonnylab.app/apps/serenity-icon.png",
@@ -156,7 +181,7 @@ const structuredData = {
       },
       {
         "@type": "ListItem",
-        position: 2,
+        position: 3,
         item: {
           "@type": "SoftwareApplication",
           name: "ClearSpace",
@@ -169,7 +194,7 @@ const structuredData = {
       },
       {
         "@type": "ListItem",
-        position: 3,
+        position: 4,
         item: {
           "@type": "SoftwareApplication",
           name: "Privune",
@@ -181,7 +206,7 @@ const structuredData = {
       },
       {
         "@type": "ListItem",
-        position: 4,
+        position: 5,
         item: {
           "@type": "SoftwareApplication",
           name: "Fileio",
@@ -194,7 +219,7 @@ const structuredData = {
       },
       {
         "@type": "ListItem",
-        position: 5,
+        position: 6,
         item: {
           "@type": "WebApplication",
           name: "SafeUnfollow",

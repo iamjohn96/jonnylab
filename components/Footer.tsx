@@ -4,6 +4,7 @@ import Link from "next/link";
 const productLinks = [
   { href: "/serenity", label: "Serenity" },
   { href: "/clearspace", label: "ClearSpace" },
+  { href: "/deadline-lens", label: "Deadline Lens" },
   { href: "/privune", label: "Privune" },
   { href: "/fileio", label: "Fileio" },
 ];
@@ -28,6 +29,12 @@ export default function Footer() {
               {link.label}
             </Link>
           ))}
+          <Link
+            href="/deadline-lens/privacy"
+            className="transition-colors hover:text-zinc-950"
+          >
+            Deadline Lens Privacy
+          </Link>
           <a
             href="mailto:support@jonnylab.app"
             className="transition-colors hover:text-zinc-950"
