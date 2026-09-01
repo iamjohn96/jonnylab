@@ -201,6 +201,19 @@ export default function ClearspacePage() {
               <span className="inline-flex items-center rounded-lg border border-sky-200 bg-sky-50 px-4 py-3 text-sm font-semibold text-sky-700">
                 iOS: In App Review
               </span>
+              <a
+                href="https://sellwithboost.com"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="inline-flex items-center rounded-lg border border-zinc-200 bg-white px-3 py-2 transition-colors hover:border-zinc-400"
+              >
+                {/* eslint-disable-next-line @next/next/no-img-element */}
+                <img
+                  src="https://sellwithboost.com/badge/listing.svg"
+                  alt="Listed on Sell With boost"
+                  style={{ height: "40px", width: "auto" }}
+                />
+              </a>
             </div>
 
             <div className="mt-8 grid max-w-2xl gap-3 text-sm text-zinc-600 sm:grid-cols-2">
