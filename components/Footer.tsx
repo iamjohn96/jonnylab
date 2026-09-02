@@ -17,7 +17,7 @@ export default function Footer() {
           <Link href="/" aria-label="JonnyLab home" className="inline-block">
             <Image src="/brand/jonnylab-logo-with-words.png" alt="JonnyLab" width={125} height={45} className="h-7 w-auto" />
           </Link>
-          <p className="mt-1">Simple tools for real everyday problems.</p>
+          <p className="mt-1">Solve real everyday problems with useful AI.</p>
         </div>
         <nav aria-label="Footer" className="flex flex-wrap gap-x-5 gap-y-3">
           {productLinks.map((link) => (
@@ -41,6 +41,14 @@ export default function Footer() {
           >
             FilingCue Privacy
           </Link>
+          <a
+            href="https://safeunfollow.com"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="transition-colors hover:text-zinc-950"
+          >
+            SafeUnfollow
+          </a>
           <a
             href="mailto:support@jonnylab.app"
             className="transition-colors hover:text-zinc-950"
