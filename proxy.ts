@@ -4,6 +4,7 @@ import type { NextRequest } from "next/server";
 function isKoreanPage(pathname: string) {
   return (
     pathname.endsWith("/ko") ||
+    pathname.startsWith("/reasontrace/ko") ||
     pathname === "/filingcue/privacy" ||
     pathname === "/doran" ||
     pathname.startsWith("/doran/")
