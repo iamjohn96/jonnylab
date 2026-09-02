@@ -100,13 +100,14 @@ const products: Product[] = [
 const labProjects: Product[] = [
   {
     name: "ReasonTrace",
-    summary: "A private iPhone decision journal for recording why a choice was made, then reviewing how the real outcome compared with the original judgment.",
+    summary: "A private iPhone and iPad decision journal for recording why a choice was made, then reviewing how the real outcome compared with the original judgment.",
     journey: ["Capture the reasoning", "Commit to a decision", "Review the outcome"],
-    tags: ["iOS", "Decision journal", "Local-first"],
-    status: "In development",
+    tags: ["iPhone & iPad", "Decision journal", "Local-first"],
+    status: "Preparing for App Store",
     tone: "neutral",
     icon: "RT",
     iconClass: "from-rose-500 to-indigo-600",
+    href: "/reasontrace",
   },
   {
     name: "FixShot",

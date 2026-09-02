@@ -2,6 +2,7 @@ import Image from "next/image";
 import Link from "next/link";
 
 const productLinks = [
+  { href: "/reasontrace", label: "ReasonTrace" },
   { href: "/serenity", label: "Serenity" },
   { href: "/clearspace", label: "ClearSpace" },
   { href: "/deadline-lens", label: "Deadline Lens" },
@@ -29,6 +30,12 @@ export default function Footer() {
               {link.label}
             </Link>
           ))}
+          <Link
+            href="/reasontrace/privacy"
+            className="transition-colors hover:text-zinc-950"
+          >
+            ReasonTrace Privacy
+          </Link>
           <Link
             href="/deadline-lens/privacy"
             className="transition-colors hover:text-zinc-950"

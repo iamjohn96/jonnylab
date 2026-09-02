@@ -33,6 +33,12 @@ const routes = [
   "/privune/support/ko",
   "/privune/terms",
   "/privune/terms/ko",
+  "/reasontrace",
+  "/reasontrace/ko",
+  "/reasontrace/privacy",
+  "/reasontrace/ko/privacy",
+  "/reasontrace/support",
+  "/reasontrace/ko/support",
   "/serenity",
   "/serenity/privacy",
   "/serenity/privacy/ko",
@@ -45,6 +51,11 @@ const localizedRoutes: Record<
   string,
   MetadataRoute.Sitemap[number]["alternates"]
 > = {
+  ...Object.fromEntries([
+    ["/reasontrace", "/reasontrace/ko"],
+    ["/reasontrace/privacy", "/reasontrace/ko/privacy"],
+    ["/reasontrace/support", "/reasontrace/ko/support"],
+  ].flatMap(([enPath, koPath]) => [[enPath, { languages: { en: `${baseUrl}${enPath}`, ko: `${baseUrl}${koPath}` } }], [koPath, { languages: { en: `${baseUrl}${enPath}`, ko: `${baseUrl}${koPath}` } }]])),
   "/deadline-lens": {
     languages: {
       en: `${baseUrl}/deadline-lens`,
