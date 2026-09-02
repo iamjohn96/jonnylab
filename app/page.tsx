@@ -33,9 +33,9 @@ type Product = {
 const products: Product[] = [
   {
     name: "ClearSpace",
-    summary: "Review screenshots, duplicates, similar photos, and storage-heavy media—then choose what moves to trash.",
-    journey: ["See what takes space", "Choose what can go", "Move it to trash"],
-    tags: ["Android", "Photo utility", "On-device review"],
+    summary: "Turn a growing screenshot backlog into small, focused review sessions—then choose what moves to Android Trash.",
+    journey: ["Open the inbox", "Review oldest first", "Choose what moves"],
+    tags: ["Android", "Screenshot Inbox", "On-device review"],
     status: "Android available · iOS in review",
     tone: "green",
     href: "/clearspace",
@@ -99,6 +99,16 @@ const products: Product[] = [
 
 const labProjects: Product[] = [
   {
+    name: "ReasonTrace",
+    summary: "A private iPhone decision journal for recording why a choice was made, then reviewing how the real outcome compared with the original judgment.",
+    journey: ["Capture the reasoning", "Commit to a decision", "Review the outcome"],
+    tags: ["iOS", "Decision journal", "Local-first"],
+    status: "In development",
+    tone: "neutral",
+    icon: "RT",
+    iconClass: "from-rose-500 to-indigo-600",
+  },
+  {
     name: "FixShot",
     summary: "A Mac troubleshooter that lets people review sensitive details before AI analyzes a sanitized screenshot and suggests cautious next steps.",
     journey: ["Understand the screen", "Assess likely causes", "Try verified steps"],
@@ -110,10 +120,10 @@ const labProjects: Product[] = [
   },
   {
     name: "FilingCue",
-    summary: "A Korean-first Android experiment that turns company disclosures into structured event cards and clear watchlist decisions.",
+    summary: "A Korean-first Android product that explains official company disclosures as fact, meaning, uncertainty, what to check next, and source.",
     journey: ["Understand the filing", "Judge the event", "Track what matters"],
     tags: ["Android", "Korean market", "Internal test"],
-    status: "Internal test",
+    status: "Internal test · infrastructure pilot",
     tone: "neutral",
     icon: "FC",
     iconClass: "from-amber-500 to-orange-600",
@@ -131,7 +141,7 @@ const labProjects: Product[] = [
   },
   {
     name: "Agent Permission Guard",
-    summary: "A local gateway for AI-agent tool calls with deterministic policy decisions, one-time human approval, and a local audit trail.",
+    summary: "A local gateway for AI-agent tool calls with deterministic policy decisions, one-time human approval, a local audit trail, and a native macOS companion preview.",
     journey: ["Inspect the request", "Approve or deny", "Verify the outcome"],
     tags: ["Open source", "MCP gateway", "Developer alpha"],
     status: "Developer alpha",

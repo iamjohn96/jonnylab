@@ -7,57 +7,51 @@ const googlePlayUrl =
   "https://play.google.com/store/apps/details?id=com.jonnylab.clearspace";
 
 export const metadata = createPageMetadata({
-  title: "ClearSpace — Fast Screenshot Cleanup for Android",
+  title: "ClearSpace — Your Screenshot Inbox for Android",
   description:
-    "Review screenshots, duplicates, similar photos, quality issues, and storage-heavy media on your Android device. You decide what gets cleaned.",
+    "Work through old screenshots in focused sessions on your Android device. Pass what you want to keep and choose deletion separately.",
   path: "/clearspace",
 });
 
 const featureGroups = [
   {
-    title: "Screenshots",
+    title: "Screenshot Inbox",
     description:
-      "Start with a focused screenshot scan, then sort and review the images you no longer need.",
+      "Open a dedicated backlog of screenshots instead of starting with a broad photo-library scan.",
     accent: "bg-violet-500",
   },
   {
-    title: "Duplicates",
+    title: "Oldest-first progress",
     description:
-      "Group exact duplicates and near-duplicates using hashing and perceptual comparison.",
-    accent: "bg-emerald-500",
-  },
-  {
-    title: "Similar Photos",
-    description:
-      "Review repeated shots, edited versions, and burst-style photo groups together.",
-    accent: "bg-cyan-500",
-  },
-  {
-    title: "Quality",
-    description:
-      "Find photos that may be blurry, dark, overexposed, noisy, or otherwise low quality.",
+      "Start with older screenshots and use age filters to make a large backlog feel manageable.",
     accent: "bg-amber-500",
   },
   {
-    title: "Chat Media",
+    title: "Focused Review",
     description:
-      "Find visible media from common chat folders such as WhatsApp, Telegram, and KakaoTalk.",
-    accent: "bg-rose-500",
+      "Work through up to 25 of the oldest screenshots in one bounded review session.",
+    accent: "bg-indigo-500",
   },
   {
-    title: "Large Videos",
+    title: "Separate keep and delete",
     description:
-      "Surface large and old videos available through Android media permissions.",
+      "Swiping passes a screenshot. Deletion is a separate, explicit choice rather than a gesture shortcut.",
+    accent: "bg-emerald-500",
+  },
+  {
+    title: "More cleanup tools",
+    description:
+      "Open duplicates, similar photos, quality issues, and large media only when you want them.",
     accent: "bg-sky-500",
   },
 ];
 
 const reviewTools = [
-  "Results tabs by cleanup category",
-  "Side-by-side comparison for duplicate and similar groups",
-  "Swipe review with a Finish action for partial sessions",
-  "Batch selection before moving items to trash",
-  "Five-second undo window before Android confirmation",
+  "Screenshot Inbox is the primary home and review workspace",
+  "Oldest-first sorting and filters for 30 days, 6 months, or 1 year",
+  "Focused Review uses bounded sessions of up to 25 screenshots",
+  "Horizontal swipes pass items; Delete remains an explicit action",
+  "Android Trash confirmation and restore support",
 ];
 
 const privacyPoints = [
@@ -71,18 +65,17 @@ const privacyPoints = [
 
 const freeFeatures = [
   "Unlimited scanning",
-  "Full results review",
-  "Manual review",
+  "Full Screenshot Inbox and results review",
+  "Focused Review for screenshots",
   "Move up to 50 selected items per month to trash",
 ];
 
 const proFeatures = [
   "Unlimited deletion allowance",
-  "Swipe review mode and faster review tools",
-  "Similar and burst groups",
-  "Advanced quality analysis and chat media detection",
-  "Large and old video cleanup",
-  "Home screen widget, advanced filters, and priority support",
+  "Full-library Quick Review tools",
+  "Duplicate and similar-photo groups",
+  "Quality analysis",
+  "Large and old media review",
 ];
 
 function AppPreview() {
@@ -92,15 +85,15 @@ function AppPreview() {
         <div className="mb-4 flex items-center justify-between">
           <div>
             <p className="text-xs font-semibold text-zinc-500">ClearSpace</p>
-            <p className="text-lg font-bold text-zinc-950">Review your photos</p>
+            <p className="text-lg font-bold text-zinc-950">Screenshot Inbox</p>
           </div>
-          <div className="rounded-full bg-emerald-600 px-3 py-1 text-xs font-semibold text-white">
-            2.8 GB
+          <div className="rounded-full bg-violet-600 px-3 py-1 text-xs font-semibold text-white">
+            Oldest first
           </div>
         </div>
 
         <div className="mb-4 grid grid-cols-3 gap-2">
-          {["Screenshots", "Dupes", "Similar"].map((label, index) => (
+          {["30 days", "6 months", "1 year"].map((label, index) => (
             <div
               key={label}
               className="rounded-lg border border-zinc-200 bg-white p-2"
@@ -124,9 +117,9 @@ function AppPreview() {
 
         <div className="space-y-2">
           {[
-            ["Duplicate group", "14 photos", "bg-emerald-500"],
-            ["Blurry photos", "37 found", "bg-amber-500"],
-            ["Chat media", "126 items", "bg-rose-500"],
+            ["Screenshot backlog", "201 total", "bg-violet-500"],
+            ["Focused Review", "25 oldest", "bg-indigo-500"],
+            ["More cleanup tools", "Optional", "bg-sky-500"],
           ].map(([title, detail, color]) => (
             <div
               key={title}
@@ -139,18 +132,15 @@ function AppPreview() {
                 </p>
                 <p className="text-xs text-zinc-500">{detail}</p>
               </div>
-              <span className="text-sm font-semibold text-zinc-400">Review</span>
+              <span className="text-sm font-semibold text-zinc-400">Open</span>
             </div>
           ))}
         </div>
 
         <div className="mt-4 rounded-xl bg-zinc-950 p-3 text-white">
-          <div className="mb-2 flex items-center justify-between text-xs">
-            <span className="font-semibold">Undo available</span>
-            <span className="text-zinc-300">5s</span>
-          </div>
-          <div className="h-1.5 rounded-full bg-zinc-700">
-            <div className="h-1.5 w-2/3 rounded-full bg-emerald-400" />
+          <div className="flex items-center justify-between gap-3 text-xs">
+            <span className="font-semibold">Pass to keep</span>
+            <span className="rounded-md bg-white px-2.5 py-1 font-semibold text-zinc-950">Choose Delete</span>
           </div>
         </div>
       </div>
@@ -168,19 +158,19 @@ export default function ClearspacePage() {
               <Image src="/apps/clearspace-icon.png" alt="ClearSpace app icon" width={48} height={48} priority className="h-12 w-12 shrink-0 rounded-xl" />
               <div>
                 <p className="text-sm font-semibold text-zinc-500">
-                  ClearSpace - Photo Cleaner
+                  ClearSpace · Screenshot Inbox
                 </p>
-            <p className="text-sm text-zinc-500">Android 1.5.3 · Available now</p>
+                <p className="text-sm text-zinc-500">Android · Available now</p>
               </div>
             </div>
 
             <h1 className="max-w-3xl text-4xl font-bold tracking-tight text-zinc-950 sm:text-6xl">
-              Fast screenshot cleanup. You stay in control.
+              Your screenshot backlog, one small session at a time.
             </h1>
             <p className="mt-5 max-w-2xl text-lg leading-8 text-zinc-600">
-              Start with screenshots, then review duplicates, similar photos,
-              quality issues, chat media, and storage-heavy videos. ClearSpace
-              organizes what may be worth cleaning; you choose what moves to trash.
+              Open your Screenshot Inbox, begin with the oldest items, and work
+              through a focused set of up to 25. Pass what you want to keep and
+              choose deletion separately. Nothing is removed automatically.
             </p>
 
             <div className="mt-8 flex flex-wrap gap-3">
@@ -234,10 +224,10 @@ export default function ClearspacePage() {
         <div className="mx-auto max-w-6xl px-6 py-16">
           <div className="mb-8 max-w-2xl">
             <p className="mb-2 text-sm font-semibold text-emerald-700">
-              Cleanup categories
+              Screenshot Inbox
             </p>
             <h2 className="text-3xl font-bold tracking-tight text-zinc-950">
-              Start with screenshots, then review the rest
+              Decisions and progress—not automatic cleanup
             </h2>
           </div>
           <div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
@@ -269,10 +259,10 @@ export default function ClearspacePage() {
               You decide what gets cleaned
             </h2>
             <p className="mt-4 leading-7 text-zinc-600">
-              ClearSpace organizes scan results into focused tabs and gives you
-              manual, batch, comparison, and swipe review tools. When you choose
-              items to remove, the app shows an undo window before starting the
-              Android trash flow.
+              ClearSpace keeps passing and deletion separate. A swipe moves the
+              review forward without selecting an item for deletion. When you
+              deliberately choose items to remove, Android shows its Trash
+              confirmation, and supported items can be restored from Trash.
             </p>
           </div>
           <div className="space-y-3">
@@ -319,7 +309,7 @@ export default function ClearspacePage() {
               ClearSpace Pro
             </p>
             <h2 className="mb-5 text-2xl font-bold">
-              Built for deeper cleanup
+            Built for larger backlogs
             </h2>
             <ul className="space-y-3">
               {proFeatures.map((feature) => (
@@ -340,7 +330,7 @@ export default function ClearspacePage() {
       <section className="border-t border-zinc-200 bg-zinc-50">
         <div className="mx-auto flex max-w-6xl flex-col gap-4 px-6 py-10 text-sm sm:flex-row sm:items-center sm:justify-between">
           <p className="text-zinc-600">
-            Support, privacy, and terms for ClearSpace - Photo Cleaner.
+            Support, privacy, and terms for ClearSpace.
           </p>
           <div className="flex flex-wrap gap-5">
             <a
