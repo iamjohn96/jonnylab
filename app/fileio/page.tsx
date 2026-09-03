@@ -9,11 +9,12 @@ const appStoreUrl =
   "https://apps.apple.com/app/id6766760955";
 const productHuntUrl =
   "https://www.producthunt.com/products/fileio?launch=fileio";
+const releaseNote = "Latest updates are live: Fileio 2.1.0 on iOS and 2.1.2 on Android.";
 
 export const metadata = createPageMetadata({
   title: "Fileio — Private Document & PDF Workspace | JonnyLab",
-  description:
-    "Scan, organize, and privately manage documents and PDFs on iPhone, iPad, and Android with Fileio.",
+    description:
+    "Fileio 2.1 is available on iPhone, iPad, and Android for private document scanning, PDF editing, and local file management.",
   path: "/fileio",
 });
 
@@ -22,7 +23,7 @@ const features = [
     icon: "01",
     title: "Scan or import documents",
     description:
-      "Scan paper documents or choose files and images with Android system pickers.",
+      "Scan paper documents or choose files and images with your device's system picker.",
   },
   {
     icon: "02",
@@ -80,6 +81,9 @@ export default function FileioPage() {
             </p>
             <p className="mt-5 max-w-2xl text-base font-semibold text-indigo-800">
               No account. No ads. No behavioral tracking. Core document work happens on your device.
+            </p>
+            <p className="mt-4 inline-flex rounded-full border border-emerald-200 bg-emerald-50 px-4 py-2 text-sm font-semibold text-emerald-800">
+              {releaseNote}
             </p>
             <div className="mt-8 flex flex-wrap gap-3">
               <a href={appStoreUrl} target="_blank" rel="noopener noreferrer" className="rounded-lg bg-zinc-950 px-5 py-3 text-sm font-semibold text-white transition-colors hover:bg-zinc-800">
@@ -164,6 +168,7 @@ export default function FileioPage() {
           <div>
             <h2 className="text-2xl font-bold text-zinc-950">Ready to work with your PDFs?</h2>
             <p className="mt-2 text-zinc-600">Fileio is available now on iPhone, iPad, and Android.</p>
+            <p className="mt-1 text-sm text-zinc-500">{releaseNote}</p>
           </div>
           <div className="flex flex-wrap gap-4 text-sm">
             <a href={appStoreUrl} target="_blank" rel="noopener noreferrer" className="rounded-lg bg-zinc-950 px-5 py-3 font-semibold text-white transition-colors hover:bg-zinc-800">

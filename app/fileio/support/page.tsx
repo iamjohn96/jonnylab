@@ -4,7 +4,7 @@ import { createPageMetadata } from "@/lib/siteMetadata";
 export const metadata = createPageMetadata({
   title: "Fileio Support | JonnyLab",
   description:
-    "Support and frequently asked questions for Fileio 2.1 PDF tools, Private Vault, and Fileio Pro.",
+    "Support and frequently asked questions for Fileio 2.1 on iOS and Android, including PDF tools, Private Vault, and Fileio Pro.",
   path: "/fileio/support",
 });
 
@@ -19,7 +19,7 @@ const faqs = [
   },
   {
     q: "How do Fileio Pro purchases work?",
-    a: "Google Play processes Android purchases, and RevenueCat is used to show products, confirm Pro access, and restore purchases. Fileio does not send your document contents to RevenueCat.",
+    a: "Apple App Store processes iOS purchases and Google Play processes Android purchases. RevenueCat is used to show products, confirm Pro access, and restore purchases. Fileio does not send your document contents to RevenueCat.",
   },
   {
     q: "How does Private Vault protect files?",
@@ -48,6 +48,7 @@ export default function FileioSupportPage() {
     <main className="mx-auto max-w-2xl px-6 py-20">
       <Link href="/fileio" className="text-sm text-zinc-500 transition-colors hover:text-zinc-950">← Fileio</Link>
       <h1 className="mt-6 mb-12 text-3xl font-bold tracking-tight text-zinc-950">Fileio Support</h1>
+      <p className="-mt-8 mb-12 text-sm font-medium text-emerald-700">The latest Fileio updates are available on iPhone, iPad, and Android.</p>
       <section className="mb-16">
         <h2 className="mb-6 text-xl font-bold text-zinc-950">Frequently Asked Questions</h2>
         <div className="space-y-6">

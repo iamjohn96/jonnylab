@@ -57,7 +57,7 @@ const products: Product[] = [
     summary: "Scan, organize, edit, and privately manage documents and PDFs on iPhone, iPad, and Android.",
     journey: ["Bring files together", "Choose the right tool", "Finish the document"],
     tags: ["iOS", "Android", "PDF workspace"],
-    status: "Available on iOS & Android",
+    status: "Latest updates live on iOS & Android",
     tone: "green",
     href: "/fileio",
     iconSrc: "/apps/fileio-icon.png",
