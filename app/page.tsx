@@ -300,6 +300,15 @@ export default function Home() {
         <div className="mt-10 grid gap-5 md:grid-cols-2 xl:grid-cols-3">{products.map((product) => <ProductCard key={product.name} product={product} />)}</div>
       </section>
 
+      <section className="mx-auto max-w-6xl px-6 pb-20">
+        <div className="rounded-3xl border border-indigo-200 bg-indigo-50 p-7 sm:p-10">
+          <p className="text-sm font-bold text-indigo-700">JonnyLab Automation · Services</p>
+          <h2 className="mt-3 text-3xl font-bold tracking-tight">Less copy-paste. More time for your clients.</h2>
+          <p className="mt-4 max-w-2xl leading-7 text-zinc-600">Fixed-scope n8n workflows for small teams: organize incoming inquiries, record them in Google Sheets, and know what needs your attention.</p>
+          <Link href="/automation" className="mt-6 inline-flex rounded-xl bg-zinc-950 px-5 py-3 text-sm font-semibold text-white hover:bg-indigo-700">Explore automation services →</Link>
+        </div>
+      </section>
+
       <section id="how-we-build" className="bg-zinc-950 text-white">
         <div className="mx-auto max-w-6xl px-6 py-20 sm:py-28">
           <div className="grid gap-12 lg:grid-cols-[0.8fr_1.2fr] lg:items-end">
