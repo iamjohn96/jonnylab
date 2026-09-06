@@ -12,6 +12,13 @@ function isKoreanPage(pathname: string) {
 }
 
 export function proxy(request: NextRequest) {
+  // Preserve previously shared links once the legacy subdomain moves to this project.
+  if (request.nextUrl.hostname === "automation.jonnylab.app") {
+    const destination = new URL("https://jonnylab.app/automation");
+    destination.search = request.nextUrl.search;
+    return NextResponse.redirect(destination, 308);
+  }
+
   const requestHeaders = new Headers(request.headers);
   requestHeaders.set(
     "x-document-language",
