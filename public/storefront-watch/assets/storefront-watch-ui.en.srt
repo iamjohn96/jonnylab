@@ -1,0 +1,15 @@
+1
+00:00:00,000 --> 00:00:08,000
+Follow the Buy link to the checkout entry you expect.
+
+2
+00:00:08,000 --> 00:00:16,000
+An unexpected destination is recorded as an issue.
+
+3
+00:00:16,000 --> 00:00:24,000
+Uncertain outcomes wait for authorized review.
+
+4
+00:00:24,000 --> 00:00:32,000
+Review the recorded result. No purchase is completed.

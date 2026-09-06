@@ -1,0 +1,128 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="Watch a synthetic checkout-entry review workflow: inspect a Buy link route, record its result, and keep uncertain outcomes under human control.">
+    <meta name="robots" content="index,follow">
+    <link rel="canonical" href="https://jonnylab.app/storefront-watch">
+    <meta property="og:type" content="website">
+    <meta property="og:site_name" content="JonnyLab">
+    <meta property="og:title" content="Storefront Watch — Synthetic Checkout Monitoring Demo">
+    <meta property="og:description" content="A controlled demo for inspecting checkout-entry routes and keeping uncertain outcomes under human review.">
+    <meta property="og:url" content="https://jonnylab.app/storefront-watch">
+    <meta property="og:image" content="https://jonnylab.app/storefront-watch/assets/storefront-watch-poster.png">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Storefront Watch — Synthetic Checkout Monitoring Demo">
+    <meta name="twitter:description" content="A controlled demo for inspecting checkout-entry routes and keeping uncertain outcomes under human review.">
+    <meta name="twitter:image" content="https://jonnylab.app/storefront-watch/assets/storefront-watch-poster.png">
+    <title>Storefront Watch — Synthetic Checkout Monitoring Demo | JonnyLab</title>
+    <link rel="stylesheet" href="styles.css">
+    <script type="application/ld+json">
+      {
+        "@context": "https://schema.org",
+        "@type": "WebPage",
+        "name": "Storefront Watch — Synthetic Checkout Monitoring Demo",
+        "url": "https://jonnylab.app/storefront-watch",
+        "description": "A synthetic demonstration of a controlled checkout-entry review workflow. It does not inspect live stores, place purchases, process payments, send customer alerts, or automatically repair a checkout.",
+        "isPartOf": { "@type": "WebSite", "name": "JonnyLab", "url": "https://jonnylab.app" },
+        "about": { "@type": "Thing", "name": "Synthetic checkout monitoring" }
+      }
+    </script>
+  </head>
+  <body>
+    <header class="site-header">
+      <a class="brand" href="#top" aria-label="JonnyLab Storefront Watch home"><span class="brand-mark">S</span><span>JonnyLab <b>/</b> Storefront Watch</span></a>
+      <span class="header-note">Synthetic demo preview</span>
+    </header>
+
+    <main id="top">
+      <section class="hero wrap" aria-labelledby="hero-title">
+        <div class="hero-copy">
+          <p class="eyebrow">Synthetic checkout monitoring with human-controlled recovery</p>
+          <h1 id="hero-title">See when a Buy link stops leading where it should.</h1>
+          <p class="hero-lede">Storefront Watch shows a controlled workflow for recording a checkout-entry issue and its recovery. Every result stays inspectable; uncertain outcomes wait for human review.</p>
+          <div class="actions">
+            <a class="button button-primary" href="mailto:support@jonnylab.app?subject=Storefront%20Watch%20synthetic%20demo%20walkthrough">Request a walkthrough</a>
+            <a class="text-link" href="#how-it-works">How the demo works <span aria-hidden="true">↓</span></a>
+          </div>
+          <p class="disclosure">This preview uses synthetic <code>.test</code> routes and local records. It does not inspect a live store, submit a payment, send customer alerts, or automatically repair a checkout.</p>
+        </div>
+
+        <div class="signal-board" aria-label="Synthetic result example">
+          <div class="board-top"><span>Recorded result</span><span class="status">Healthy</span></div>
+          <div class="board-main">
+            <span class="signal-dot" aria-hidden="true"></span>
+            <div><strong>Checkout entry visible</strong><p>The expected Buy link reached the intended destination.</p></div>
+          </div>
+          <dl class="board-details">
+            <div><dt>Route</dt><dd>store.example.test</dd></div>
+            <div><dt>Expected entry</dt><dd>checkout.example.test</dd></div>
+            <div><dt>Scope</dt><dd>Synthetic fixture</dd></div>
+          </dl>
+          <div class="board-footer"><span>Human review remains required for uncertain results.</span><span>Demo record</span></div>
+        </div>
+      </section>
+
+      <section class="context wrap" aria-labelledby="context-title">
+        <p class="eyebrow">Why this workflow exists</p>
+        <div class="section-split">
+          <h2 id="context-title">A storefront can look live while its buying path is wrong.</h2>
+          <p>An unexpected destination, changed Buy link, or inconclusive browser result can leave a team without a clear answer. A basic uptime signal cannot show whether the intended checkout entry is still reachable.</p>
+        </div>
+      </section>
+
+      <section class="walkthrough wrap" aria-labelledby="walkthrough-title">
+        <div class="walkthrough-copy"><p class="eyebrow">32-second walkthrough</p><h2 id="walkthrough-title">Watch the controlled review flow.</h2><p>Follow one fictional checkout route from a recorded result to the human decision boundary. The footage shows the same synthetic-only workflow described on this page.</p></div>
+        <figure>
+          <video controls preload="metadata" poster="assets/storefront-watch-poster.png">
+            <source src="assets/storefront-watch-ui.webm" type="video/webm">
+            <source src="assets/storefront-watch-ui.mp4" type="video/mp4">
+            <track kind="captions" srclang="en" label="English" src="assets/storefront-watch-ui.en.srt" default>
+            Your browser does not support the walkthrough video.
+          </video>
+          <figcaption>Synthetic walkthrough only. No live store, purchase, payment, customer data, or message delivery is shown.</figcaption>
+        </figure>
+      </section>
+
+      <section id="how-it-works" class="workflow" aria-labelledby="workflow-title">
+        <div class="wrap">
+          <p class="eyebrow">The synthetic workflow</p>
+          <h2 id="workflow-title">A narrow check with a visible decision boundary.</h2>
+          <ol class="steps">
+            <li><span class="step-number">01</span><div><h3>Define a fictional route</h3><p>A synthetic storefront page, Buy link, and expected checkout entry are recorded for the demo.</p></div></li>
+            <li><span class="step-number">02</span><div><h3>Review before provision</h3><p>An operator approves the exact synthetic route. Approval does not mean that a check ran.</p></div></li>
+            <li><span class="step-number">03</span><div><h3>Record the outcome</h3><p>The demo shows healthy, issue, and inconclusive states with an inspectable incident and recovery record.</p></div></li>
+          </ol>
+        </div>
+      </section>
+
+      <section class="boundaries wrap" aria-labelledby="boundaries-title">
+        <div><p class="eyebrow">Current boundary</p><h2 id="boundaries-title">A product preview, not a live monitoring claim.</h2></div>
+        <ul>
+          <li>Fictional <code>.test</code> storefront routes only</li>
+          <li>No purchase or payment processing</li>
+          <li>No customer data or customer messaging</li>
+          <li>No continuous production monitoring or automatic repair</li>
+        </ul>
+      </section>
+
+      <section class="faq wrap" aria-labelledby="faq-title">
+        <p class="eyebrow">FAQ</p>
+        <h2 id="faq-title">What this preview can answer.</h2>
+        <details open><summary>Does the demo place an order or process a payment?</summary><p>No. It uses fictional routes and local records only.</p></details>
+        <details><summary>Does it monitor a live storefront today?</summary><p>No. This page demonstrates the controlled workflow. Live monitoring, verified alert delivery, billing, and production operations are not enabled.</p></details>
+        <details><summary>What does “human-controlled recovery” mean here?</summary><p>An inconclusive outcome is not treated as healthy or silently retried. It is recorded for authorized human review.</p></details>
+      </section>
+
+      <section class="closing wrap" aria-labelledby="closing-title">
+        <p class="eyebrow">Private walkthrough</p>
+        <h2 id="closing-title">See the synthetic workflow before discussing a future pilot.</h2>
+        <p>Request a short walkthrough of the fictional route, review decision, and recorded result flow.</p>
+        <a class="button button-primary" href="mailto:support@jonnylab.app?subject=Storefront%20Watch%20synthetic%20demo%20walkthrough">Request a walkthrough</a>
+      </section>
+    </main>
+
+    <footer class="site-footer wrap"><span>© JonnyLab</span><span>Synthetic Demo Preview · No live monitoring</span></footer>
+  </body>
+</html>
