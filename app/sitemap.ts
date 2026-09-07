@@ -34,6 +34,7 @@ const routes = [
   "/privune/support/ko",
   "/privune/terms",
   "/privune/terms/ko",
+  "/privacy",
   "/reasontrace",
   "/reasontrace/ko",
   "/reasontrace/privacy",

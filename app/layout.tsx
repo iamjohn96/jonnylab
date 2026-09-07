@@ -1,9 +1,11 @@
 import type { Metadata } from "next";
 import { headers } from "next/headers";
 import { Inter } from "next/font/google";
+import Script from "next/script";
 import "./globals.css";
 import Nav from "@/components/Nav";
 import Footer from "@/components/Footer";
+import WebsiteAnalytics from "@/components/WebsiteAnalytics";
 
 const inter = Inter({
   subsets: ["latin"],
@@ -30,6 +32,8 @@ export default async function RootLayout({
         <Nav />
         {children}
         <Footer />
+        <Script src="/analytics.js" strategy="afterInteractive" />
+        <WebsiteAnalytics />
       </body>
     </html>
   );

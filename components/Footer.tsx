@@ -48,6 +48,12 @@ export default function Footer() {
           >
             FilingCue Privacy
           </Link>
+          <Link
+            href="/privacy"
+            className="transition-colors hover:text-zinc-950"
+          >
+            Website Privacy
+          </Link>
           <a
             href="https://safeunfollow.com"
             target="_blank"
