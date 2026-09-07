@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import Image from "next/image";
 import Link from "next/link";
+import SignalSearch from "@/components/SignalSearch";
 
 export const metadata: Metadata = {
   title: "JonnyLab — Solve Real Everyday Problems with Useful AI",
@@ -290,6 +291,8 @@ export default function Home() {
           </div>
         </div>
       </section>
+
+      <SignalSearch />
 
       <section id="products" className="mx-auto max-w-6xl px-6 py-20 sm:py-28">
         <div className="max-w-3xl">
