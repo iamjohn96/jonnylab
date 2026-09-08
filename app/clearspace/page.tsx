@@ -4,7 +4,7 @@ import TrustSection from "@/components/TrustSection";
 import { createPageMetadata } from "@/lib/siteMetadata";
 
 const googlePlayUrl =
-  "https://play.google.com/store/apps/details?id=com.jonnylab.clearspace";
+  "https://play.google.com/store/apps/details?id=com.jonnylab.clearspace&utm_source=jonnylab_website&utm_campaign=clearspace_screenshot_inbox";
 
 export const metadata = createPageMetadata({
   title: "ClearSpace — Your Screenshot Inbox for Android",
