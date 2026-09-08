@@ -27,7 +27,7 @@ export default function AutomationInquiry() {
   async function copy() {
     try {
       await navigator.clipboard.writeText(draft);
-      setStatus("Copied. Paste the draft into an email to support@jonnylab.app, review it, and send when ready.");
+      setStatus("Copied. Paste the draft into an email to jonny@jonnylab.app, review it, and send when ready.");
     } catch {
       setStatus("Copy was unavailable. Select the draft text below and copy it manually.");
     }
@@ -62,10 +62,10 @@ export default function AutomationInquiry() {
             <textarea readOnly value={draft} rows={10} className={field} onFocus={(event) => event.currentTarget.select()} />
           </label>
           <div className="mt-4 flex flex-wrap gap-3">
-            <a href={`mailto:support@jonnylab.app?subject=${encodeURIComponent("Automation project inquiry")}&body=${encodeURIComponent(draft)}`} className="rounded-xl bg-zinc-950 px-5 py-3 text-sm font-semibold text-white hover:bg-indigo-700">Open email draft</a>
+            <a href={`mailto:jonny@jonnylab.app?subject=${encodeURIComponent("Automation project inquiry")}&body=${encodeURIComponent(draft)}`} className="rounded-xl bg-zinc-950 px-5 py-3 text-sm font-semibold text-white hover:bg-indigo-700">Open email draft</a>
             <button type="button" onClick={copy} className="rounded-xl border border-zinc-300 px-5 py-3 text-sm font-semibold hover:bg-zinc-50">Copy inquiry text</button>
           </div>
-          <p className="mt-3 text-sm leading-6 text-zinc-500">Your email app opens when you choose “Open email draft”. Review and send it there. No email app? Copy the text into your webmail and send to support@jonnylab.app.</p>
+          <p className="mt-3 text-sm leading-6 text-zinc-500">Your email app opens when you choose “Open email draft”. Review and send it there. No email app? Copy the text into your webmail and send to jonny@jonnylab.app.</p>
         </div>
       )}
     </div>

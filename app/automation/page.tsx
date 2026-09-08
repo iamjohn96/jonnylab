@@ -9,21 +9,21 @@ export const metadata = createPageMetadata({
 
 const services = [
   {
-    name: "Inquiry intake", label: "Start here", price: "KRW 200,000–400,000", delivery: "4–7 business days",
+    name: "Inquiry Intake Setup", label: "Start here", price: "US$500 · one-time", delivery: "4–7 business days",
     description: "Turn incoming inquiries into organized records, with a notification so you know what needs a reply.",
-    input: "Email inquiries or form submissions",
-    output: "Google Sheets records and a notification",
-    includes: "Input review, field mapping, agreed classification rules, notification setup, and initial testing.",
+    input: "One form with a stable submission ID; up to six agreed fields",
+    output: "One Google Sheets tab and one internal notification destination",
+    includes: "Field mapping, required-field checks, duplicate handling, visible failures, a retry guide, acceptance testing, and handover.",
   },
   {
-    name: "Monitoring brief", label: "When updates matter", price: "KRW 150,000–250,000", delivery: "3–5 business days",
+    name: "Monitoring brief", label: "When updates matter", price: "Custom USD quote", delivery: "3–5 business days",
     description: "Bring relevant updates from agreed sources into one concise, scheduled brief.",
     input: "News feeds and accessible public pages",
     output: "A brief by email or Telegram",
     includes: "Source selection, duplicate filtering, scheduled runs, one delivery channel, and initial testing.",
   },
   {
-    name: "Files and reports", label: "For recurring admin", price: "KRW 100,000–300,000", delivery: "2–5 business days",
+    name: "Files and reports", label: "For recurring admin", price: "Custom USD quote", delivery: "2–5 business days",
     description: "Reduce repetitive renaming, merging, and formatting of files with a consistent output.",
     input: "Agreed CSV, Excel, or PDF formats",
     output: "Organized files, a report, and a completion alert",
@@ -37,7 +37,7 @@ const questions = [
   ["Will it send replies or make decisions for me?", "The starter inquiry workflow records information and notifies you. You review and send the reply. Important decisions, approvals, and exceptions remain with a person."],
   ["What happens when AI or an integration gets something wrong?", "We agree on validation rules, test with representative samples, and define how failures and uncertain results are surfaced. AI summaries and classifications still need appropriate review."],
   ["What is included after delivery?", "One minor adjustment within 7 days of delivery, within the agreed scope. New inputs, integrations, outputs, and ongoing maintenance are quoted separately. This is a custom setup service, not a continuously managed SaaS subscription."],
-  ["How do pricing and payment work?", "The ranges are indicative one-time setup prices in South Korean won (KRW). Final scope, payment currency, payment method, and delivery dates are agreed in writing before work begins. External software subscriptions, hosting, and API usage are not included."],
+  ["How do pricing and payment work?", "Inquiry Intake Setup is US$500 (USD) for one agreed form, up to six fields, one Google Sheets tab, and one internal notification destination. Proposed milestones are US$250 to start and US$250 after acceptance and handover. Final scope, applicable taxes, payment method, and delivery dates are confirmed in writing. External software costs and other workflows are quoted separately."],
   ["How do we work across time zones?", "JonnyLab is based in South Korea and works remotely with English-speaking clients. Start by email; scope, examples, feedback, and handover can be shared asynchronously. Any calls or response expectations are agreed for the project."],
 ];
 
@@ -48,7 +48,7 @@ const structuredData = {
   serviceType: "Custom workflow automation",
   url: "https://jonnylab.app/automation",
   description: "Fixed-scope n8n automation for inquiry intake, monitoring briefs, and recurring file workflows.",
-  provider: { "@type": "Organization", name: "JonnyLab", url: "https://jonnylab.app", email: "support@jonnylab.app" },
+  provider: { "@type": "Organization", name: "JonnyLab", url: "https://jonnylab.app", email: "jonny@jonnylab.app" },
 };
 
 const section = "mx-auto max-w-6xl px-6 py-16 sm:py-24";
@@ -66,7 +66,7 @@ export default function AutomationPage() {
           <p className="mt-6 max-w-xl text-lg leading-8 text-zinc-600">Practical n8n automations for solo consultants and small teams. Turn incoming inquiries, recurring updates, and files into organized records and useful notifications.</p>
           <div className="mt-8 flex flex-wrap gap-3">
             <a href="#contact" className="rounded-xl bg-zinc-950 px-5 py-3.5 text-sm font-semibold text-white hover:bg-indigo-700">Discuss your workflow →</a>
-            <a href="#demo" className="rounded-xl border border-zinc-300 bg-white px-5 py-3.5 text-sm font-semibold hover:border-indigo-600">See a sample workflow</a>
+            <a href="/automation-demo/index.html" className="rounded-xl border border-zinc-300 bg-white px-5 py-3.5 text-sm font-semibold hover:border-indigo-600">Try the intake demo</a>
           </div>
           <p className="mt-5 text-sm leading-6 text-zinc-500">Based in South Korea. Working remotely with English-speaking clients.</p>
           <ul className="mt-7 space-y-3 text-sm text-zinc-700">
@@ -78,7 +78,7 @@ export default function AutomationPage() {
         <div className="rounded-[2rem] border border-zinc-200 bg-white p-6 shadow-[0_20px_70px_rgba(39,39,42,0.07)] sm:p-8">
           <p className={eyebrow}>A focused first project</p>
           <ol className="mt-6 space-y-3">
-            {[["01", "An inquiry arrives", "An agreed email or form is the starting point."], ["02", "The details are organized", "Key fields become a row in Google Sheets."], ["03", "You know what needs attention", "A notification helps you review and follow up."]].map(([number, title, body]) => (
+            {[["01", "An inquiry arrives", "One agreed form is the starting point."], ["02", "The details are organized", "Key fields become a row in Google Sheets."], ["03", "You know what needs attention", "A notification helps you review and follow up."]].map(([number, title, body]) => (
               <li key={number} className="rounded-2xl border border-zinc-200 bg-zinc-50 p-5">
                 <p className="text-xs font-bold text-indigo-600">{number}</p><h2 className="mt-2 font-bold">{title}</h2><p className="mt-2 text-sm leading-6 text-zinc-600">{body}</p>
               </li>
@@ -110,15 +110,15 @@ export default function AutomationPage() {
             </article>
           ))}
         </div>
-        <p className="mt-6 max-w-4xl text-sm leading-7 text-zinc-500">Indicative one-time setup prices in South Korean won (KRW), not a subscription. Final scope, currency, payment method, and dates are agreed before work begins. One minor revision within 7 days of delivery is included. External subscriptions, hosting, API usage, expanded scope, and ongoing maintenance are separate.</p>
+        <p className="mt-6 max-w-4xl text-sm leading-7 text-zinc-500">Inquiry Intake Setup is US$500 (USD), with no recurring JonnyLab fee. Its 4–7 business day estimate starts after scope and access are agreed. US$250 to start; US$250 after acceptance and handover. Final taxes and payment details are confirmed in writing. One minor adjustment within 7 days is included. External software costs, expanded scope, and ongoing maintenance are separate. Other workflows receive a custom USD quote.</p>
       </section>
 
       <section id="demo" className="scroll-mt-24 border-y border-zinc-200 bg-white">
         <div className={section}>
           <p className={eyebrow}>Sample workflow</p><h2 className={heading}>A new inquiry, ready for a human reply.</h2>
-          <p className="mt-4 text-sm text-zinc-500">Illustrative example · sample data, not a client case study or a live integration.</p>
+          <p className="mt-4 text-sm text-zinc-500">Illustrative example · sample data, not a client case study or a live integration.</p><a href="/automation-demo/index.html" className="mt-4 inline-block font-semibold text-indigo-700 hover:underline">Try duplicate handling and failure scenarios →</a>
           <div className="mt-9 grid gap-5 lg:grid-cols-3">
-            <div className="rounded-3xl border border-zinc-200 bg-zinc-50 p-6"><p className={eyebrow}>01 · Incoming email</p><h3 className="mt-5 font-bold">New website project</h3><p className="mt-3 text-sm leading-7 text-zinc-600">“Hi, we need a new website for our studio. Could you send an estimate and let us know what you need from us?”</p><p className="mt-5 text-xs text-zinc-500">From: Alex · Riverbend Studio (sample)</p></div>
+            <div className="rounded-3xl border border-zinc-200 bg-zinc-50 p-6"><p className={eyebrow}>01 · Form submission</p><h3 className="mt-5 font-bold">New website project</h3><p className="mt-3 text-sm leading-7 text-zinc-600">“Hi, we need a new website for our studio. Could you send an estimate and let us know what you need from us?”</p><p className="mt-5 text-xs text-zinc-500">From: Alex · Riverbend Studio (sample)</p></div>
             <div className="rounded-3xl border border-zinc-200 p-6"><p className={eyebrow}>02 · Google Sheets record</p><dl className="mt-5 divide-y divide-zinc-100 text-sm">{[["Contact", "Alex"], ["Company", "Riverbend Studio"], ["Type", "Quote request"], ["Status", "Needs review"]].map(([label, value]) => <div key={label} className="flex flex-wrap justify-between gap-2 py-3"><dt className="text-zinc-500">{label}</dt><dd className="font-medium">{value}</dd></div>)}</dl></div>
             <div className="rounded-3xl border border-indigo-200 bg-indigo-50 p-6"><p className={eyebrow}>03 · Notification</p><h3 className="mt-5 font-bold">An inquiry needs your review.</h3><p className="mt-3 text-sm leading-7 text-zinc-700">Alex from Riverbend Studio requested a quote. The details are in your sheet. Review the request and decide how to reply.</p><p className="mt-5 rounded-xl bg-white p-3 text-sm font-semibold text-indigo-800">No automatic client reply.</p></div>
           </div>
@@ -134,7 +134,7 @@ export default function AutomationPage() {
       <section id="faq" className="scroll-mt-24 border-y border-zinc-200 bg-white"><div className={section}><p className={eyebrow}>Before you get in touch</p><h2 className={heading}>A few useful answers.</h2><div className="mt-8 divide-y divide-zinc-200">{questions.map(([question, answer]) => <details key={question} className="group py-5"><summary className="cursor-pointer text-base font-semibold focus-visible:outline-2 focus-visible:outline-indigo-600">{question}</summary><p className="mt-4 max-w-3xl text-sm leading-7 text-zinc-600">{answer}</p></details>)}</div></div></section>
 
       <section id="contact" className={`${section} scroll-mt-24 grid gap-10 lg:grid-cols-[0.8fr_1.2fr]`}>
-        <div><p className={eyebrow}>Start with a short email</p><h2 className={heading}>What do you repeat every week?</h2><p className="mt-5 leading-8 text-zinc-600">Tell me what comes in, what you do with it, and what you want to happen. We will agree on a realistic first workflow before any work begins.</p><a href="mailto:support@jonnylab.app" className="mt-6 inline-block break-all text-lg font-semibold text-indigo-700 hover:underline">support@jonnylab.app</a><p className="mt-4 text-sm leading-7 text-zinc-500">Remote, email-first collaboration in English. No account or booking required.</p></div>
+        <div><p className={eyebrow}>Start with a short email</p><h2 className={heading}>What do you repeat every week?</h2><p className="mt-5 leading-8 text-zinc-600">Tell me what comes in, what you do with it, and what you want to happen. We will agree on a realistic first workflow before any work begins.</p><a href="mailto:jonny@jonnylab.app" className="mt-6 inline-block break-all text-lg font-semibold text-indigo-700 hover:underline">jonny@jonnylab.app</a><p className="mt-4 text-sm leading-7 text-zinc-500">Remote, email-first collaboration in English. No account or booking required.</p></div>
         <AutomationInquiry />
       </section>
     </main>
