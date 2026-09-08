@@ -1,36 +1,17 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# JonnyLab
 
-## Getting Started
+Product website and public automation demo, exported from Next.js as static HTML, CSS, JavaScript and assets. Vercel is not required.
 
-First, run the development server:
+## Development
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
-```
+Run npm ci, then npm run dev.
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+## Build and publish
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+Run npm run build. Upload the **contents of out/** to the JonnyLab Cloudflare Pages direct-upload project. A ZIP must contain these files at its root. Never upload source files or credentials.
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+There is no production Next.js server. Each release requires a fresh build and explicit upload. Direct-upload projects have no built-in Git deployment; Wrangler or separately configured CI can automate uploads later.
 
-## Learn More
+English and Korean route groups preserve URLs and HTML languages. Images are static files. Path redirects and security headers are in public/_redirects and public/_headers; hostname redirects belong in Cloudflare zone rules.
 
-To learn more about Next.js, take a look at the following resources:
-
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
-
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
-
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+Before changing the domain, verify the Pages deployment, product and policy routes, mobile layout, demos and inquiry draft. Preserve email DNS and unrelated API/Workers records.

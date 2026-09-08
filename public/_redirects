@@ -1,0 +1,3 @@
+# Existing standalone demos use relative asset URLs. Keep their directory URL.
+/storefront-watch /storefront-watch/ 308
+/automation-demo /automation-demo/ 308
