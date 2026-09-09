@@ -4,12 +4,12 @@ import Link from "next/link";
 import SignalSearch from "@/components/SignalSearch";
 
 export const metadata: Metadata = {
-  title: "JonnyLab — Solve Real Everyday Problems with Useful AI",
-  description: "JonnyLab builds simple, useful, private, and human-controlled products that help people understand, decide, and act.",
+  title: "JonnyLab — Small Apps for Everyday Tasks",
+  description: "Review screenshots with ClearSpace, work with PDFs in Fileio, and mix sleep sounds in Serenity. Independent software from JonnyLab.",
   alternates: { canonical: "https://jonnylab.app" },
   openGraph: {
-    title: "JonnyLab — Solve Real Everyday Problems with Useful AI",
-    description: "Focused products for real problems. Understand, decide, and act—with people in control.",
+    title: "JonnyLab — Small Apps for Everyday Tasks",
+    description: "Screenshot review, PDF tools, and sleep sounds. Explore focused apps from JonnyLab.",
     url: "https://jonnylab.app",
     siteName: "JonnyLab",
     type: "website",
@@ -182,7 +182,7 @@ const structuredData = {
       url: "https://jonnylab.app",
       logo: "https://jonnylab.app/brand/jonnylab-logo.png",
       email: "support@jonnylab.app",
-      slogan: "Solve real everyday problems with useful AI.",
+      slogan: "Small apps for everyday tasks.",
     },
     {
       "@type": "ItemList",
@@ -258,41 +258,41 @@ export default function Home() {
           <div className="absolute -right-40 -top-48 h-[34rem] w-[34rem] rounded-full bg-indigo-100/60 blur-3xl" />
           <div className="absolute -left-52 bottom-[-18rem] h-[30rem] w-[30rem] rounded-full bg-amber-100/60 blur-3xl" />
         </div>
-        <div className="relative mx-auto grid max-w-6xl gap-14 px-6 py-20 sm:py-28 lg:grid-cols-[1.15fr_0.85fr] lg:items-center lg:py-36">
+        <div className="relative mx-auto grid max-w-6xl gap-14 px-6 py-16 sm:py-20 lg:grid-cols-[1.15fr_0.85fr] lg:items-center lg:py-24">
           <div>
             <p className="text-sm font-bold uppercase tracking-[0.2em] text-indigo-700">JonnyLab · Seoul</p>
             <h1 className="mt-6 max-w-4xl text-5xl font-bold leading-[0.98] tracking-[-0.045em] text-zinc-950 sm:text-7xl lg:text-[5.25rem]">
-              Solve real everyday problems <span className="text-indigo-600">with useful AI.</span>
+              Small apps for <span className="text-indigo-600">everyday tasks.</span>
             </h1>
-            <p className="mt-7 max-w-2xl text-lg leading-8 text-zinc-600 sm:text-xl">We build focused products that turn confusing or tedious moments into clear, useful next actions. AI is a tool—not the destination.</p>
+            <p className="mt-7 max-w-2xl text-lg leading-8 text-zinc-600 sm:text-xl">Review old screenshots, work with PDFs, and make room for sleep or focus. JonnyLab is an independent software studio building tools you can use in everyday life.</p>
             <div className="mt-9 flex flex-wrap gap-3">
               <a href="#products" className="inline-flex items-center gap-2 rounded-xl bg-zinc-950 px-5 py-3.5 text-sm font-semibold text-white transition hover:bg-indigo-700">Explore products <ArrowIcon /></a>
               <a href="#how-we-build" className="rounded-xl border border-zinc-300 bg-white px-5 py-3.5 text-sm font-semibold text-zinc-800 transition hover:border-zinc-500">How we build</a>
             </div>
           </div>
 
-          <div className="rounded-[2rem] border border-zinc-200 bg-white/85 p-5 shadow-[0_28px_80px_rgba(39,39,42,0.10)] backdrop-blur sm:p-7">
-            <p className="px-2 text-xs font-bold uppercase tracking-[0.18em] text-zinc-500">The product loop</p>
-            <div className="mt-5 space-y-3">
+          <div className="rounded-[2rem] border border-zinc-200 bg-white/90 p-6 shadow-[0_20px_60px_rgba(39,39,42,0.07)] sm:p-8">
+            <h2 className="text-xs font-bold uppercase tracking-[0.18em] text-zinc-500">What do you need to do?</h2>
+            <div className="mt-3 divide-y divide-zinc-200">
               {[
-                ["01", "Understand", "Make the situation clear"],
-                ["02", "Decide", "Structure facts, uncertainty, and options"],
-                ["03", "Act", "Make the next step easier to complete"],
-              ].map(([number, title, copy], index) => (
-                <div key={title} className={`rounded-2xl border p-5 ${index === 2 ? "border-indigo-200 bg-indigo-600 text-white" : "border-zinc-200 bg-white"}`}>
-                  <div className="flex items-center gap-4">
-                    <span className={`text-xs font-bold ${index === 2 ? "text-indigo-200" : "text-indigo-600"}`}>{number}</span>
-                    <div><p className="text-lg font-bold">{title}</p><p className={`mt-1 text-sm ${index === 2 ? "text-indigo-100" : "text-zinc-500"}`}>{copy}</p></div>
+                { name: "ClearSpace", task: "Review your screenshot backlog", detail: "Start with the oldest. Choose what to delete.", href: "/clearspace", icon: "/apps/clearspace-icon.png" },
+                { name: "Fileio", task: "Finish a document or PDF", detail: "Scan, organize, edit, and share your files.", href: "/fileio", icon: "/apps/fileio-icon.png" },
+                { name: "Serenity", task: "Find your sound for sleep or focus", detail: "Mix calming sounds for the moment.", href: "/serenity", icon: "/apps/serenity-icon.png" },
+              ].map((product) => (
+                <Link key={product.name} href={product.href} className="group flex items-start gap-4 rounded-lg py-6 focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-indigo-600">
+                  <Image src={product.icon} alt="" width={44} height={44} className="h-11 w-11 shrink-0 rounded-xl" />
+                  <div className="min-w-0 flex-1">
+                    <p className="text-xs font-semibold text-indigo-700">{product.name}</p>
+                    <h3 className="mt-1 font-bold leading-6 text-zinc-950 group-hover:text-indigo-700">{product.task}</h3>
+                    <p className="mt-1 text-sm leading-6 text-zinc-600">{product.detail}</p>
                   </div>
-                </div>
+                  <span className="mt-5 shrink-0 text-indigo-700"><ArrowIcon /></span>
+                </Link>
               ))}
             </div>
-            <p className="mt-5 px-2 text-sm leading-6 text-zinc-500">If AI does not materially improve understanding, judgment, or action, we use simpler software.</p>
           </div>
         </div>
       </section>
-
-      <SignalSearch />
 
       <section id="products" className="mx-auto max-w-6xl px-6 py-20 sm:py-28">
         <div className="max-w-3xl">
@@ -367,6 +367,8 @@ export default function Home() {
         </div>
         <div className="mt-10 grid gap-5 md:grid-cols-2">{labProjects.map((product) => <ProductCard key={product.name} product={product} />)}</div>
       </section>
+
+      <SignalSearch />
 
       <section className="border-y border-zinc-200 bg-white">
         <div className="mx-auto grid max-w-6xl gap-12 px-6 py-20 sm:py-28 lg:grid-cols-[0.75fr_1.25fr]">
