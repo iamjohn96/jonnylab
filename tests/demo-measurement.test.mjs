@@ -1,0 +1,18 @@
+import test from 'node:test';
+import assert from 'node:assert/strict';
+import {readFileSync} from 'node:fs';
+import vm from 'node:vm';
+const source=readFileSync(new URL('../public/automation-demo/measurement.js',import.meta.url),'utf8');
+function setup(search='',choice=null){
+ const nodes=new Map(),scripts=[],storage=new Map(); let reloads=0;
+ if(choice)storage.set('jonnylab_demo_analytics_v1',JSON.stringify(choice));
+ const node=id=>{if(!nodes.has(id))nodes.set(id,{hidden:false,textContent:'',listeners:{},addEventListener(k,fn){this.listeners[k]=fn;}});return nodes.get(id)};
+ const context={Set,Date,JSON,URLSearchParams,location:{search,hostname:'jonnylab.app',reload(){reloads++;}},localStorage:{getItem:k=>storage.get(k)||null,setItem:(k,v)=>storage.set(k,v)},document:{getElementById:node,createElement:()=>({}),head:{appendChild:s=>scripts.push(s)},querySelectorAll:()=>[node('contact')]}};context.window=context;
+ vm.runInNewContext(source,context);
+ return {context,node,scripts,storage,get reloads(){return reloads},click:id=>node(id).listeners.click(),events:()=>Array.from(context.dataLayer||[],x=>Array.from(x)).filter(x=>x[0]==='event')};
+}
+test('no tag or event before consent; decline still does not load tag',()=>{let s=setup();s.context.JonnyDemoMetrics.track('demo_view');assert.equal(s.scripts.length,0);assert.equal(s.events().length,0);s.click('measurement-deny');assert.equal(s.scripts.length,0)});
+test('allow starts one tag and one view, no arbitrary URL or form data accepted',()=>{let s=setup('?email=private@example.com&utm_source=private@example.com&utm_campaign=secret&utm_content=secret');s.click('measurement-allow');s.click('measurement-allow');s.context.JonnyDemoMetrics.track('demo_sample_success',{email:'private@example.com'});s.context.JonnyDemoMetrics.track('demo_sample_success');s.context.JonnyDemoMetrics.track('arbitrary_event');s.context.JonnyDemoMetrics.track('demo_sample_issue','private@example.com');assert.equal(s.scripts.length,1);assert.deepEqual(s.events().map(x=>x[1]),['demo_view','demo_sample_success']);assert.doesNotMatch(JSON.stringify(s.context.dataLayer),/private@example|secret/)});
+test('only approved outcome categories; contact click is distinct from sent email',()=>{let s=setup();s.click('measurement-allow');s.context.JonnyDemoMetrics.track('demo_sample_issue','invalid');s.context.JonnyDemoMetrics.track('demo_sample_issue','invalid');s.click('contact');assert.deepEqual(s.events().map(x=>x[1]),['demo_view','demo_sample_issue','demo_contact_click']);assert.equal(s.events()[1][2].issue_type,'invalid')});
+test('withdrawal disables tracking and reloads; persisted decline starts without tag',()=>{let s=setup();s.click('measurement-allow');s.click('measurement-deny');s.context.JonnyDemoMetrics.track('demo_contact_click');assert.equal(s.reloads,1);assert.equal(s.context['ga-disable-G-NMTD1VH8DZ'],true);assert.equal(s.events().length,1);let next=setup('',JSON.parse(s.storage.get('jonnylab_demo_analytics_v1')));assert.equal(next.scripts.length,0)});
+test('expired consent does not start tracking; QA and approved campaign values are explicit',()=>{let s=setup('',{choice:'allow',expires:1});assert.equal(s.scripts.length,0);let q=setup('?analytics_test=1');q.click('measurement-allow');assert.equal(q.events()[0][2].debug_mode,true);assert.equal(q.events()[0][2].campaign_source,'qa');let live=setup('?utm_source=x&utm_medium=social&utm_campaign=jonnylab_14d_20260910&utm_content=intake_demo_d02');live.click('measurement-allow');assert.equal(live.events()[0][2].campaign_name,'jonnylab_14d_20260910');assert.equal(live.events()[0][2].campaign_content,'intake_demo_d02')});

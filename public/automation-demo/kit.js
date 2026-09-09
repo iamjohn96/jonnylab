@@ -33,6 +33,8 @@ byId('intake-form').addEventListener('submit', event => {
   byId('status').textContent = statuses[result.status] + (result.fields ? ' Check: ' + result.fields.map(k=>labels[k]).join(', ') : '');
   byId('status').dataset.state = result.status;
   if(result.fields){ for(const key of result.fields) byId(key).setAttribute('aria-invalid','true'); byId(result.fields[0]).focus(); }
+  if (result.status === 'recorded' || result.status === 'recovered') window.JonnyDemoMetrics?.track('demo_sample_success');
+  else window.JonnyDemoMetrics?.track('demo_sample_issue', result.status);
   render();
 });
 document.querySelectorAll('[data-example]').forEach(button => button.addEventListener('click', () => {

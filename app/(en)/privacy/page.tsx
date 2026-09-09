@@ -20,7 +20,7 @@ export default function WebsitePrivacyPage() {
         <h1 className="mt-3 text-4xl font-bold tracking-tight text-zinc-950">
           Website Privacy Notice
         </h1>
-        <p className="mt-4 text-sm text-zinc-500">Last updated: September 7, 2026</p>
+        <p className="mt-4 text-sm text-zinc-500">Last updated: September 9, 2026</p>
         <p className="mt-6 leading-7 text-zinc-600">
           This notice applies to the public JonnyLab website, including
           {" "}<strong>jonnylab.app/storefront-watch</strong>. It does not change the
@@ -41,10 +41,34 @@ export default function WebsitePrivacyPage() {
         <section>
           <h2 className="mb-3 text-xl font-semibold text-zinc-950">Privacy-oriented configuration</h2>
           <p className="leading-7">
-            The site&apos;s Google tag is configured with analytics and advertising storage denied,
+            Outside the interactive automation demo, the site&apos;s Google tag is configured with analytics and advertising storage denied,
             Google advertising signals disabled, and no advertising personalization. We do not
             send names, email addresses, account IDs, document contents, payment information, or
             other information that directly identifies you to Google Analytics.
+          </p>
+        </section>
+
+        <section>
+          <h2 className="mb-3 text-xl font-semibold text-zinc-950">Optional automation demo analytics</h2>
+          <p className="leading-7">
+            On the interactive automation demo, Google Analytics loads only after you choose
+            Allow analytics. We measure demo visits, successful sample processing, a small set of
+            sample outcome categories, and clicks on the email contact link. These clicks do not
+            tell us whether an email was sent. We do not send the inquiry ID, name, email,
+            request text, CSV contents, or raw errors entered or displayed in the demo.
+            We send a fixed page address and only predefined campaign labels, not arbitrary
+            URL query values or referring page addresses. Google also receives standard
+            browser/device and connection information when analytics runs.
+          </p>
+          <p className="mt-3 leading-7">
+            Analytics cookies are enabled only for visitors who allow this optional measurement;
+            advertising storage and personalization remain disabled. The demo remembers your
+            choice locally for up to 90 days. You can change it using Privacy choices on the demo.
+            Turning analytics off reloads the demo and clears the current sample session. It stops
+            future demo analytics but does not erase information already sent to Google. Previously
+            created cookies can be removed using your browser&apos;s site-data settings. Declining
+            analytics does not restrict the demo. This does not add analytics to ClearSpace or any
+            other JonnyLab mobile app.
           </p>
         </section>
 
