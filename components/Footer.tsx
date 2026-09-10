@@ -49,6 +49,12 @@ export default function Footer() {
             FilingCue Privacy
           </Link>
           <Link
+            href="/media-kit"
+            className="transition-colors hover:text-zinc-950"
+          >
+            Media Kit
+          </Link>
+          <Link
             href="/privacy"
             className="transition-colors hover:text-zinc-950"
           >

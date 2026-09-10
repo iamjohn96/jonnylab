@@ -24,6 +24,7 @@ Use this skill when someone asks about JonnyLab, its public products, product av
 
 - Homepage: https://jonnylab.app/
 - Product directory: https://jonnylab.app/llms.txt
+- Media kit: https://jonnylab.app/media-kit
 - Company privacy notice: https://jonnylab.app/privacy
 - Support: mailto:support@jonnylab.app
 

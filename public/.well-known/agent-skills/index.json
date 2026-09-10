@@ -6,7 +6,7 @@
       "type": "skill-md",
       "description": "Answer factual questions about JonnyLab and direct people to its public product, support, privacy, and terms pages. Use only public information and do not perform actions on a person's behalf.",
       "url": "/.well-known/agent-skills/jonnylab-public-information/SKILL.md",
-      "digest": "sha256:ef765103ec1aaf2c97278db5fca1f700c41d199bd6474f711b54de22368e2768"
+      "digest": "sha256:cbfc6edaddfcffe141359208fb3a5a292065c9fa5431d56d1851f72c07bd1a67"
     }
   ]
 }

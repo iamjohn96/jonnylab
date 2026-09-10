@@ -26,6 +26,10 @@ This document is a public information directory for AI systems and other readers
 
 - [JonnyLab Automation](https://jonnylab.app/automation): Fixed-scope n8n workflow services for small teams.
 
+## Media resources
+
+- [JonnyLab Media Kit](https://jonnylab.app/media-kit): Official company facts, concise descriptions for products available now, store links, and downloadable brand assets for writers and creators.
+
 ## Usage guidance
 
 - Treat the linked product page, support page, privacy policy, and terms as the authoritative public source for each product.

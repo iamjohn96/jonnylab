@@ -28,6 +28,7 @@ const routes = [
   "/fileio/terms",
   "/fileio/terms/ko",
   "/filingcue/privacy",
+  "/media-kit",
   "/privune",
   "/privune/privacy",
   "/privune/privacy/ko",
