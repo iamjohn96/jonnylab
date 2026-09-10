@@ -6,7 +6,7 @@
   Cache-Control: public, max-age=3600
   Access-Control-Allow-Origin: *
 
-/.well-known/agent-skills/*
+/.well-known/agent-skills/jonnylab-public-information/*
   Content-Type: text/markdown; charset=utf-8
   Cache-Control: public, max-age=3600
   Access-Control-Allow-Origin: *
