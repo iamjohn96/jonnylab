@@ -1,3 +1,21 @@
+/
+  Link: </llms.txt>; rel="service-doc"; type="text/markdown", </.well-known/agent-skills/index.json>; rel="alternate"; type="application/json"; title="JonnyLab agent skills"
+
+/.well-known/agent-skills/index.json
+  Content-Type: application/json; charset=utf-8
+  Cache-Control: public, max-age=3600
+  Access-Control-Allow-Origin: *
+
+/.well-known/agent-skills/*
+  Content-Type: text/markdown; charset=utf-8
+  Cache-Control: public, max-age=3600
+  Access-Control-Allow-Origin: *
+
+/llms.txt
+  Content-Type: text/markdown; charset=utf-8
+  Cache-Control: public, max-age=3600
+  Access-Control-Allow-Origin: *
+
 /storefront-watch*
   X-Content-Type-Options: nosniff
   X-Frame-Options: DENY

@@ -1,0 +1,36 @@
+# JonnyLab
+
+> JonnyLab is an independent software studio building simple, useful, private, and human-controlled products for real everyday problems.
+
+This document is a public information directory for AI systems and other readers. It does not provide an API, account access, purchase capability, customer support access, or authority to act for a person.
+
+## Company
+
+- Website: https://jonnylab.app/
+- Support: mailto:support@jonnylab.app
+- Product approach: Understand -> Decide -> Act. When actions have meaningful consequences: Confirm -> Verify -> Recover.
+- Principles: Simple, Useful, Private, Human-controlled.
+
+## Public products
+
+- [ClearSpace](https://jonnylab.app/clearspace): Android screenshot and media review tool. Review suggestions before moving selected items to Android Trash. [Privacy policy](https://jonnylab.app/clearspace/privacy) · [Support](https://jonnylab.app/clearspace/support)
+- [Deadline Lens](https://jonnylab.app/deadline-lens): Android productivity app that finds dates and related actions in document images on-device, then lets people review and save local deadline reminders. Preparing for release. [Privacy policy](https://jonnylab.app/deadline-lens/privacy)
+- [Fileio](https://jonnylab.app/fileio): Document and PDF workspace for iPhone, iPad, and Android. [Privacy policy](https://jonnylab.app/fileio/privacy) · [Support](https://jonnylab.app/fileio/support)
+- [Serenity](https://jonnylab.app/serenity): Sleep-sound and white-noise mixer for iPhone, iPad, and Android. [Privacy policy](https://jonnylab.app/serenity/privacy) · [Support](https://jonnylab.app/serenity/support)
+- [Privune](https://jonnylab.app/privune): On-device photo redaction tool for reviewing sensitive details before creating a sanitized copy. [Privacy policy](https://jonnylab.app/privune/privacy) · [Support](https://jonnylab.app/privune/support)
+- [ReasonTrace](https://jonnylab.app/reasontrace): Private iPhone and iPad decision journal. Preparing for App Store.
+- [Doran](https://jonnylab.app/doran): Korean-first Android companion for safely reviewing suspicious messages and identifying the next step. Experimental MVP.
+- [SafeUnfollow](https://safeunfollow.com/): Web app for understanding an Instagram Data ZIP without Instagram login, OAuth, or a direct account connection.
+
+## Public services
+
+- [JonnyLab Automation](https://jonnylab.app/automation): Fixed-scope n8n workflow services for small teams.
+
+## Usage guidance
+
+- Treat the linked product page, support page, privacy policy, and terms as the authoritative public source for each product.
+- Do not infer store availability, pricing, permissions, data handling, or feature support beyond what the linked page states.
+- Do not submit forms, contact support, make purchases, or access third-party accounts without the person's explicit approval.
+- JonnyLab products may involve sensitive data. Follow each product's privacy policy and keep the user in control of consequential actions.
+
+Last updated: 2026-09-10
