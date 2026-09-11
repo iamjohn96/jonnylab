@@ -13,14 +13,14 @@ const productLinks = [
 export default function Footer() {
   return (
     <footer className="border-t border-zinc-200 bg-white">
-      <div className="mx-auto flex max-w-6xl flex-col gap-5 px-6 py-8 text-sm text-zinc-600 sm:flex-row sm:items-center sm:justify-between">
+      <div className="mx-auto grid max-w-[1248px] gap-8 px-5 py-12 text-xs leading-6 text-zinc-600 sm:px-6 lg:grid-cols-[1fr_2fr]">
         <div>
           <Link href="/" aria-label="JonnyLab home" className="inline-block">
             <Image src="/brand/jonnylab-logo-with-words.png" alt="JonnyLab" width={125} height={45} className="h-7 w-auto" />
           </Link>
           <p className="mt-1">Solve real everyday problems with useful AI.</p>
         </div>
-        <nav aria-label="Footer" className="flex flex-wrap gap-x-5 gap-y-3">
+        <nav aria-label="Footer" className="flex flex-wrap gap-x-5 gap-y-2">
           {productLinks.map((link) => (
             <Link
               key={link.href}

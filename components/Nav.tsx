@@ -4,7 +4,7 @@ import Link from "next/link";
 export default function Nav() {
   return (
     <nav className="sticky top-0 z-50 border-b border-zinc-200 bg-white/85 backdrop-blur-sm">
-      <div className="mx-auto flex max-w-6xl items-center justify-between px-6 py-4">
+      <div className="mx-auto flex max-w-[1248px] items-center justify-between px-5 py-4 sm:px-6">
         <Link
           href="/"
           aria-label="JonnyLab home"

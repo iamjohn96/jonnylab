@@ -2,6 +2,8 @@ import type { Metadata } from "next";
 import Image from "next/image";
 import Link from "next/link";
 import SignalSearch from "@/components/SignalSearch";
+import MarketingScene from "@/components/MarketingScene";
+import styles from "@/components/marketing.module.css";
 
 export const metadata: Metadata = {
   title: "JonnyLab — Small Apps for Everyday Tasks",
@@ -210,192 +212,173 @@ function ArrowIcon() {
   );
 }
 
-function ProductCard({ product }: { product: Product }) {
-  const statusClass = product.tone === "green"
-    ? "bg-emerald-50 text-emerald-700 ring-emerald-600/15"
-    : product.tone === "blue"
-      ? "bg-indigo-50 text-indigo-700 ring-indigo-600/15"
-      : "bg-zinc-100 text-zinc-600 ring-zinc-600/10";
-
+function ProductCard({ product, illustrated = false }: { product: Product; illustrated?: boolean }) {
   const content = (
-    <article className="group flex h-full flex-col rounded-3xl border border-zinc-200 bg-white p-6 shadow-[0_1px_2px_rgba(0,0,0,0.03)] transition duration-300 hover:-translate-y-1 hover:border-indigo-200 hover:shadow-[0_18px_50px_rgba(39,39,42,0.08)] sm:p-7">
-      <div className="flex items-start justify-between gap-4">
+    <article className={styles.productCard}>
+      {illustrated && <MarketingScene kind={product.name as Parameters<typeof MarketingScene>[0]["kind"]} />}
+      <div className={styles.productBody}>
+      <div className={styles.productIdentity}>
         {product.iconSrc ? (
-          <Image src={product.iconSrc} alt="" width={52} height={52} className="h-13 w-13 rounded-2xl" />
+          <Image src={product.iconSrc} alt="" width={38} height={38} />
         ) : (
-          <div className={`flex h-13 w-13 items-center justify-center rounded-2xl bg-gradient-to-br text-sm font-bold tracking-tight text-white ${product.iconClass}`}>
+          <div className={styles.letterIcon}>
             {product.icon}
           </div>
         )}
-        <span className={`rounded-full px-3 py-1.5 text-right text-xs font-semibold ring-1 ring-inset ${statusClass}`}>{product.status}</span>
+        <h3>{product.name}</h3>
       </div>
-      <h3 className="mt-6 text-xl font-bold tracking-tight text-zinc-950">{product.name}</h3>
-      <p className="mt-2 flex-1 text-sm leading-6 text-zinc-600">{product.summary}</p>
-      <div className="mt-6 grid grid-cols-[1fr_auto_1fr_auto_1fr] items-center gap-2 border-y border-zinc-100 py-4 text-center text-[11px] font-medium leading-4 text-zinc-600">
+      <p className={styles.status} data-tone={product.tone}>{product.status}</p>
+      <p className={styles.productSummary}>{product.summary}</p>
+      <div className={styles.journey}>
         <span>{product.journey[0]}</span><span className="text-zinc-300">→</span>
         <span>{product.journey[1]}</span><span className="text-zinc-300">→</span>
         <span>{product.journey[2]}</span>
       </div>
-      <div className="mt-5 flex flex-wrap items-center gap-2">
-        {product.tags.map((tag) => <span key={tag} className="rounded-md bg-zinc-100 px-2 py-1 text-[11px] font-medium text-zinc-600">{tag}</span>)}
-        {product.href ? <span className="ml-auto inline-flex items-center gap-1 text-xs font-semibold text-indigo-700">Explore <ArrowIcon /></span> : null}
+      <div className={styles.tags}>
+        {product.tags.map((tag) => <span key={tag}>{tag}</span>)}
+        {product.href ? <span className={styles.explore}>Explore <ArrowIcon /></span> : null}
+      </div>
       </div>
     </article>
   );
 
   if (!product.href) return content;
-  if (product.external) return <a href={product.href} target="_blank" rel="noopener noreferrer" className="block h-full">{content}</a>;
-  return <Link href={product.href} className="block h-full">{content}</Link>;
+  if (product.external) return <a href={product.href} aria-label={`Explore ${product.name}`} target="_blank" rel="noopener noreferrer" className="block h-full">{content}</a>;
+  return <Link href={product.href} aria-label={`Explore ${product.name}`} className="block h-full">{content}</Link>;
 }
 
 export default function Home() {
   return (
-    <main className="overflow-hidden bg-[#fafafa]">
+    <main className={styles.page}>
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(structuredData) }} />
 
-      <section id="vision" className="relative border-b border-zinc-200 bg-white">
-        <div className="pointer-events-none absolute inset-0 overflow-hidden" aria-hidden="true">
-          <div className="absolute -right-40 -top-48 h-[34rem] w-[34rem] rounded-full bg-indigo-100/60 blur-3xl" />
-          <div className="absolute -left-52 bottom-[-18rem] h-[30rem] w-[30rem] rounded-full bg-amber-100/60 blur-3xl" />
-        </div>
-        <div className="relative mx-auto grid max-w-6xl gap-14 px-6 py-16 sm:py-20 lg:grid-cols-[1.15fr_0.85fr] lg:items-center lg:py-24">
+      <section id="vision" className={`${styles.shell} ${styles.hero}`}>
           <div>
-            <p className="text-sm font-bold uppercase tracking-[0.2em] text-indigo-700">JonnyLab · Seoul</p>
-            <h1 className="mt-6 max-w-4xl text-5xl font-bold leading-[0.98] tracking-[-0.045em] text-zinc-950 sm:text-7xl lg:text-[5.25rem]">
-              Small apps for <span className="text-indigo-600">everyday tasks.</span>
+            <p className={styles.eyebrow}>JonnyLab · Seoul</p>
+            <h1 className={styles.heroTitle}>
+              Small apps for<br /><span>everyday tasks.</span>
             </h1>
-            <p className="mt-7 max-w-2xl text-lg leading-8 text-zinc-600 sm:text-xl">Review old screenshots, work with PDFs, and make room for sleep or focus. JonnyLab is an independent software studio building tools you can use in everyday life.</p>
-            <div className="mt-9 flex flex-wrap gap-3">
-              <a href="#products" className="inline-flex items-center gap-2 rounded-xl bg-zinc-950 px-5 py-3.5 text-sm font-semibold text-white transition hover:bg-indigo-700">Explore products <ArrowIcon /></a>
-              <a href="#how-we-build" className="rounded-xl border border-zinc-300 bg-white px-5 py-3.5 text-sm font-semibold text-zinc-800 transition hover:border-zinc-500">How we build</a>
+            <p className={styles.intro}>Review old screenshots, work with PDFs, and make room for sleep or focus. JonnyLab is an independent software studio building tools you can use in everyday life.</p>
+            <div className={styles.actions}>
+              <a href="#products" className={styles.primary}>Explore products <ArrowIcon /></a>
+              <a href="#how-we-build" className={styles.secondary}>How we build</a>
             </div>
           </div>
 
-          <div className="rounded-[2rem] border border-zinc-200 bg-white/90 p-6 shadow-[0_20px_60px_rgba(39,39,42,0.07)] sm:p-8">
-            <h2 className="text-xs font-bold uppercase tracking-[0.18em] text-zinc-500">What do you need to do?</h2>
-            <div className="mt-3 divide-y divide-zinc-200">
+          <div className={styles.launchpad}>
+            <h2>What do you need to do?</h2>
+            <div className={styles.launchGrid}>
               {[
                 { name: "ClearSpace", task: "Review your screenshot backlog", detail: "Start with the oldest. Choose what to delete.", href: "/clearspace", icon: "/apps/clearspace-icon.png" },
                 { name: "Fileio", task: "Finish a document or PDF", detail: "Scan, organize, edit, and share your files.", href: "/fileio", icon: "/apps/fileio-icon.png" },
                 { name: "Serenity", task: "Find your sound for sleep or focus", detail: "Mix calming sounds for the moment.", href: "/serenity", icon: "/apps/serenity-icon.png" },
               ].map((product) => (
-                <Link key={product.name} href={product.href} className="group flex items-start gap-4 rounded-lg py-6 focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-indigo-600">
-                  <Image src={product.icon} alt="" width={44} height={44} className="h-11 w-11 shrink-0 rounded-xl" />
-                  <div className="min-w-0 flex-1">
-                    <p className="text-xs font-semibold text-indigo-700">{product.name}</p>
-                    <h3 className="mt-1 font-bold leading-6 text-zinc-950 group-hover:text-indigo-700">{product.task}</h3>
-                    <p className="mt-1 text-sm leading-6 text-zinc-600">{product.detail}</p>
+                <Link key={product.name} href={product.href} className={styles.launchCard}>
+                  <MarketingScene kind={product.name as "ClearSpace" | "Fileio" | "Serenity"} />
+                  <div className={styles.launchCopy}>
+                    <Image src={product.icon} alt="" width={34} height={34} />
+                    <div><p className={styles.appName}>{product.name}</p><h3>{product.task}</h3><p>{product.detail}</p></div>
+                    <span><ArrowIcon /></span>
                   </div>
-                  <span className="mt-5 shrink-0 text-indigo-700"><ArrowIcon /></span>
                 </Link>
               ))}
             </div>
           </div>
-        </div>
       </section>
 
-      <section id="products" className="mx-auto max-w-6xl px-6 py-20 sm:py-28">
-        <div className="max-w-3xl">
-          <p className="text-sm font-bold uppercase tracking-[0.18em] text-indigo-700">Focused products</p>
-          <h2 className="mt-3 text-4xl font-bold tracking-[-0.03em] text-zinc-950 sm:text-5xl">One clear problem at a time.</h2>
-          <p className="mt-5 text-lg leading-8 text-zinc-600">Each product starts narrow, earns its place through real use, and helps people move from understanding to a concrete outcome.</p>
+      <section id="products" className={styles.shell}>
+        <div className={styles.splitHeading}>
+          <div><p className={styles.eyebrow}>Focused products</p><h2 className={styles.heading}>One clear problem at a time.</h2></div>
+          <p>Each product starts narrow, earns its place through real use, and helps people move from understanding to a concrete outcome.</p>
         </div>
-        <div className="mt-10 grid gap-5 md:grid-cols-2 xl:grid-cols-3">{products.map((product) => <ProductCard key={product.name} product={product} />)}</div>
+        <div className={styles.productGrid}>{products.map((product) => <ProductCard key={product.name} product={product} illustrated />)}</div>
       </section>
 
-      <section className="mx-auto max-w-6xl px-6 pb-20">
-        <div className="rounded-3xl border border-indigo-200 bg-indigo-50 p-7 sm:p-10">
-          <p className="text-sm font-bold text-indigo-700">JonnyLab Automation · Services</p>
-          <h2 className="mt-3 text-3xl font-bold tracking-tight">Less copy-paste. More time for your clients.</h2>
-          <p className="mt-4 max-w-2xl leading-7 text-zinc-600">Fixed-scope n8n workflows for small teams: organize incoming inquiries, record them in Google Sheets, and know what needs your attention.</p>
-          <Link href="/automation" className="mt-6 inline-flex rounded-xl bg-zinc-950 px-5 py-3 text-sm font-semibold text-white hover:bg-indigo-700">Explore automation services →</Link>
+      <section className={`${styles.shell} ${styles.automationLink}`}>
+        <div>
+          <p className={styles.eyebrow}>JonnyLab Automation · Services</p>
+          <h2>Less copy-paste. More time for your clients.</h2>
+          <p>Fixed-scope n8n workflows for small teams: organize incoming inquiries, record them in Google Sheets, and know what needs your attention.</p>
         </div>
+        <Link href="/automation" className={styles.primary}>Explore automation services →</Link>
       </section>
 
-      <section id="how-we-build" className="bg-zinc-950 text-white">
-        <div className="mx-auto max-w-6xl px-6 py-20 sm:py-28">
-          <div className="grid gap-12 lg:grid-cols-[0.8fr_1.2fr] lg:items-end">
+      <section id="how-we-build" className={styles.philosophy}>
+        <div className={styles.shell}>
+          <div className={styles.splitHeading}>
             <div>
-              <p className="text-sm font-bold uppercase tracking-[0.18em] text-indigo-300">When actions matter</p>
-              <h2 className="mt-4 text-4xl font-bold tracking-[-0.03em] sm:text-5xl">AI recommends.<br />Human controls.</h2>
+              <p className={styles.eyebrow}>When actions matter</p>
+              <h2 className={styles.heading}>AI recommends.<br />Human controls.</h2>
             </div>
-            <p className="max-w-2xl text-lg leading-8 text-zinc-300">For actions with meaningful consequences, intelligence is only one part of the system. The product must keep the decision visible, verify what happened, and provide a recovery path when possible.</p>
+            <p>For actions with meaningful consequences, intelligence is only one part of the system. The product must keep the decision visible, verify what happened, and provide a recovery path when possible.</p>
           </div>
-          <div className="mt-12 grid gap-4 md:grid-cols-3">
+          <ol className={styles.process}>
             {[
               ["Confirm", "The person reviews and approves the important action."],
               ["Verify", "The product checks and clearly reports the result."],
               ["Recover", "Failures and mistakes have a safe, understandable path back."],
             ].map(([title, copy], index) => (
-              <div key={title} className="relative rounded-3xl border border-white/10 bg-white/[0.055] p-7">
-                <p className="text-xs font-bold text-indigo-300">0{index + 1}</p>
-                <h3 className="mt-8 text-2xl font-bold">{title}</h3>
-                <p className="mt-3 leading-7 text-zinc-400">{copy}</p>
-              </div>
+              <li key={title}><p className={styles.eyebrow}>0{index + 1}</p><h3>{title}</h3><p>{copy}</p></li>
             ))}
-          </div>
+          </ol>
         </div>
       </section>
 
-      <section id="principles" className="border-b border-zinc-200 bg-white">
-        <div className="mx-auto max-w-6xl px-6 py-20 sm:py-28">
-          <p className="text-sm font-bold uppercase tracking-[0.18em] text-indigo-700">Product principles</p>
-          <h2 className="mt-3 max-w-4xl text-4xl font-bold tracking-[-0.03em] text-zinc-950 sm:text-5xl">Simple · Useful · Private · Human-controlled</h2>
-          <div className="mt-12 grid gap-x-10 gap-y-10 sm:grid-cols-2">
+      <section id="principles">
+        <div className={styles.shell}>
+          <p className={styles.eyebrow}>Product principles</p>
+          <h2 className={styles.heading}>Simple · Useful · Private · Human-controlled</h2>
+          <div className={styles.principles}>
             {principles.map(([title, copy], index) => (
-              <div key={title} className="border-t border-zinc-200 pt-6">
-                <div className="flex items-baseline gap-4"><span className="text-xs font-bold text-indigo-600">0{index + 1}</span><h3 className="text-2xl font-bold text-zinc-950">{title}</h3></div>
-                <p className="mt-3 max-w-lg leading-7 text-zinc-600">{copy}</p>
+              <div key={title}>
+                <p className={styles.eyebrow}>0{index + 1}</p><h3>{title}</h3><p>{copy}</p>
               </div>
             ))}
           </div>
-          <div className="mt-14 rounded-3xl border border-emerald-200 bg-emerald-50 p-7 sm:p-9">
-            <p className="text-sm font-bold text-emerald-800">Privacy is how we build, not what we sell.</p>
-            <p className="mt-3 max-w-4xl text-lg leading-8 text-emerald-950">Data minimization, local processing when practical, purpose limitation, intentional retention, user control, and clear deletion are concrete product requirements—not a category label.</p>
+          <div className={styles.trustNote}>
+            <h3>Privacy is how we build, not what we sell.</h3>
+            <p>Data minimization, local processing when practical, purpose limitation, intentional retention, user control, and clear deletion are concrete product requirements—not a category label.</p>
           </div>
         </div>
       </section>
 
-      <section id="lab" className="mx-auto max-w-6xl px-6 py-20 sm:py-28">
-        <div className="flex flex-col gap-5 sm:flex-row sm:items-end sm:justify-between">
+      <section id="lab" className={styles.shell}>
+        <div className={styles.labHeader}>
           <div className="max-w-3xl">
-            <p className="text-sm font-bold uppercase tracking-[0.18em] text-indigo-700">Product lab</p>
-            <h2 className="mt-3 text-4xl font-bold tracking-[-0.03em] text-zinc-950 sm:text-5xl">Learning in public, carefully.</h2>
-            <p className="mt-5 text-lg leading-8 text-zinc-600">These projects are active tests, betas, or prototypes. Their scope can change as evidence becomes clearer.</p>
+            <p className={styles.eyebrow}>Product lab</p>
+            <h2 className={styles.heading}>Learning in public, carefully.</h2>
+            <p className={styles.intro}>These projects are active tests, betas, or prototypes. Their scope can change as evidence becomes clearer.</p>
           </div>
-          <p className="shrink-0 rounded-full bg-zinc-200 px-4 py-2 text-xs font-semibold text-zinc-700">Not general-release promises</p>
+          <p>Not general-release promises</p>
         </div>
-        <div className="mt-10 grid gap-5 md:grid-cols-2">{labProjects.map((product) => <ProductCard key={product.name} product={product} />)}</div>
+        <div className={styles.labGrid}>{labProjects.map((product) => <ProductCard key={product.name} product={product} />)}</div>
       </section>
 
       <SignalSearch />
 
-      <section className="border-y border-zinc-200 bg-white">
-        <div className="mx-auto grid max-w-6xl gap-12 px-6 py-20 sm:py-28 lg:grid-cols-[0.75fr_1.25fr]">
+      <section className={styles.softSection}>
+        <div className={`${styles.shell} ${styles.criteria}`}>
           <div>
-            <p className="text-sm font-bold uppercase tracking-[0.18em] text-indigo-700">Before we build</p>
-            <h2 className="mt-3 text-4xl font-bold tracking-[-0.03em] text-zinc-950">Seven questions, before more features.</h2>
-            <p className="mt-5 leading-7 text-zinc-600">A useful idea needs more than a compelling demo. We look for a clear job, manageable risk, a realistic path to action, and evidence that people want it.</p>
+            <p className={styles.eyebrow}>Before we build</p>
+            <h2 className={styles.heading}>Seven questions, before more features.</h2>
+            <p className={styles.intro}>A useful idea needs more than a compelling demo. We look for a clear job, manageable risk, a realistic path to action, and evidence that people want it.</p>
           </div>
-          <ol className="grid gap-px overflow-hidden rounded-3xl border border-zinc-200 bg-zinc-200 sm:grid-cols-2">
+          <ol>
             {criteria.map(([number, title, copy]) => (
-              <li key={number} className="bg-white p-5 sm:p-6">
-                <div className="flex gap-4"><span className="text-xs font-bold text-indigo-600">{number}</span><div><h3 className="font-bold text-zinc-950">{title}</h3><p className="mt-1 text-sm leading-6 text-zinc-500">{copy}</p></div></div>
+              <li key={number}>
+                <span className={styles.eyebrow}>{number}</span><div><h3>{title}</h3><p>{copy}</p></div>
               </li>
             ))}
           </ol>
         </div>
       </section>
 
-      <section className="mx-auto max-w-6xl px-6 py-20 sm:py-28">
-        <div className="relative overflow-hidden rounded-[2rem] bg-indigo-600 px-7 py-12 text-white sm:px-12 sm:py-16">
-          <div className="absolute -right-20 -top-24 h-72 w-72 rounded-full border-[48px] border-white/10" aria-hidden="true" />
-          <div className="relative max-w-3xl">
-            <p className="text-sm font-bold uppercase tracking-[0.18em] text-indigo-200">Our product strategy</p>
-            <h2 className="mt-4 text-4xl font-bold tracking-[-0.03em] sm:text-5xl">Start narrow. Merge only after evidence.</h2>
-            <p className="mt-5 text-lg leading-8 text-indigo-100">We do not begin with a super app. Products come together only when the same input, the same moment, and the same desired outcome repeatedly prove that they belong together.</p>
-            <a href="mailto:support@jonnylab.app" className="mt-8 inline-flex items-center gap-2 rounded-xl bg-white px-5 py-3.5 text-sm font-semibold text-indigo-700 transition hover:bg-indigo-50">Talk to JonnyLab <ArrowIcon /></a>
-          </div>
+      <section className={styles.shell}>
+        <div className={styles.closing}>
+            <p className={styles.eyebrow}>Our product strategy</p>
+            <h2 className={styles.heading}>Start narrow. Merge only after evidence.</h2>
+            <p className={styles.intro}>We do not begin with a super app. Products come together only when the same input, the same moment, and the same desired outcome repeatedly prove that they belong together.</p>
+            <a href="mailto:support@jonnylab.app" className={`${styles.primary} mt-8`}>Talk to JonnyLab <ArrowIcon /></a>
         </div>
       </section>
     </main>
