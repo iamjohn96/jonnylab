@@ -1,7 +1,6 @@
 import type { Metadata } from "next";
 import Image from "next/image";
 import Link from "next/link";
-import SignalSearch from "@/components/SignalSearch";
 import MarketingScene from "@/components/MarketingScene";
 import styles from "@/components/marketing.module.css";
 
@@ -353,8 +352,6 @@ export default function Home() {
         </div>
         <div className={styles.labGrid}>{labProjects.map((product) => <ProductCard key={product.name} product={product} />)}</div>
       </section>
-
-      <SignalSearch />
 
       <section className={styles.softSection}>
         <div className={`${styles.shell} ${styles.criteria}`}>
