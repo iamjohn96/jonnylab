@@ -1,0 +1,24 @@
+{
+  "$schema": "node_modules/wrangler/config-schema.json",
+  "name": "daily-desk-api",
+  "main": "src/index.mjs",
+  "compatibility_date": "2026-09-12",
+  "workers_dev": false,
+  "routes": [
+    { "pattern": "jonnylab.app/daily-desk/api/*", "zone_name": "jonnylab.app" }
+  ],
+  "d1_databases": [
+    {
+      "binding": "DAILY_DESK_DB",
+      "database_name": "daily-desk-private",
+      "database_id": "SET_AFTER_DATABASE_CREATION",
+      "migrations_dir": "migrations"
+    }
+  ],
+  "access": {
+    "dev": {
+      "aud": "daily-desk-local-development",
+      "identity": { "email": "local-development@example.invalid" }
+    }
+  }
+}

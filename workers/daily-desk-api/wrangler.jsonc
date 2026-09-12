@@ -1,0 +1,21 @@
+{
+  "$schema": "node_modules/wrangler/config-schema.json",
+  "name": "daily-desk-api",
+  "main": "src/index.mjs",
+  "compatibility_date": "2026-09-12",
+  "workers_dev": false,
+  "d1_databases": [
+    {
+      "binding": "DAILY_DESK_DB",
+      "database_name": "daily-desk-private",
+      "database_id": "b24c9068-c4c8-4c49-aa54-6dbf65e1b8e7",
+      "migrations_dir": "migrations"
+    }
+  ],
+  "access": {
+    "dev": {
+      "aud": "daily-desk-local-development",
+      "identity": { "email": "local-development@example.invalid" }
+    }
+  }
+}
