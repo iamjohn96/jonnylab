@@ -16,7 +16,7 @@ const features = [
   ["Get local reminders", "Choose when to be reminded and manage upcoming, due soon, completed, and overdue items."],
 ];
 
-const privacy = ["On-device processing", "No account", "No ads", "No tracking", "No cloud upload"];
+const privacy = ["On-device processing", "No account", "No ads", "No advertising tracking", "No cloud sync", "Google Play billing"];
 const flow = ["Capture or select a document", "Recognize text and dates", "Review and edit the result", "Save the deadline and set a reminder"];
 
 const structuredData = {
@@ -60,7 +60,7 @@ export default function DeadlineLensPage() {
       </div></section>
 
       <section className="bg-zinc-950 text-white"><div className="mx-auto grid max-w-6xl gap-10 px-6 py-16 lg:grid-cols-[1fr_1.2fr] lg:items-center">
-        <div><p className="mb-2 text-sm font-semibold text-indigo-300">Privacy first</p><h2 className="text-3xl font-bold tracking-tight">Your documents stay with you</h2><p className="mt-4 leading-7 text-zinc-300">Images, recognized text, and extracted results are processed on your device. Deadline Lens has no app networking, account system, advertising, analytics, tracking, or cloud sync.</p></div>
+        <div><p className="mb-2 text-sm font-semibold text-indigo-300">Privacy first</p><h2 className="text-3xl font-bold tracking-tight">Your documents stay with you</h2><p className="mt-4 leading-7 text-zinc-300">Images, recognized text, and extracted results are processed on your device. Deadline Lens uses Google Play and RevenueCat only to offer and restore purchases. It has no account system, ads, advertising tracking, or cloud sync.</p></div>
         <div className="grid gap-3 sm:grid-cols-2">{privacy.map((item) => <div key={item} className="rounded-xl border border-zinc-700 bg-zinc-900 px-4 py-4 text-sm font-semibold"><span className="mr-2 text-indigo-300">✓</span>{item}</div>)}</div>
       </div></section>
 
