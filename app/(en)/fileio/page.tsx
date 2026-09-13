@@ -18,6 +18,18 @@ export const metadata = createPageMetadata({
   path: "/fileio",
 });
 
+const structuredData = {
+  "@context": "https://schema.org",
+  "@type": "SoftwareApplication",
+  name: "Fileio",
+  url: "https://jonnylab.app/fileio",
+  operatingSystem: "iOS, Android",
+  applicationCategory: "BusinessApplication",
+  description:
+    "A private document and PDF workspace for scanning, organizing, editing, and managing files on iPhone, iPad, and Android.",
+  publisher: { "@type": "Organization", name: "JonnyLab", url: "https://jonnylab.app" },
+};
+
 const features = [
   {
     icon: "01",
@@ -67,6 +79,7 @@ const trustPoints = [
 export default function FileioPage() {
   return (
     <main>
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(structuredData) }} />
       <section className="border-b border-zinc-200 bg-white">
         <div className="mx-auto grid max-w-6xl gap-10 px-6 py-16 lg:grid-cols-[1fr_360px] lg:items-center lg:py-20">
           <div>

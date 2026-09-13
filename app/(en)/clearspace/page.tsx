@@ -13,6 +13,18 @@ export const metadata = createPageMetadata({
   path: "/clearspace",
 });
 
+const structuredData = {
+  "@context": "https://schema.org",
+  "@type": "SoftwareApplication",
+  name: "ClearSpace",
+  url: "https://jonnylab.app/clearspace",
+  operatingSystem: "Android",
+  applicationCategory: "UtilitiesApplication",
+  description:
+    "An Android app for reviewing a screenshot backlog in focused sessions and choosing what to move to Android Trash.",
+  publisher: { "@type": "Organization", name: "JonnyLab", url: "https://jonnylab.app" },
+};
+
 const featureGroups = [
   {
     title: "Screenshot Inbox",
@@ -151,6 +163,7 @@ function AppPreview() {
 export default function ClearspacePage() {
   return (
     <main>
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(structuredData) }} />
       <section className="border-b border-zinc-200 bg-white">
         <div className="mx-auto grid max-w-6xl gap-10 px-6 py-16 lg:grid-cols-[1fr_420px] lg:items-center lg:py-20">
           <div>

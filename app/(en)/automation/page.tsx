@@ -68,7 +68,7 @@ export default function AutomationPage() {
           <p className={styles.intro}>Practical n8n automations for solo consultants and small teams. Turn incoming inquiries, recurring updates, and files into organized records and useful notifications.</p>
           <div className={styles.actions}>
             <a href="#contact" className={styles.primary}>Discuss your workflow →</a>
-            <a href="/automation-demo/index.html" className={styles.secondary}>Try the intake demo</a>
+            <a href="/automation-demo/" className={styles.secondary}>Try the intake demo</a>
           </div>
           <p className={styles.caption}>Based in South Korea. Working remotely with English-speaking clients.</p>
         </div>
@@ -121,7 +121,7 @@ export default function AutomationPage() {
       <section id="demo" className={styles.softSection}>
         <div className={section}>
           <p className={eyebrow}>Sample workflow</p><h2 className={heading}>A new inquiry, ready for a human reply.</h2>
-          <p className={styles.caption}>Illustrative example · sample data, not a client case study or a live integration.</p><a href="/automation-demo/index.html" className={styles.textLink}>Try duplicate handling and failure scenarios →</a>
+          <p className={styles.caption}>Illustrative example · sample data, not a client case study or a live integration.</p><a href="/automation-demo/" className={styles.textLink}>Try duplicate handling and failure scenarios →</a>
           <div className={styles.demoGrid}>
             <div className={styles.demoCard}><p className={eyebrow}>01 · Form submission</p><h3>New website project</h3><p>“Hi, we need a new website for our studio. Could you send an estimate and let us know what you need from us?”</p><p>From: Alex · Riverbend Studio (sample)</p></div>
             <div className={styles.demoCard}><p className={eyebrow}>02 · Google Sheets record</p><dl>{[["Contact", "Alex"], ["Company", "Riverbend Studio"], ["Type", "Quote request"], ["Status", "Needs review"]].map(([label, value]) => <div key={label}><dt>{label}</dt><dd>{value}</dd></div>)}</dl></div>

@@ -14,6 +14,18 @@ export const metadata = createPageMetadata({
   path: "/serenity",
 });
 
+const structuredData = {
+  "@context": "https://schema.org",
+  "@type": "SoftwareApplication",
+  name: "Serenity",
+  url: "https://jonnylab.app/serenity",
+  operatingSystem: "iOS, Android",
+  applicationCategory: "LifestyleApplication",
+  description:
+    "A sleep sounds and white-noise mixer with saved mixes, routines, focus sessions, and a sleep timer for iPhone, iPad, and Android.",
+  publisher: { "@type": "Organization", name: "JonnyLab", url: "https://jonnylab.app" },
+};
+
 const features = [
   {
     icon: "🌧",
@@ -81,6 +93,7 @@ const trustPoints = [
 export default function SerenityPage() {
   return (
     <main className="mx-auto max-w-5xl px-6 py-16 sm:py-20">
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(structuredData) }} />
       <section className="relative overflow-hidden rounded-[2rem] bg-[#08111F] px-6 py-16 text-white shadow-[0_30px_120px_rgba(8,17,31,0.35)] sm:px-10 lg:px-12">
         <div className="absolute inset-0 bg-[radial-gradient(circle_at_top_left,_rgba(56,189,248,0.24),_transparent_45%),radial-gradient(circle_at_bottom_right,_rgba(59,130,246,0.2),_transparent_38%)]" />
         <div className="relative">

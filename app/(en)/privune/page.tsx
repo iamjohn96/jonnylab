@@ -8,6 +8,18 @@ export const metadata = createPageMetadata({
   path: "/privune",
 });
 
+const structuredData = {
+  "@context": "https://schema.org",
+  "@type": "SoftwareApplication",
+  name: "Privune",
+  url: "https://jonnylab.app/privune",
+  operatingSystem: "iOS, Android",
+  applicationCategory: "UtilitiesApplication",
+  description:
+    "An on-device photo-redaction app that helps people review sensitive details and create sanitized copies without modifying the original photo.",
+  publisher: { "@type": "Organization", name: "JonnyLab", url: "https://jonnylab.app" },
+};
+
 const workflow = [
   ["Select a photo", "Choose one photo from your library."],
   ["Detect private details", "On-device OCR identifies areas that may contain sensitive information."],
@@ -59,6 +71,7 @@ const faqs = [
 export default function PrivunePage() {
   return (
     <main className="mx-auto max-w-5xl px-6 py-16 sm:py-20">
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(structuredData) }} />
       <section className="relative overflow-hidden rounded-[2rem] bg-[#111827] px-6 py-14 text-white shadow-[0_30px_120px_rgba(15,23,42,0.28)] sm:px-10 sm:py-16 lg:px-12">
         <div aria-hidden="true" className="absolute inset-0 bg-[radial-gradient(circle_at_top_left,_rgba(129,140,248,0.28),_transparent_42%),radial-gradient(circle_at_bottom_right,_rgba(45,212,191,0.16),_transparent_42%)]" />
         <div className="relative grid gap-10 lg:grid-cols-[1.15fr_0.85fr] lg:items-center">
