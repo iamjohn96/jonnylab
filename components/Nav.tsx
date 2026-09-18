@@ -14,7 +14,6 @@ export default function Nav() {
         </Link>
         <div className="flex items-center gap-3 sm:gap-6">
           <Link href="/#products" className="text-sm text-zinc-600 transition-colors hover:text-zinc-950">Products</Link>
-          <Link href="/automation" className="text-sm text-zinc-600 transition-colors hover:text-zinc-950">Automation</Link>
           <Link href="/#how-we-build" className="hidden text-sm text-zinc-600 transition-colors hover:text-zinc-950 sm:block">How we build</Link>
           <Link href="/#lab" className="text-sm text-zinc-600 transition-colors hover:text-zinc-950">Lab</Link>
         </div>

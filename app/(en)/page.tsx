@@ -6,11 +6,11 @@ import styles from "@/components/marketing.module.css";
 
 export const metadata: Metadata = {
   title: "JonnyLab — Small Apps for Everyday Tasks",
-  description: "Review screenshots with ClearSpace, work with PDFs in Fileio, and mix sleep sounds in Serenity. Independent software from JonnyLab.",
+  description: "Review screenshots with ClearSpace, work with PDFs in Fileio, and understand your Instagram connections with SafeUnfollow. Independent software from JonnyLab.",
   alternates: { canonical: "https://jonnylab.app" },
   openGraph: {
     title: "JonnyLab — Small Apps for Everyday Tasks",
-    description: "Screenshot review, PDF tools, and sleep sounds. Explore focused apps from JonnyLab.",
+    description: "Screenshot review, PDF tools, and private Instagram analysis. Explore focused apps from JonnyLab.",
     url: "https://jonnylab.app",
     siteName: "JonnyLab",
     type: "website",
@@ -21,7 +21,6 @@ export const metadata: Metadata = {
 type Product = {
   name: string;
   summary: string;
-  journey: [string, string, string];
   tags: string[];
   status: string;
   tone: "green" | "blue" | "neutral";
@@ -36,123 +35,61 @@ const products: Product[] = [
   {
     name: "ClearSpace",
     summary: "Turn a growing screenshot backlog into small, focused review sessions—then choose what moves to Android Trash.",
-    journey: ["Open the inbox", "Review oldest first", "Choose what moves"],
-    tags: ["Android", "Screenshot Inbox", "On-device review"],
-    status: "Android available · iOS in review",
+    tags: ["Android", "iOS", "Screenshot Inbox"],
+    status: "Android available · iOS in App Review",
     tone: "green",
     href: "/clearspace",
     iconSrc: "/apps/clearspace-icon.png",
   },
   {
-    name: "Deadline Lens",
-    summary: "Find dates and related actions in documents on-device, review them, and save local deadline reminders.",
-    journey: ["Read the document", "Review the deadline", "Set a reminder"],
-    tags: ["Android", "Productivity", "On-device OCR"],
-    status: "Preparing for release",
-    tone: "blue",
-    href: "/deadline-lens",
-    icon: "D",
-    iconClass: "from-indigo-600 to-violet-500",
-  },
-  {
     name: "Fileio",
     summary: "Scan, organize, edit, and privately manage documents and PDFs on iPhone, iPad, and Android.",
-    journey: ["Bring files together", "Choose the right tool", "Finish the document"],
     tags: ["iOS", "Android", "PDF workspace"],
-    status: "Latest updates live on iOS & Android",
+    status: "Available on iOS & Android",
     tone: "green",
     href: "/fileio",
     iconSrc: "/apps/fileio-icon.png",
   },
   {
-    name: "Serenity",
-    summary: "Mix sleep sounds and white noise, save the combination, and keep calm audio playing in the background.",
-    journey: ["Choose a sound", "Shape the mix", "Start a calm session"],
-    tags: ["iOS", "Android", "Sleep & focus"],
-    status: "Available on iOS & Android",
-    tone: "green",
-    href: "/serenity",
-    iconSrc: "/apps/serenity-icon.png",
-  },
-  {
-    name: "Privune",
-    summary: "Detect private details in photos on-device, review every redaction, and create a sanitized Safe Copy.",
-    journey: ["Find sensitive details", "Review every mask", "Create a Safe Copy"],
-    tags: ["iOS", "Android", "Photo redaction"],
-    status: "iOS in review · Android testing",
-    tone: "blue",
-    href: "/privune",
-    icon: "P",
-    iconClass: "from-teal-500 to-indigo-500",
-  },
-  {
     name: "SafeUnfollow",
     summary: "Understand an Instagram Data ZIP without Instagram login, OAuth, or direct account connection.",
-    journey: ["Open your export", "Compare connections", "Export your result"],
     tags: ["Web", "Local ZIP analysis", "No OAuth"],
     status: "Live web app",
     tone: "green",
     href: "https://safeunfollow.com",
     external: true,
-    icon: "◎",
-    iconClass: "from-fuchsia-600 to-purple-500",
+    iconSrc: "/apps/safeunfollow-icon.png",
   },
 ];
 
 const labProjects: Product[] = [
   {
-    name: "ReasonTrace",
-    summary: "A private iPhone and iPad decision journal for recording why a choice was made, then reviewing how the real outcome compared with the original judgment.",
-    journey: ["Capture the reasoning", "Commit to a decision", "Review the outcome"],
-    tags: ["iPhone & iPad", "Decision journal", "Local-first"],
-    status: "Preparing for App Store",
+    name: "Agent Receipt",
+    summary: "See what your coding agent actually changed—including files touched by Bash—and restore them one file at a time.",
+    tags: ["CLI", "Claude Code", "Open source"],
+    status: "Pre-release · npm alpha",
     tone: "neutral",
-    icon: "RT",
-    iconClass: "from-rose-500 to-indigo-600",
-    href: "/reasontrace",
+    href: "https://github.com/iamjohn96/agent-receipt",
+    external: true,
+    icon: "AR",
+    iconClass: "from-zinc-700 to-zinc-950",
   },
   {
     name: "FixShot",
     summary: "A Mac troubleshooter that lets people review sensitive details before AI analyzes a sanitized screenshot and suggests cautious next steps.",
-    journey: ["Understand the screen", "Assess likely causes", "Try verified steps"],
-    tags: ["macOS", "Visual troubleshooting", "External beta"],
-    status: "Beta validation",
+    tags: ["macOS", "Visual troubleshooting"],
+    status: "In development",
+    tone: "neutral",
+    iconSrc: "/apps/fixshot-icon.png",
+  },
+  {
+    name: "Privune",
+    summary: "Detect private details in photos on-device, review every redaction, and create a sanitized Safe Copy.",
+    tags: ["iOS", "Android", "Photo redaction"],
+    status: "Coming soon · iOS & Android",
     tone: "blue",
-    icon: "F",
-    iconClass: "from-sky-500 to-indigo-600",
-  },
-  {
-    name: "FilingCue",
-    summary: "A Korean-first Android product that explains official company disclosures as fact, meaning, uncertainty, what to check next, and source.",
-    journey: ["Understand the filing", "Judge the event", "Track what matters"],
-    tags: ["Android", "Korean market", "Internal test"],
-    status: "Internal test · infrastructure pilot",
-    tone: "neutral",
-    icon: "FC",
-    iconClass: "from-amber-500 to-orange-600",
-  },
-  {
-    name: "Doran",
-    summary: "A Korean-first companion that helps older adults inspect suspicious messages and complete a safer next action one step at a time.",
-    journey: ["Understand the message", "Choose a safe response", "Complete the next step"],
-    tags: ["Android", "Senior usability", "Korean-first"],
-    status: "Experimental MVP",
-    tone: "neutral",
-    href: "/doran",
-    icon: "도",
-    iconClass: "from-amber-400 to-orange-600",
-  },
-  {
-    name: "Agent Permission Guard",
-    summary: "A local gateway for AI-agent tool calls with deterministic policy decisions, one-time human approval, a local audit trail, and a native macOS companion preview.",
-    journey: ["Inspect the request", "Approve or deny", "Verify the outcome"],
-    tags: ["Open source", "MCP gateway", "Developer alpha"],
-    status: "Developer alpha",
-    tone: "neutral",
-    href: "https://github.com/iamjohn96/agent-permission-guard",
-    external: true,
-    icon: "APG",
-    iconClass: "from-zinc-700 to-zinc-950",
+    href: "/privune",
+    iconSrc: "/apps/privune-icon.png",
   },
 ];
 
@@ -211,32 +148,25 @@ function ArrowIcon() {
   );
 }
 
-function ProductCard({ product, illustrated = false }: { product: Product; illustrated?: boolean }) {
+function ProductCard({ product }: { product: Product }) {
   const content = (
     <article className={styles.productCard}>
-      {illustrated && <MarketingScene kind={product.name as Parameters<typeof MarketingScene>[0]["kind"]} />}
-      <div className={styles.productBody}>
-      <div className={styles.productIdentity}>
+      <div className={styles.productField} data-tone={product.tone}>
+        <span className={styles.productGrain} aria-hidden="true" />
         {product.iconSrc ? (
-          <Image src={product.iconSrc} alt="" width={38} height={38} />
+          <Image src={product.iconSrc} alt="" width={52} height={52} className={styles.fieldIcon} />
         ) : (
-          <div className={styles.letterIcon}>
-            {product.icon}
-          </div>
+          <div className={styles.fieldLetterIcon}>{product.icon}</div>
         )}
+        <span className={styles.fieldStatus}>{product.status}</span>
+      </div>
+      <div className={styles.productBody}>
         <h3>{product.name}</h3>
-      </div>
-      <p className={styles.status} data-tone={product.tone}>{product.status}</p>
-      <p className={styles.productSummary}>{product.summary}</p>
-      <div className={styles.journey}>
-        <span>{product.journey[0]}</span><span className="text-zinc-300">→</span>
-        <span>{product.journey[1]}</span><span className="text-zinc-300">→</span>
-        <span>{product.journey[2]}</span>
-      </div>
-      <div className={styles.tags}>
-        {product.tags.map((tag) => <span key={tag}>{tag}</span>)}
-        {product.href ? <span className={styles.explore}>Explore <ArrowIcon /></span> : null}
-      </div>
+        <p className={styles.productSummary}>{product.summary}</p>
+        <div className={styles.tags}>
+          {product.tags.map((tag) => <span key={tag}>{tag}</span>)}
+          {product.href ? <span className={styles.explore}>Explore <ArrowIcon /></span> : null}
+        </div>
       </div>
     </article>
   );
@@ -257,7 +187,7 @@ export default function Home() {
             <h1 className={styles.heroTitle}>
               Small apps for<br /><span>everyday tasks.</span>
             </h1>
-            <p className={styles.intro}>Review old screenshots, work with PDFs, and make room for sleep or focus. JonnyLab is an independent software studio building tools you can use in everyday life.</p>
+            <p className={styles.intro}>Review old screenshots, work with PDFs, and understand your Instagram connections. JonnyLab is an independent software studio building tools you can use in everyday life.</p>
             <div className={styles.actions}>
               <a href="#products" className={styles.primary}>Explore products <ArrowIcon /></a>
               <a href="#how-we-build" className={styles.secondary}>How we build</a>
@@ -270,10 +200,10 @@ export default function Home() {
               {[
                 { name: "ClearSpace", task: "Review your screenshot backlog", detail: "Start with the oldest. Choose what to delete.", href: "/clearspace", icon: "/apps/clearspace-icon.png" },
                 { name: "Fileio", task: "Finish a document or PDF", detail: "Scan, organize, edit, and share your files.", href: "/fileio", icon: "/apps/fileio-icon.png" },
-                { name: "Serenity", task: "Find your sound for sleep or focus", detail: "Mix calming sounds for the moment.", href: "/serenity", icon: "/apps/serenity-icon.png" },
+                { name: "SafeUnfollow", task: "See who doesn't follow you back", detail: "Analyze your Instagram export, entirely offline.", href: "https://safeunfollow.com", icon: "/apps/safeunfollow-icon.png" },
               ].map((product) => (
                 <Link key={product.name} href={product.href} className={styles.launchCard}>
-                  <MarketingScene kind={product.name as "ClearSpace" | "Fileio" | "Serenity"} />
+                  <MarketingScene kind={product.name as "ClearSpace" | "Fileio" | "SafeUnfollow"} />
                   <div className={styles.launchCopy}>
                     <Image src={product.icon} alt="" width={34} height={34} />
                     <div><p className={styles.appName}>{product.name}</p><h3>{product.task}</h3><p>{product.detail}</p></div>
@@ -290,16 +220,7 @@ export default function Home() {
           <div><p className={styles.eyebrow}>Focused products</p><h2 className={styles.heading}>One clear problem at a time.</h2></div>
           <p>Each product starts narrow, earns its place through real use, and helps people move from understanding to a concrete outcome.</p>
         </div>
-        <div className={styles.productGrid}>{products.map((product) => <ProductCard key={product.name} product={product} illustrated />)}</div>
-      </section>
-
-      <section className={`${styles.shell} ${styles.automationLink}`}>
-        <div>
-          <p className={styles.eyebrow}>JonnyLab Automation · Services</p>
-          <h2>Less copy-paste. More time for your clients.</h2>
-          <p>Fixed-scope n8n workflows for small teams: organize incoming inquiries, record them in Google Sheets, and know what needs your attention.</p>
-        </div>
-        <Link href="/automation" className={styles.primary}>Explore automation services →</Link>
+        <div className={styles.productGrid}>{products.map((product) => <ProductCard key={product.name} product={product} />)}</div>
       </section>
 
       <section id="how-we-build" className={styles.philosophy}>
