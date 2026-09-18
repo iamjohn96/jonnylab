@@ -53,6 +53,16 @@ const structuredData = {
   provider: { "@type": "Organization", name: "JonnyLab", url: "https://jonnylab.app", email: "jonny@jonnylab.app" },
 };
 
+const faqStructuredData = {
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  mainEntity: questions.map(([question, answer]) => ({
+    "@type": "Question",
+    name: question,
+    acceptedAnswer: { "@type": "Answer", text: answer },
+  })),
+};
+
 const section = styles.shell;
 const eyebrow = styles.eyebrow;
 const heading = styles.heading;
@@ -61,6 +71,7 @@ export default function AutomationPage() {
   return (
     <main id="top" className={styles.page}>
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(structuredData) }} />
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(faqStructuredData) }} />
       <section className={`${section} ${styles.hero}`}>
         <div>
           <p className={eyebrow}>JonnyLab Automation · Founder-run</p>

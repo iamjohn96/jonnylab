@@ -4,6 +4,13 @@ import Link from "next/link";
 import MarketingScene from "@/components/MarketingScene";
 import styles from "@/components/marketing.module.css";
 
+const ogImage = {
+  url: "https://jonnylab.app/og-image.png",
+  width: 1200,
+  height: 630,
+  alt: "JonnyLab — Small apps for everyday tasks.",
+};
+
 export const metadata: Metadata = {
   title: "JonnyLab — Small Apps for Everyday Tasks",
   description: "Review screenshots with ClearSpace, work with PDFs in Fileio, and understand your Instagram connections with SafeUnfollow. Independent software from JonnyLab.",
@@ -14,6 +21,13 @@ export const metadata: Metadata = {
     url: "https://jonnylab.app",
     siteName: "JonnyLab",
     type: "website",
+    images: [ogImage],
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "JonnyLab — Small Apps for Everyday Tasks",
+    description: "Screenshot review, PDF tools, and private Instagram analysis. Explore focused apps from JonnyLab.",
+    images: [ogImage.url],
   },
   robots: { index: true, follow: true },
 };
@@ -121,6 +135,7 @@ const structuredData = {
       logo: "https://jonnylab.app/brand/jonnylab-logo.png",
       email: "support@jonnylab.app",
       slogan: "Small apps for everyday tasks.",
+      sameAs: ["https://github.com/iamjohn96"],
     },
     {
       "@type": "ItemList",

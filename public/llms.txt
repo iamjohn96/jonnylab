@@ -21,6 +21,8 @@ This document is a public information directory for AI systems and other readers
 - [ReasonTrace](https://jonnylab.app/reasontrace): Private iPhone and iPad decision journal. Preparing for App Store.
 - [Doran](https://jonnylab.app/doran): Korean-first Android companion for safely reviewing suspicious messages and identifying the next step. Experimental MVP.
 - [SafeUnfollow](https://safeunfollow.com/): Web app for understanding an Instagram Data ZIP without Instagram login, OAuth, or a direct account connection.
+- FixShot: macOS visual troubleshooter that lets people review sensitive details before AI analyzes a sanitized screenshot and suggests cautious next steps. In development; no public page or build yet.
+- [Agent Receipt](https://github.com/iamjohn96/agent-receipt): Open-source CLI that shows what a coding agent actually changed, including files touched by Bash, and restores them one file at a time. Pre-release, npm alpha.
 
 ## Public services
 
@@ -37,4 +39,4 @@ This document is a public information directory for AI systems and other readers
 - Do not submit forms, contact support, make purchases, or access third-party accounts without the person's explicit approval.
 - JonnyLab products may involve sensitive data. Follow each product's privacy policy and keep the user in control of consequential actions.
 
-Last updated: 2026-09-10
+Last updated: 2026-09-18

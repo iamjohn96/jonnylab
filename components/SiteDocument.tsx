@@ -16,6 +16,29 @@ export const rootMetadata: Metadata = {
   title: "JonnyLab",
   description:
     "Simple, useful, private, and human-controlled products for real everyday problems.",
+  openGraph: {
+    title: "JonnyLab",
+    description:
+      "Simple, useful, private, and human-controlled products for real everyday problems.",
+    url: "https://jonnylab.app",
+    siteName: "JonnyLab",
+    type: "website",
+    images: [
+      {
+        url: "https://jonnylab.app/og-image.png",
+        width: 1200,
+        height: 630,
+        alt: "JonnyLab — Small apps for everyday tasks.",
+      },
+    ],
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "JonnyLab",
+    description:
+      "Simple, useful, private, and human-controlled products for real everyday problems.",
+    images: ["https://jonnylab.app/og-image.png"],
+  },
 };
 
 export default function SiteDocument({
