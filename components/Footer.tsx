@@ -2,13 +2,13 @@ import Image from "next/image";
 import Link from "next/link";
 
 const productLinks = [
+  { href: "https://safeunfollow.com", label: "SafeUnfollow" },
   { href: "/clearspace", label: "ClearSpace" },
   { href: "/fileio", label: "Fileio" },
   { href: "/privune", label: "Privune" },
 ];
 
 const externalLinks = [
-  { href: "https://safeunfollow.com", label: "SafeUnfollow" },
   { href: "https://github.com/iamjohn96/agent-receipt", label: "Agent Receipt" },
 ];
 
@@ -33,11 +33,11 @@ function ChevronIcon() {
 
 export default function Footer() {
   return (
-    <footer className="border-t border-zinc-200 bg-white">
-      <div className="mx-auto flex max-w-[1248px] flex-col gap-8 px-5 py-10 text-sm text-zinc-600 sm:px-6 sm:flex-row sm:items-start sm:justify-between">
+    <footer className="border-t border-[#1d1b18]/10 bg-[#ebe4d6]">
+      <div className="mx-auto flex max-w-[1248px] flex-col gap-8 px-5 py-10 text-sm text-[#5a544a] sm:px-6 sm:flex-row sm:items-start sm:justify-between">
         <div className="max-w-xs">
           <Link href="/" aria-label="JonnyLab home" className="inline-block">
-            <Image src="/brand/jonnylab-logo-with-words.png" alt="JonnyLab" width={125} height={45} className="h-7 w-auto" />
+            <Image src="/brand/jonnylab-logo-with-words.png" alt="JonnyLab" width={125} height={45} className="h-7 w-auto mix-blend-multiply" />
           </Link>
           <p className="mt-3 leading-6">Solve real everyday problems with useful AI.</p>
         </div>
@@ -69,13 +69,13 @@ export default function Footer() {
                 <ChevronIcon />
               </button>
               <div
-                className="absolute left-0 top-full z-20 mt-2 w-56 origin-top-left translate-y-1 rounded-2xl border border-zinc-200 bg-white p-2 opacity-0 shadow-[0_18px_40px_rgba(39,39,42,0.12)] transition duration-150 pointer-events-none group-hover:translate-y-0 group-hover:opacity-100 group-hover:pointer-events-auto group-focus-within:translate-y-0 group-focus-within:opacity-100 group-focus-within:pointer-events-auto"
+                className="absolute bottom-full left-0 z-20 mb-2 w-56 origin-bottom-left translate-y-1 rounded-2xl border border-[#1d1b18]/10 bg-[#fbf8f1] p-2 opacity-0 shadow-[0_18px_40px_rgba(39,39,42,0.12)] transition duration-150 pointer-events-none group-hover:translate-y-0 group-hover:opacity-100 group-hover:pointer-events-auto group-focus-within:translate-y-0 group-focus-within:opacity-100 group-focus-within:pointer-events-auto"
               >
                 {legalLinks.map((link) => (
                   <Link
                     key={link.href}
                     href={link.href}
-                    className="block rounded-lg px-3 py-2 text-sm text-zinc-600 transition-colors hover:bg-zinc-50 hover:text-zinc-950"
+                    className="block rounded-lg px-3 py-2 text-sm text-zinc-600 transition-colors hover:bg-[#1d1b18]/5 hover:text-zinc-950"
                   >
                     {link.label}
                   </Link>

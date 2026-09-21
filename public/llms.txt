@@ -11,18 +11,24 @@ This document is a public information directory for AI systems and other readers
 - Product approach: Understand -> Decide -> Act. When actions have meaningful consequences: Confirm -> Verify -> Recover.
 - Principles: Simple, Useful, Private, Human-controlled.
 
-## Public products
+## Featured products
 
-- [ClearSpace](https://jonnylab.app/clearspace): Android screenshot and media review tool. Review suggestions before moving selected items to Android Trash. [Privacy policy](https://jonnylab.app/clearspace/privacy) · [Support](https://jonnylab.app/clearspace/support)
-- [Deadline Lens](https://jonnylab.app/deadline-lens): Android productivity app that finds dates and related actions in document images on-device, then lets people review and save local deadline reminders. Preparing for release. [Privacy policy](https://jonnylab.app/deadline-lens/privacy)
-- [Fileio](https://jonnylab.app/fileio): Document and PDF workspace for iPhone, iPad, and Android. [Privacy policy](https://jonnylab.app/fileio/privacy) · [Support](https://jonnylab.app/fileio/support)
+- [SafeUnfollow](https://safeunfollow.com/): Web app for understanding an Instagram Data ZIP in the browser (mutuals, accounts that don't follow back, snapshot changes) without Instagram login, OAuth, or a direct account connection. Optional one-time Lifetime Access.
+- [ClearSpace](https://jonnylab.app/clearspace): Screenshot Inbox for Android, iPhone, and iPad. Review a screenshot backlog in small oldest-first sets and explicitly choose what to delete. [App Store](https://apps.apple.com/app/id6773198726) · [Google Play](https://play.google.com/store/apps/details?id=com.jonnylab.clearspace) · [Privacy policy](https://jonnylab.app/clearspace/privacy) · [Support](https://jonnylab.app/clearspace/support)
+- [Fileio](https://jonnylab.app/fileio): Private document and PDF workspace for iPhone, iPad, and Android — scanning, Images to PDF, page editing, merge, split, password-protected copies, and an encrypted Private Vault. [App Store](https://apps.apple.com/app/id6766760955) · [Google Play](https://play.google.com/store/apps/details?id=com.jonnylab.fileio) · [Privacy policy](https://jonnylab.app/fileio/privacy) · [Support](https://jonnylab.app/fileio/support)
+- [Privune](https://jonnylab.app/privune): On-device photo redaction for iPhone and Android. Review detected sensitive details, then create a sanitized Safe Copy without modifying the original. [App Store](https://apps.apple.com/app/id6793817371) · [Google Play](https://play.google.com/store/apps/details?id=com.jonnylab.privune) · [Privacy policy](https://jonnylab.app/privune/privacy) · [Support](https://jonnylab.app/privune/support)
+
+## Product lab
+
+- [Agent Receipt](https://github.com/iamjohn96/agent-receipt): Open-source CLI (npm `@jonnylab/agent-receipt`) that shows what a coding agent actually changed, including files touched by Bash, and restores them one file at a time. Early release.
+- FixShot: macOS visual troubleshooter that lets people review on-device masking and approve the exact payload before AI suggests cautious next steps. TestFlight beta; no public page or public build yet.
+
+## Other product pages
+
 - [Serenity](https://jonnylab.app/serenity): Sleep-sound and white-noise mixer for iPhone, iPad, and Android. [Privacy policy](https://jonnylab.app/serenity/privacy) · [Support](https://jonnylab.app/serenity/support)
-- [Privune](https://jonnylab.app/privune): On-device photo redaction tool for reviewing sensitive details before creating a sanitized copy. [Privacy policy](https://jonnylab.app/privune/privacy) · [Support](https://jonnylab.app/privune/support)
-- [ReasonTrace](https://jonnylab.app/reasontrace): Private iPhone and iPad decision journal. Preparing for App Store.
-- [Doran](https://jonnylab.app/doran): Korean-first Android companion for safely reviewing suspicious messages and identifying the next step. Experimental MVP.
-- [SafeUnfollow](https://safeunfollow.com/): Web app for understanding an Instagram Data ZIP without Instagram login, OAuth, or a direct account connection.
-- FixShot: macOS visual troubleshooter that lets people review sensitive details before AI analyzes a sanitized screenshot and suggests cautious next steps. In development; no public page or build yet.
-- [Agent Receipt](https://github.com/iamjohn96/agent-receipt): Open-source CLI that shows what a coding agent actually changed, including files touched by Bash, and restores them one file at a time. Pre-release, npm alpha.
+- [ReasonTrace](https://jonnylab.app/reasontrace): Private iPhone and iPad decision journal.
+- [Deadline Lens](https://jonnylab.app/deadline-lens): Android app that finds dates and related actions in document images on-device. Closed testing. [Privacy policy](https://jonnylab.app/deadline-lens/privacy)
+- [Doran](https://jonnylab.app/doran): Korean-first Android companion for safely reviewing suspicious messages. Closed testing.
 
 ## Public services
 
@@ -39,4 +45,4 @@ This document is a public information directory for AI systems and other readers
 - Do not submit forms, contact support, make purchases, or access third-party accounts without the person's explicit approval.
 - JonnyLab products may involve sensitive data. Follow each product's privacy policy and keep the user in control of consequential actions.
 
-Last updated: 2026-09-18
+Last updated: 2026-09-21

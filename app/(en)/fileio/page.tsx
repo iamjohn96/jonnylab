@@ -9,7 +9,7 @@ const appStoreUrl =
   "https://apps.apple.com/app/id6766760955";
 const productHuntUrl =
   "https://www.producthunt.com/products/fileio?launch=fileio";
-const releaseNote = "Latest updates are live: Fileio 2.1.0 on iOS and 2.1.2 on Android.";
+const releaseNote = "Latest updates are live: Fileio 2.1.2 on iOS and 2.1.3 on Android.";
 
 export const metadata = createPageMetadata({
   title: "Fileio — Private Document & PDF Workspace | JonnyLab",

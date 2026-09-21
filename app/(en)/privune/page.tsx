@@ -87,9 +87,22 @@ export default function PrivunePage() {
               Privune detects private information in photos on your device, lets you review what should be hidden, and creates a privacy-safe copy without modifying the original.
             </p>
             <div className="mt-8 flex flex-wrap items-center gap-3">
-              <span aria-label="iOS is in App Review and Android is in closed testing" className="inline-flex cursor-not-allowed rounded-xl bg-white/10 px-5 py-3 text-sm font-semibold text-white ring-1 ring-inset ring-white/15">
-                iOS: In App Review · Android: Closed testing
-              </span>
+              <a
+                href="https://apps.apple.com/app/id6793817371"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="rounded-xl bg-white px-5 py-3 text-sm font-semibold text-slate-950 transition-colors hover:bg-indigo-100 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-white"
+              >
+                Download on the App Store
+              </a>
+              <a
+                href="https://play.google.com/store/apps/details?id=com.jonnylab.privune"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="rounded-xl bg-white px-5 py-3 text-sm font-semibold text-slate-950 transition-colors hover:bg-indigo-100 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-white"
+              >
+                Get it on Google Play
+              </a>
               <Link href="/privune/privacy" className="rounded-xl border border-white/20 px-5 py-3 text-sm font-semibold text-white transition-colors hover:bg-white/10 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-white">
                 Privacy Policy
               </Link>

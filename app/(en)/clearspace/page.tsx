@@ -5,11 +5,12 @@ import { createPageMetadata } from "@/lib/siteMetadata";
 
 const googlePlayUrl =
   "https://play.google.com/store/apps/details?id=com.jonnylab.clearspace&utm_source=jonnylab_website&utm_campaign=clearspace_screenshot_inbox";
+const appStoreUrl = "https://apps.apple.com/app/id6773198726";
 
 export const metadata = createPageMetadata({
-  title: "ClearSpace — Your Screenshot Inbox for Android",
+  title: "ClearSpace — Your Screenshot Inbox for Android and iPhone",
   description:
-    "Work through old screenshots in focused sessions on your Android device. Pass what you want to keep and choose deletion separately.",
+    "Work through old screenshots in focused sessions on Android, iPhone, and iPad. Pass what you want to keep and choose deletion separately.",
   path: "/clearspace",
 });
 
@@ -18,10 +19,10 @@ const structuredData = {
   "@type": "SoftwareApplication",
   name: "ClearSpace",
   url: "https://jonnylab.app/clearspace",
-  operatingSystem: "Android",
+  operatingSystem: "Android, iOS",
   applicationCategory: "UtilitiesApplication",
   description:
-    "An Android app for reviewing a screenshot backlog in focused sessions and choosing what to move to Android Trash.",
+    "An Android and iPhone app for reviewing a screenshot backlog in focused sessions and explicitly choosing what to delete.",
   publisher: { "@type": "Organization", name: "JonnyLab", url: "https://jonnylab.app" },
 };
 
@@ -173,7 +174,7 @@ export default function ClearspacePage() {
                 <p className="text-sm font-semibold text-zinc-500">
                   ClearSpace · Screenshot Inbox
                 </p>
-                <p className="text-sm text-zinc-500">Android · Available now</p>
+                <p className="text-sm text-zinc-500">Android &amp; iPhone · Available now</p>
               </div>
             </div>
 
@@ -201,9 +202,14 @@ export default function ClearspacePage() {
               >
                 Support
               </Link>
-              <span className="inline-flex items-center rounded-lg border border-sky-200 bg-sky-50 px-4 py-3 text-sm font-semibold text-sky-700">
-                iOS: In App Review
-              </span>
+              <a
+                href={appStoreUrl}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="rounded-lg bg-zinc-950 px-5 py-3 text-sm font-semibold text-white transition-colors hover:bg-zinc-800"
+              >
+                Download on the App Store
+              </a>
               <a
                 href="https://sellwithboost.com"
                 target="_blank"

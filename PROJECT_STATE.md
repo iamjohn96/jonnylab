@@ -1,6 +1,6 @@
 # JonnyLab website — project state
 
-Updated: 2026-09-13
+Updated: 2026-09-21
 
 ## Purpose
 
@@ -60,6 +60,32 @@ assuming the documentation commit itself has been published.
   `https://jonnylab.app/daily-desk`; unauthenticated access redirected to Cloudflare
   Access and the page rendered after authorized access. The published UI is not a
   public, indexable feature page.
+
+## Homepage redesign — 2026-09-21
+
+The homepage (`app/(en)/page.tsx`) was rebuilt as a "studio index":
+
+- Entrance gate: a kraft-paper cover with a torn seam and an **Open** button. An
+  inline script sets `html[data-gate]` before paint: `closed` for a first visit in
+  the session, `open` when `sessionStorage` has `jl-gate=open`, the URL has a hash
+  or `?enter`, or the user agent is a crawler/automation. Without JavaScript the
+  attribute is never set and the gate stays hidden, so content stays crawlable.
+- Hero with a pure-CSS 3D wooden card index, then two "rooms": Products and Lab.
+- Products (single section, no duplicate launchpad): SafeUnfollow, ClearSpace,
+  Fileio, Privune — in that order — as ruled index cards with real store links.
+- Lab: Agent Receipt and FixShot only, styled as two-ink halftone plates.
+- Client behavior lives in `components/HomeEffects.tsx` (gate, pointer tilt,
+  parallax, scroll reveal); styles in `components/home.module.css`. Fonts:
+  Instrument Serif + JetBrains Mono via `next/font`. No new npm dependencies.
+- Store status verified 2026-09-21 in App Store Connect / Play Console:
+  ClearSpace iOS 1.2.0 live (id6773198726), Fileio iOS 2.1.2 live, Privune iOS
+  1.0.1 live (id6793817371); ClearSpace, Fileio, Privune are in Google Play
+  production. ClearSpace/Privune product pages now link both stores; `llms.txt`
+  was updated to match. Nav/Footer were restyled to the paper palette and the
+  footer Legal menu now opens upward (it previously extended page height).
+- Known pre-existing test failures unrelated to this work:
+  `tests/automation.test.mjs` (expects missing `proxy.ts`) and
+  `tests/serenity-pages.test.mjs`.
 
 ## Current work and next priority
 
