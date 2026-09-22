@@ -1,6 +1,6 @@
 # JonnyLab website — project state
 
-Updated: 2026-09-21
+Updated: 2026-09-22
 
 ## Purpose
 
@@ -13,11 +13,13 @@ The configured source remote is `https://github.com/iamjohn96/jonnylab.git`.
 
 ## Current milestone
 
-The last published product source revision is `aeafbef` (`Update Deadline Lens
-purchase privacy disclosures`). Its static export was uploaded to Cloudflare Pages
-Production on 2026-09-13; the deployment URL is
-`https://d0f78979.jonnylab.pages.dev`. The public production routes listed below
-returned HTTPS 200 responses after that upload.
+The last published product source revision is `9e626ad` (`feat: redesign homepage
+as a studio index with entrance gate`). Its static export was uploaded to Cloudflare
+Pages on 2026-09-22 via `wrangler pages deploy`; the deployment URL is
+`https://f0777975.jonnylab.pages.dev`. `https://jonnylab.app` was fetched after the
+upload and confirmed to serve the redesigned homepage (entrance gate, Room 01
+products in SafeUnfollow/ClearSpace/Fileio/Privune order, Room 02 lab with Agent
+Receipt and FixShot).
 
 Daily Desk is implemented; its sky-blue visual refinement is in `6dad5c6`. It is
 an established private workspace, not a new product-launch project. This handoff
@@ -186,9 +188,10 @@ fresh live checks after deployment or infrastructure changes.
 - Public hosting: Cloudflare Pages project `jonnylab`, using direct upload of the
   contents of `out/`. The production domains are `https://jonnylab.app` and
   `https://www.jonnylab.app`.
-- Last confirmed public release: source revision `aeafbef`, deployment
-  `https://d0f78979.jonnylab.pages.dev`, verified on 2026-09-13. A later source
-  commit is not public until its own artifact is explicitly uploaded.
+- Last confirmed public release: source revision `9e626ad`, deployment
+  `https://f0777975.jonnylab.pages.dev`, verified live on `https://jonnylab.app` on
+  2026-09-22. A later source commit is not public until its own artifact is
+  explicitly uploaded.
 - Private Daily Desk route: `https://jonnylab.app/daily-desk`, protected by
   Cloudflare Access. API route: `/daily-desk/api/state`, served by the distinct
   `daily-desk-api` Worker route.
