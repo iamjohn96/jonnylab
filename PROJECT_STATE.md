@@ -180,6 +180,17 @@ Historical release results are not a claim that today’s checkout or production
 has just been revalidated. Re-run the relevant commands after source changes; use
 fresh live checks after deployment or infrastructure changes.
 
+## Pending: ReasonTrace privacy policy (2026-09-27)
+
+- `components/ReasonTracePrivacyPage.tsx` now describes the live AI Reflection path
+  (Cloudflare Worker → OpenAI Responses API, `store=false`, 30-day OpenAI abuse
+  retention, server metadata with 90/365-day retention, deletion requests, App Attest,
+  AI reconnect) and 1.1 on-device transcription. Source-committed, NOT deployed.
+- Deploy blocker: the policy says OpenAI does not train on ReasonTrace data. That is
+  only true once OpenAI Data controls → Sharing "Share inputs and outputs with OpenAI"
+  is OFF for the ReasonTrace project (it was "Enabled for all projects" on 2026-09-27).
+  Turn it off (or change the sentence) before uploading `out/`.
+
 ## Build and deployment
 
 - Build: `npm run build` creates `out/`.
