@@ -190,6 +190,10 @@ fresh live checks after deployment or infrastructure changes.
   only true once OpenAI Data controls → Sharing "Share inputs and outputs with OpenAI"
   is OFF for the ReasonTrace project (it was "Enabled for all projects" on 2026-09-27).
   Turn it off (or change the sentence) before uploading `out/`.
+- Update 2026-09-27 (user screenshot): "Share inputs and outputs with OpenAI" is now
+  **Disabled** at the organization level. "Share evaluation and fine-tuning data" still
+  showed "Enabled for all projects"; ReasonTrace does not use evals/fine-tuning, but turn
+  it off too for a clean policy statement.
 
 ## Build and deployment
 
