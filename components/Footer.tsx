@@ -21,6 +21,7 @@ const legalLinks = [
   { href: "/serenity/privacy", label: "Serenity Privacy" },
   { href: "/deadline-lens/privacy", label: "Deadline Lens Privacy" },
   { href: "/filingcue/privacy", label: "FilingCue Privacy" },
+  { href: "/calm-arrows/privacy", label: "Calm Arrows Privacy" },
 ];
 
 function ChevronIcon() {

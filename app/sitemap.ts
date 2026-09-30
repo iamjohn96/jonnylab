@@ -7,6 +7,9 @@ const baseUrl = "https://jonnylab.app";
 const routes = [
   "",
   "/automation",
+  "/calm-arrows",
+  "/calm-arrows/privacy",
+  "/calm-arrows/support",
   "/clearspace",
   "/clearspace/privacy",
   "/clearspace/privacy/ko",
