@@ -17,6 +17,14 @@ const faqs = [
     a: "That arrow is frozen. The number is how many other arrows still have to leave the board, anywhere on it, before it thaws.",
   },
   {
+    q: "What do the padlock and key badges mean?",
+    a: "From level 101, a block with a padlock can move only after the block carrying the key with the same letter has left the board.",
+  },
+  {
+    q: "Why is there no sound?",
+    a: "Sound follows the silent switch, so check that silent mode is off and the volume is up. Sound effects and music each have a switch in Settings. Music does not start while another app is playing audio.",
+  },
+  {
     q: "Can I get stuck?",
     a: "No. Every board can be cleared, and no move makes a board unsolvable. The Hint button highlights an arrow that can leave.",
   },
